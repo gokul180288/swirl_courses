@@ -56,9 +56,7 @@
     ```
     x <- 5 + 7
     ```
-    It's important to include a single space on each side of
-    the assignment operator, but do **not** put a space between the `<` and the `-` that
-    form the arrow.
+    It's important to include a single space on each side of the assignment operator, but do **not** put a space between the `<` and the `-` that form the arrow.
 
 - Class: text
   Output: You'll notice that R did not print the result of 12 this time. When you
@@ -81,9 +79,7 @@
     ```
     y <- x - 3 
     ```
-    and press Enter. Whether you use `x - 3` or `x-3` is personal
-    preference, but it's good habit to include a space on either side of the assignment
-    operator.
+    and press Enter. Whether you use `x - 3` or `x-3` is personal preference, but it's good habit to include a space on either side of the assignment operator.
 
 - Class: cmd_question
   Output: What is the value of `y`? Type `y` to find out.
@@ -109,9 +105,7 @@
     ```
     z <- c(1.1, 9, 3.14)
     ```
-    will assign the vector (1.1, 9, 3.14) to a
-    new variable called z. Including single spaces after the commas in the vector
-    is not required, but helps make your code less cluttered and more readable.
+    will assign the vector (1.1, 9, 3.14) to a new variable called z. Including single spaces after the commas in the vector is not required, but helps make your code less cluttered and more readable.
 
 - Class: cmd_question
   Output: Anytime you have questions about a particular function, you can access R's
@@ -156,8 +150,7 @@
     ```
     z * 2 + 100
     ```
-    without assigning the result to a variable. The `*` symbol
-    is used for multiplication and shares a key with the number 8 on many keyboards.
+    without assigning the result to a variable. The `*` symbol is used for multiplication and shares a key with the number 8 on many keyboards.
 
 - Class: text
   Output: First, R multiplied each of the three elements in `z` by 2. Then it added
@@ -204,9 +197,7 @@
     ```
     my_div <- z / my_sqrt
     ```
-    The spaces on either side of the `/` sign are not
-    required, but can often improve readability by making code appear less cluttered.
-    In the end, it's personal preference.
+    The spaces on either side of the `/` sign are not required, but can often improve readability by making code appear less cluttered. In the end, it's personal preference.
 
 - Class: mult_question
   Output: Which statement do you think is true?
@@ -237,8 +228,7 @@
 
 - Class: text
   Output: |
-    'Behind the scenes, R is ''recycling'' the 2 to make a vector of 2s and
-    the 100 to make a vector of 100s. In other words, when you ask R to compute `z
+    'Behind the scenes, R is ''recycling'' the 2 to make a vector of 2s and the 100 to make a vector of 100s. In other words, when you ask R to compute `z
     * 2 + 100`, what it really computes is this: 
     ```
     z * c(2, 2, 2) + c(100, 100, 100).
@@ -254,8 +244,7 @@
     ```
     c(1, 2, 3, 4) + c(0, 10)
     ```
-    in the console to see how R adds two vectors
-    of different length. Don't assign the result to a variable.
+    in the console to see how R adds two vectors of different length. Don't assign the result to a variable.
 
 - Class: text
   Output: If the length of the shorter vector does not divide evenly into the length
@@ -276,9 +265,7 @@
     ```
     c(1, 2, 3, 4) + c(0, 10, 100)
     ```
-    to see how R handles adding two vectors,
-    when the shorter vector's length does not divide evenly into the longer vector's
-    length. Don't worry about assigning the result to a variable.
+    to see how R handles adding two vectors, when the shorter vector's length does not divide evenly into the longer vector's length. Don't worry about assigning the result to a variable.
 
 - Class: text
   Output: Before concluding this lesson, I'd like to show you a couple of time-saving tricks.

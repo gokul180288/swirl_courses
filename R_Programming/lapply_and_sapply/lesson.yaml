@@ -162,7 +162,7 @@
   CorrectAnswer: sapply(flag_colors, mean)
   AnswerTests: omnitest(correctExpr='sapply(flag_colors, mean)')
   Hint: |
-    `sapply(flag_colors, mean)` will do the trick!
+    '`sapply(flag_colors, mean)` will do the trick!'
 
 - Class: text
   Output: In the examples we've looked at so far, `sapply()` has been able to simplify the result to vector. That's because each element of the list returned by `lapply()` was a vector of length one. Recall that `sapply()` instead returns a matrix when each element of the list returned by `lapply()` is a vector of the same length (> 1).
@@ -172,7 +172,7 @@
     To illustrate this, let's extract columns 19 through 23 from the `flags` dataset and store the result in a new data frame called `flag_shapes`. 
     ```
     flag_shapes <- flags[, 19:23]
-    ``` 
+    ```
     will do it.
   CorrectAnswer: flag_shapes <- flags[, 19:23]
   AnswerTests: omnitest(correctExpr='flag_shapes <- flags[, 19:23]')
@@ -240,11 +240,11 @@
   CorrectAnswer: unique_vals <- lapply(flags, unique)
   AnswerTests: omnitest(correctExpr='unique_vals <- lapply(flags, unique)')
   Hint: |
-    Try 
+    'Try
     ```
     unique_vals <- lapply(flags, unique)
     ```
-
+    '
 - Class: cmd_question
   Output: Print the value of `unique_vals` to the console.
   CorrectAnswer: unique_vals

@@ -22,7 +22,7 @@
   CorrectAnswer: pi:10
   AnswerTests: omnitest(correctExpr='pi:10')
   Hint: Enter `pi:10` and see what happens. pi is a predefined constant in R that takes
-    on the value 3.1415....
+    on the value 3.1415...
 
 - Class: text
   Output: The result is a vector of real numbers starting with `pi` (3.142...) and increasing
@@ -52,11 +52,11 @@
   CorrectAnswer: ?`:`
   AnswerTests: ANY_of_exprs('?`:`', "?':'", '?":"')
   Hint: |
-    "In order to view the documentation for a symbol like the colon operator, you have to use backticks (or quotes). This is so R knows you are not attempting to use the symbol in the command. Here's what it looks like: 
+    'In order to view the documentation for a symbol like the colon operator, you have to use backticks (or quotes). This is so R knows you are not attempting to use the symbol in the command. Here's what it looks like: 
     ```
     ?`:`
     ```
-    Don't forget the question mark out front."
+    Don\'t forget the question mark out front.'
 
 - Class: text
   Output: Often, we'll desire more control over a sequence we're creating than what
@@ -89,7 +89,8 @@
     'You''re using the same function here, but changing its arguments for different results. Be sure to store the result in a new variable called `my_seq`, like this:
     ```
     my_seq <- seq(5, 10, length=30)
-    ```'
+    ```
+    '
 
 - Class: cmd_question
   Output: To confirm that `my_seq` has length 30, we can use the `length()` function.

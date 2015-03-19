@@ -142,7 +142,8 @@
     to see what happens: 
     ```
     z * 2 + 100
-    ```'
+    ```
+    '
   CorrectAnswer: z * 2 + 100
   AnswerTests: omnitest(correctExpr='z * 2 + 100')
   Hint: | 
@@ -232,7 +233,8 @@
     * 2 + 100`, what it really computes is this: 
     ```
     z * c(2, 2, 2) + c(100, 100, 100).
-    ```'
+    ```
+    '
 
 - Class: cmd_question
   Output: To see another example of how this vector 'recycling' works, try adding

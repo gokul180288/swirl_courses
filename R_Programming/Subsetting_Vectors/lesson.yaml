@@ -35,9 +35,9 @@
 
 - Class: mult_question
   Output: What do you think `x[is.na(x)]` will give you?
-  AnswerChoices: A vector of all NAs; A vector with no NAs; A vector of TRUEs and FALSEs; A vector of length 0
-  CorrectAnswer: A vector of all NAs
-  AnswerTests: omnitest(correctVal="A vector of all NAs")
+  AnswerChoices: A vector of all `NA`s; A vector with no `NA`s; A vector of `TRUE`s and `FALSE`s; A vector of length 0
+  CorrectAnswer: A vector of all `NA`s
+  AnswerTests: omnitest(correctVal="A vector of all `NA`s")
   Hint: Remember that `is.na(x)` tells us where the `NA`s are in a vector. So if we subset `x` based on that, what do you expect to happen?
 
 - Class: cmd_question
@@ -75,7 +75,7 @@
   Output: Recall that the expression `y > 0` will give us a vector of logical values the same length as `y`, with TRUEs corresponding to values of y that are greater than zero and FALSEs corresponding to values of `y` that are less than or equal to zero. What do you think `y[y > 0]` will give you?
   AnswerChoices: A vector of all the positive elements of `y`; A vector of all the negative elements of `y`; A vector of all `NA`s; A vector of length 0; A vector of `TRUE`s and `FALSE`s
   CorrectAnswer: A vector of all the positive elements of `y`
-  AnswerTests: omnitest(correctVal="A vector of all the positive elements of y")
+  AnswerTests: omnitest(correctVal="A vector of all the positive elements of `y`")
   Hint: The logical expression `y > 0` will give us `TRUE` for each element of y that is positive. Based on that, what do you think `y[y > 0]` will return?
 
 - Class: cmd_question
@@ -219,7 +219,7 @@
     `vect["bar"]`; `vect[bar]`; `vect["2"]`
   CorrectAnswer: |
     `vect["bar"]`
-  AnswerTests: omnitest(correctVal='vect["bar"]')
+  AnswerTests: omnitest(correctVal='`vect["bar"]`')
   Hint: If we want the element named "bar" (i.e. the second element of `vect`), which command would get us that?
 
 - Class: cmd_question

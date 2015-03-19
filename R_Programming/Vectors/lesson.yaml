@@ -108,27 +108,27 @@
 
 - Class: mult_question
   Output: (3 > 5) & (4 == 4)
-  CorrectAnswer: 'FALSE'
-  AnswerChoices: TRUE; FALSE
-  AnswerTests: omnitest(correctVal='FALSE')
+  CorrectAnswer: '`FALSE`'
+  AnswerChoices: '`TRUE`; `FALSE`'
+  AnswerTests: omnitest(correctVal='`FALSE`')
   Hint: Break this problem down into 2 pieces. The `&` in the middle states that **both**
     pieces are `TRUE`. Your job is to figure out if that is an accurate statement. If
     so, the entire condition is `TRUE`. If not, it's `FALSE`.
 
 - Class: mult_question
   Output: (TRUE == TRUE) | (TRUE == FALSE)
-  CorrectAnswer: 'TRUE'
-  AnswerChoices: TRUE; FALSE
-  AnswerTests: omnitest(correctVal='TRUE')
+  CorrectAnswer: '`TRUE`'
+  AnswerChoices: '`TRUE`; `FALSE`'
+  AnswerTests: omnitest(correctVal='`TRUE`')
   Hint: Break this problem down into 2 pieces. The `|` in the middle states that **at least one**
     of the pieces is `TRUE`. Your job is to figure out if that is an accurate
     statement. If so, the entire condition is `TRUE`. If not, it's `FALSE`.
 
 - Class: mult_question
   Output: ((111 >= 111) | !(TRUE)) & ((4 + 1) == 5)
-  CorrectAnswer: 'TRUE'
-  AnswerChoices: TRUE; FALSE
-  AnswerTests: omnitest(correctVal='TRUE')
+  CorrectAnswer: '`TRUE`'
+  AnswerChoices: `TRUE`; `FALSE`
+  AnswerTests: omnitest(correctVal='`TRUE`')
   Hint: This is a tricky one. Remember that the `!` symbol negates whatever comes
     after it. There's also an 'order of operations' going on here. Conditions that
     are enclosed within parentheses should be evaluated first. Then, work your way

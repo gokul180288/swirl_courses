@@ -209,7 +209,7 @@
     to create the plot.
 
 - Class: cmd_question
-  Output: Plot `cars` while limiting the x-axis to 10 through 15.  (Use xlim = c(10, 15) to achieve this effect.) 
+  Output: Plot `cars` while limiting the x-axis to 10 through 15.  (Use `xlim = c(10, 15)` to achieve this effect.) 
   CorrectAnswer: plot(cars, xlim = c(10, 15))
   AnswerTests: omnitest(correctExpr='plot(cars, xlim = c(10, 15))')
   Hint: Type plot(cars, xlim = c(10, 15)) to create the plot.

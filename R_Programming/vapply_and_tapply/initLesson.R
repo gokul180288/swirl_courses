@@ -1,5 +1,5 @@
 # Path to installed lesson
-.lessonpath <- file.path("~", "Courses", "R_Programming",
+.lessonpath <- file.path("~", ".datacamp", "Courses", "R_Programming",
                          "lapply_and_sapply")
 # Path to dataset
 .datapath <- file.path(.lessonpath, "flag.data.txt")

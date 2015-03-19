@@ -130,7 +130,7 @@
     ```
     '
   CorrectAnswer: '`TRUE`'
-  AnswerChoices: '`TRUE`; `FALSE`; Can there be objective truth when programming?; %>%'
+  AnswerChoices: '`TRUE`; `FALSE`; Can there be objective truth when programming?; `%>%`'
   AnswerTests: omnitest(correctVal='`TRUE`')
   Hint: 'Try to evaluate each expression in isolation and build up an answer.'
 
@@ -266,14 +266,14 @@
   CorrectAnswer: "`TRUE && FALSE || 9 >= 4 && 3 < 6`"
   AnswerChoices: |
     "`TRUE && FALSE || 9 >= 4 && 3 < 6`; `TRUE && 62 < 62 && 44 >= 44`; `99.99 > 100 || 45 < 7.3 || 4 != 4.0`; `FALSE || TRUE && FALSE`"
-  AnswerTests: omnitest(correctVal='TRUE && FALSE || 9 >= 4 && 3 < 6')
+  AnswerTests: omnitest(correctVal='`TRUE && FALSE || 9 >= 4 && 3 < 6`')
   Hint: 'Try to evaluate each expression in isolation and build up an answer.'
   
 - Class: mult_question
   Output: Which one of the following expressions evaluates to FALSE?
   CorrectAnswer: "`FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5`"
   AnswerChoices: "`FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5`; `FALSE || TRUE && 6 != 4 || 9 > 4`; `!(8 > 4) ||  5 == 5.0 && 7.8 >= 7.79`; `6 >= -9 && !(6 > 7) && !(!TRUE)`"
-  AnswerTests: omnitest(correctVal='FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5')
+  AnswerTests: omnitest(correctVal='`FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5`')
   Hint: 'Try to evaluate each expression in isolation and build up an answer.'
   
 - Class : text
@@ -292,7 +292,7 @@
   Output: Which of the following evaluates to `TRUE`?
   CorrectAnswer: "`!isTRUE(4 < 3)`"
   AnswerChoices: "`isTRUE(!TRUE)`; `isTRUE(3)`; `isTRUE(NA)`; `!isTRUE(4 < 3)`; `!isTRUE(8 != 5)`"
-  AnswerTests: omnitest(correctVal='!isTRUE(4 < 3)')
+  AnswerTests: omnitest(correctVal='`!isTRUE(4 < 3)`')
   Hint: '`isTRUE()` will only return `TRUE` if the statement passed to it as an argument is `TRUE`.'
   
 - Class : cmd_question
@@ -315,7 +315,7 @@
   Output: Which of the following evaluates to `TRUE`?
   CorrectAnswer: "`identical(5 > 4, 3 < 3.1)`"
   AnswerChoices: "`identical(5 > 4, 3 < 3.1)`; `identical(4, 3.1)`; `identical('hello', 'Hello')`; `!identical(7, 7)`"
-  AnswerTests: omnitest(correctVal='identical(5 > 4, 3 < 3.1)')
+  AnswerTests: omnitest(correctVal='`identical(5 > 4, 3 < 3.1)`')
   Hint: "`identical()` will only evaluate to `TRUE` if its arguments are exactly the same."
   
 - Class : cmd_question
@@ -338,9 +338,9 @@
     
 - Class: mult_question
   Output: Which of the following evaluates to `FALSE`?
-  CorrectAnswer: "xor(4 >= 9, 8 != 8.0)"
-  AnswerChoices: "xor(4 >= 9, 8 != 8.0); xor(!isTRUE(TRUE), 6 > -1); xor(identical(xor, 'xor'), 7 == 7.0); xor(!!TRUE, !!FALSE)"
-  AnswerTests: omnitest(correctVal='xor(4 >= 9, 8 != 8.0)')
+  CorrectAnswer: "`xor(4 >= 9, 8 != 8.0)`"
+  AnswerChoices: "`xor(4 >= 9, 8 != 8.0)`; `xor(!isTRUE(TRUE), 6 > -1)`; `xor(identical(xor, 'xor'), 7 == 7.0)`; `xor(!!TRUE, !!FALSE)`"
+  AnswerTests: omnitest(correctVal='`xor(4 >= 9, 8 != 8.0)`')
   Hint: "For `xor()` to evaluate to `TRUE`, one argument must be `TRUE` and one must be `FALSE`."
     
 - Class : cmd_question
@@ -391,9 +391,9 @@
 - Class: mult_question
   Output: Which of the following commands would produce the indices of the elements in ints that
     are less than or equal to 2?
-  CorrectAnswer: "which(ints <= 2)"
-  AnswerChoices: "ints < 2; ints <= 2; which(ints < 2); which(ints <= 2)"
-  AnswerTests: omnitest(correctVal='which(ints <= 2)')
+  CorrectAnswer: "`which(ints <= 2)`"
+  AnswerChoices: "`ints < 2`; `ints <= 2`; `which(ints < 2)`; `which(ints <= 2)`"
+  AnswerTests: omnitest(correctVal='`which(ints <= 2)`')
   Hint: 'Use the `which()` function.'
   
 - Class : text
@@ -418,9 +418,9 @@
   
 - Class: mult_question
   Output: Which of the following evaluates to `TRUE`?
-  CorrectAnswer: "any(ints == 10)"
-  AnswerChoices: "any(ints == 10); all(ints == 10); all(c(TRUE, FALSE, TRUE)); any(ints == 2.5)"
-  AnswerTests: omnitest(correctVal='any(ints == 10)')
+  CorrectAnswer: "`any(ints == 10)`"
+  AnswerChoices: "`any(ints == 10)`; `all(ints == 10)`; `all(c(TRUE, FALSE, TRUE))`; `any(ints == 2.5)`"
+  AnswerTests: omnitest(correctVal='`any(ints == 10)`')
   Hint: "`any()` will evaluate to `TRUE` if there is one or more `TRUE` elements in a logical vector."
   
 - Class : text

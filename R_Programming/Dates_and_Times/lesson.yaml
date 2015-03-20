@@ -33,7 +33,7 @@
   CorrectAnswer: class(d1)
   AnswerTests: omnitest(correctExpr='class(d1)')
   Hint: |
-    '`class(d1)` will tell you the class of `d1`.'
+    `class(d1)` will tell you the class of `d1`.
 
 - Class: cmd_question
   Output: We can use the `unclass()` function to see what `d1` looks like internally. Try it out.
@@ -156,11 +156,11 @@
 
 - Class: cmd_question
   Output: |
-    '`t2`, like all `POSIXlt` objects, is just a list of values that make up the date and time. Use 
+    `t2`, like all `POSIXlt` objects, is just a list of values that make up the date and time. Use 
     ```
     str(unclass(t2))
     ```
-    to have a more compact view.'
+    to have a more compact view.
   CorrectAnswer: str(unclass(t2))
   AnswerTests: omnitest(correctExpr='str(unclass(t2))')
   Hint: |
@@ -232,7 +232,7 @@
   CorrectAnswer: t4 <- strptime(t3, "%B %d, %Y %H:%M")
   AnswerTests: omnitest(correctExpr='t4 <- strptime(t3, "%B %d, %Y %H:%M")')
   Hint: |
-    '
+    The command
     ```
     t4 <- strptime(t3, "%B %d, %Y %H:%M")
     ```
@@ -255,11 +255,10 @@
 
 - Class: cmd_question
   Output: |
-    "The variable `t1` contains the time at which you created it (recall you used `Sys.time()`). Confirm that some time has passed since you created `t1` by using the 'greater than' operator to compare it to the current time: 
+    The variable `t1` contains the time at which you created it (recall you used `Sys.time()`). Confirm that some time has passed since you created `t1` by using the 'greater than' operator to compare it to the current time: 
     ```
     Sys.time() > t1
     ```
-    "
   CorrectAnswer: Sys.time() > t1
   AnswerTests: omnitest(correctExpr='Sys.time() > t1')
   Hint: |

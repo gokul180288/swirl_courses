@@ -95,11 +95,11 @@
 
 - Class: cmd_question
   Output: |
-    'Combining our knowledge of logical operators with our new knowledge of subsetting, we could do this:
+    Combining our knowledge of logical operators with our new knowledge of subsetting, we could do this:
     ```
     x[!is.na(x) & x > 0]
     ```
-    Try it out.'
+    Try it out.
   CorrectAnswer: x[!is.na(x) & x > 0]
   AnswerTests: omnitest(correctExpr='x[!is.na(x) & x > 0]')
   Hint: |

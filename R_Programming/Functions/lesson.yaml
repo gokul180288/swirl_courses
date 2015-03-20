@@ -38,11 +38,10 @@
   CorrectAnswer: mean(c(2, 4, 5))
   AnswerTests: omnitest(correctExpr='mean(c(2, 4, 5))')
   Hint: |
-    "Compute the average of 2, 4, and 5 by typing: 
+    Compute the average of 2, 4, and 5 by typing: 
     ```
     mean(c(2, 4, 5))
     ```
-    "
 
 - Class: text
   Output: Functions usually take arguments which are variables that the function operates on. For example,
@@ -74,19 +73,17 @@
   CorrectAnswer: "boring_function('My first function!')"
   AnswerTests: omnitest(correctExpr="boring_function('My first function!')")
   Hint: |
-    "Test `boring_function()` by typing: 
+    Test `boring_function()` by typing: 
     ```
     boring_function('My first function!')
     ```
-    "
 
 - Class: text
   Output: |
-    "Congratulations on writing your first function. By writing functions, you can gain serious insight into how R works. As John Chambers, the creator of R once said:
+    Congratulations on writing your first function. By writing functions, you can gain serious insight into how R works. As John Chambers, the creator of R once said:
     To understand computations in R, two slogans are helpful:
     1. Everything that exists is an object.
     2. Everything that happens is a function call.
-    "
 
 - Class: cmd_question
   Output: "If you want to see the source code for any function, just type the
@@ -116,11 +113,11 @@
   CorrectAnswer: my_mean(c(4, 5, 10))
   AnswerTests: omnitest(correctExpr='my_mean(c(4, 5, 10))')
   Hint: |
-    "Run the command
+    Run the command
     ```
     my_mean(c(4, 5, 10))
     ```
-    to test out your new function." 
+    to test out your new function.
 
 - Class: text
   Output: "Next, let's try writing a function with default arguments. You can set
@@ -149,39 +146,36 @@
 
 - Class: cmd_question
   Output: |
-    "Now let's test the remainder function by providing two arguments.
+    Now let's test the remainder function by providing two arguments.
     Type: 
     ```
     remainder(11, 5)
     ```
-    and let's see what happens."
+    and let's see what happens.
   CorrectAnswer: remainder(11, 5)
   AnswerTests: omnitest(correctExpr='remainder(11, 5)')
   Hint: |
-    "Let's test your remainder function by running: 
+    Let's test your remainder function by running: 
     ```
     remainder(11, 5)
     ```
-    "
 
 - Class: text
   Output: "Once again, the arguments have been matched appropriately."
 
 - Class: cmd_question
   Output: |
-    "You can also explicitly specify arguments in a function. When you explicitly designate argument values by name, the ordering of the arguments becomes unimportant. You can try this out by typing: 
+    You can also explicitly specify arguments in a function. When you explicitly designate argument values by name, the ordering of the arguments becomes unimportant. You can try this out by typing: 
     ```
     remainder(divisor = 11, num = 5)
     ```
-    "
   CorrectAnswer: remainder(divisor = 11, num = 5)
   AnswerTests: omnitest(correctExpr='remainder(divisor = 11, num = 5)')
   Hint: |
-    "Order no longer matters when you explicity state argument values! Test this out by typing: 
+    Order no longer matters when you explicity state argument values! Test this out by typing: 
     ```
     remainder(divisor = 11, num = 5)
     ```
-    "
 
 - Class: text
   Output: "As you can see, there is a significant difference between
@@ -189,19 +183,18 @@
 
 - Class: cmd_question
   Output: |
-    "R can also partially match arguments. Try typing
+    R can also partially match arguments. Try typing
     ```
     remainder(4, div = 2)
     ```
-    to see this feature in action."
+    to see this feature in action.
   CorrectAnswer: remainder(4, div = 2)
   AnswerTests: omnitest(correctExpr='remainder(4, div = 2)')
   Hint: |
-    "Test out partial matching by typing: 
+    Test out partial matching by typing: 
     ```
     remainder(4, div = 2)
     ```
-    "
 
 - Class: text
   Output: "A word of warning: in general you want to make your code as easy to
@@ -211,19 +204,18 @@
 
 - Class: cmd_question
   Output: |
-    "With all of this talk about arguments, you may be wondering if there is a way you can see a function's arguments (besides looking at the documentation). Thankfully, you can use the `args()` function! Type:
+    With all of this talk about arguments, you may be wondering if there is a way you can see a function's arguments (besides looking at the documentation). Thankfully, you can use the `args()` function! Type:
     ```
     args(remainder)
     ```
-    to examine the arguments for the remainder function."
+    to examine the arguments for the remainder function.
   CorrectAnswer: args(remainder)
   AnswerTests: omnitest(correctExpr='args(remainder)')
   Hint: |
-    "Look at the arguments of the remainder function by typing: 
+    Look at the arguments of the remainder function by typing: 
     ```
     args(remainder)
     ```
-    "
 
 - Class: text
   Output: "You may not realize it but I just tricked you into doing something
@@ -264,20 +256,18 @@
      data to the tiny anonymous function in the first argument."
 
 - Class: cmd_question
-  Output: "
+  Output: |
     Type the following command and then we'll discuss how it works: 
     ```
     evaluate(function(x){x+1}, 6)
     ```
-    "
   CorrectAnswer: evaluate(function(x){x+1}, 6)
   AnswerTests: omnitest(correctExpr='evaluate(function(x){x+1}, 6)')
   Hint: |
-    "Just type the command 
+    Just type the command 
     ```
     evaluate(function(x){x+1}, 6)
     ```
-    "
 
 - Class: text
   Output: "The first argument is a tiny anonymous function that takes one argument
@@ -322,19 +312,17 @@
 
 - Class: cmd_question
   Output: |
-    'Just to see how `paste()` works, type
+    Just to see how `paste()` works, type
     ```
     paste("Programming", "is", "fun!")
     ```
-    '
   CorrectAnswer: paste("Programming", "is", "fun!")
   AnswerTests: omnitest(correctExpr='paste("Programming", "is", "fun!")')
   Hint: |
-    'Just type: 
+    Just type: 
     ```
     paste("Programming", "is", "fun!")
     ```
-    '
 
 - Class: text
   Output: "Time to write our own modified version of `paste()`."
@@ -365,8 +353,7 @@
     adjective, and noun arguments in order for your function to work."
   CorrectAnswer: mad_libs(adjective = "", place = "", noun = "")
   AnswerTests: expr_uses_func('mad_libs')
-  Hint: 'Use the `mad_libs()` function and be sure to name place, adjective, and 
-  noun arguments.'
+  Hint: 'Use the `mad_libs()` function and be sure to name place, adjective, and noun arguments.'
 
 - Class: text
   Output: "We're coming to the end of this lesson, but there's still one more
@@ -386,11 +373,11 @@
   Output: Make sure to save your script before you type `submit()`.
   AnswerTests: test_func7()
   Hint: |
-    "Remember: 
+    Remember: 
     ```
     'Hello' %p% 'student!'
     ```
-    is how you use the binary operator."
+    is how you use the binary operator.
   Script: bin_op.R
 
 - Class: cmd_question

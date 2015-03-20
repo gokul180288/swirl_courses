@@ -161,8 +161,7 @@
   Output: Use `sapply()` to apply the `mean()` function to each column of `flag_colors`. Remember that the second argument to `sapply()` should just specify the name of the function (i.e. `mean`) that you want to apply.
   CorrectAnswer: sapply(flag_colors, mean)
   AnswerTests: omnitest(correctExpr='sapply(flag_colors, mean)')
-  Hint: |
-    '`sapply(flag_colors, mean)` will do the trick!'
+  Hint: '`sapply(flag_colors, mean)` will do the trick!'
 
 - Class: text
   Output: In the examples we've looked at so far, `sapply()` has been able to simplify the result to vector. That's because each element of the list returned by `lapply()` was a vector of length one. Recall that `sapply()` instead returns a matrix when each element of the list returned by `lapply()` is a vector of the same length (> 1).
@@ -240,11 +239,11 @@
   CorrectAnswer: unique_vals <- lapply(flags, unique)
   AnswerTests: omnitest(correctExpr='unique_vals <- lapply(flags, unique)')
   Hint: |
-    'Try
+    Try
     ```
     unique_vals <- lapply(flags, unique)
     ```
-    '
+    
 - Class: cmd_question
   Output: Print the value of `unique_vals` to the console.
   CorrectAnswer: unique_vals

@@ -146,7 +146,7 @@
 
 - Class: cmd_question
   Output: |
-    'So, we\'re still left with the question of how to include the names of our patients in the table without destroying the integrity of our numeric data. Try the following:
+    So, we're still left with the question of how to include the names of our patients in the table without destroying the integrity of our numeric data. Try the following:
     ```
     my_data <- data.frame(patients, my_matrix)
     ```

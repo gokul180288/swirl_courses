@@ -20,11 +20,10 @@
 
 - Class: cmd_question
   Output: |
-    "Let's simulate rolling four six-sided dice: 
+    Let's simulate rolling four six-sided dice: 
     ```
     sample(1:6, 4, replace = TRUE).
     ```
-    "
   CorrectAnswer: sample(1:6, 4, replace = TRUE)
   AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
   Hint: |
@@ -102,13 +101,12 @@
   CorrectAnswer: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
   AnswerTests: match_call('flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))')
   Hint: |
-    'The following command will produce 100 flips of an unfair coin and assign the result: 
+    The following command will produce 100 flips of an unfair coin and assign the result: 
     ```
     flips <- sample(c(0,1), 100, 
                     replace = TRUE, 
                     prob = c(0.3, 0.7))
     ```
-    '
 
 - Class: cmd_question
   Output: View the contents of the `flips` variable.

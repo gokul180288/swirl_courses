@@ -44,11 +44,10 @@
   CorrectAnswer: (FALSE == TRUE) == FALSE
   AnswerTests: omnitest(correctExpr='(FALSE == TRUE) == FALSE')
   Hint: |
-    "Try typing: 
+    Try typing: 
     ```
     (FALSE == TRUE) == FALSE
     ```
-    "
 
 - Class: cmd_question
   Output: The equality operator can also be used to compare numbers. Use `==` to see if 6 is equal to 7.
@@ -124,11 +123,11 @@
 
 - Class: mult_question
   Output: |
-    'What do you think the following expression will evaluate to?
+    What do you think the following expression will evaluate to?
     ```
     (TRUE != FALSE) == !(6 == 7)
     ```
-    '
+    
   CorrectAnswer: '`TRUE`'
   AnswerChoices: '`TRUE`; `FALSE`; Can there be objective truth when programming?; `%>%`'
   AnswerTests: omnitest(correctVal='`TRUE`')
@@ -149,11 +148,10 @@
 
 - Class: cmd_question
   Output: |
-    "You can use the `&` operator to evaluate AND across a vector. The `&&` version of AND only evaluates the first member of a vector. Let's test both for practice. Type the expression
+    You can use the `&` operator to evaluate AND across a vector. The `&&` version of AND only evaluates the first member of a vector. Let's test both for practice. Type the expression
     ```
     TRUE & c(TRUE, FALSE, FALSE)
     ```
-    "
   CorrectAnswer: "TRUE & c(TRUE, FALSE, FALSE)"
   AnswerTests: omnitest(correctExpr='TRUE & c(TRUE, FALSE, FALSE)')
   Hint: "
@@ -171,20 +169,19 @@
     ``` 
 
 - Class: cmd_question
-  Output: "
-   Now we'll type the same expression except we'll use the `&&` operator. Type the expression
-   ```
-   TRUE && c(TRUE, FALSE, FALSE)
-   ```
-   "
-  CorrectAnswer: "TRUE && c(TRUE, FALSE, FALSE)"
-  AnswerTests: omnitest(correctExpr='TRUE && c(TRUE, FALSE, FALSE)')
-  Hint: |
-    "As you'll see, the `&&` version of AND works differently. Type: 
+  Output: |
+    Now we'll type the same expression except we'll use the `&&` operator. Type the expression
     ```
     TRUE && c(TRUE, FALSE, FALSE)
     ```
-    "
+   
+  CorrectAnswer: "TRUE && c(TRUE, FALSE, FALSE)"
+  AnswerTests: omnitest(correctExpr='TRUE && c(TRUE, FALSE, FALSE)')
+  Hint: |
+    As you'll see, the `&&` version of AND works differently. Type: 
+    ```
+    TRUE && c(TRUE, FALSE, FALSE)
+    ```
 
 - Class: text
   Output: "In this case, the left operand is only evaluated with the first member
@@ -204,55 +201,52 @@
     
 - Class: cmd_question
   Output: |
-    "Let's test out the vectorized version of the OR operator. Type the expression
+    Let's test out the vectorized version of the OR operator. Type the expression
     ```
     TRUE | c(TRUE, FALSE, FALSE)
     ```
-    "
+
   CorrectAnswer: "TRUE | c(TRUE, FALSE, FALSE)"
   AnswerTests: omnitest(correctExpr='TRUE | c(TRUE, FALSE, FALSE)')
   Hint: |
-    "Test out the vectorized OR operator by typing:
+    Test out the vectorized OR operator by typing:
     ```
     TRUE | c(TRUE, FALSE, FALSE)
     ```
-    "
+    
   
 - Class: cmd_question
   Output: |
-    "Now let's try out the non-vectorized version of the OR operator. Type the expression 
+    Now let's try out the non-vectorized version of the OR operator. Type the expression 
     ```
     TRUE || c(TRUE, FALSE, FALSE)
     ```
-    "
+
   CorrectAnswer: "TRUE || c(TRUE, FALSE, FALSE)"
   AnswerTests: omnitest(correctExpr='TRUE || c(TRUE, FALSE, FALSE)')
   Hint: |
-    "As you'll see the `||` version of OR is not vectorized. Type: 
+    As you'll see the `||` version of OR is not vectorized. Type: 
     ```
     TRUE || c(TRUE, FALSE, FALSE)
     ```
-    "
-  
+
 - Class : text
   Output: "Logical operators can be chained together just like arithmetic operators.
     The expressions: `6 != 10 && FALSE && 1 >= 2` or `TRUE || 5 < 9.3 || FALSE` are perfectly normal to see."
   
 - Class : cmd_question
   Output: |
-    "As you may recall, arithmetic has an order of operations and so do logical expressions. All AND operators are evaluated before OR operators. Let's look at an example of an ambiguous case. Type
+    As you may recall, arithmetic has an order of operations and so do logical expressions. All AND operators are evaluated before OR operators. Let's look at an example of an ambiguous case. Type
     ```
     5 > 8 || 6 != 8 && 4 > 3.9
     ```
-    "
   CorrectAnswer: "5 > 8 || 6 != 8 && 4 > 3.9"
   AnswerTests: omnitest(correctExpr='5 > 8 || 6 != 8 && 4 > 3.9')
   Hint: |
-    "See how the order of operations works by typing
+    See how the order of operations works by typing
     ```
     5 > 8 || 6 != 8 && 4 > 3.9
     ```
-    "
   
 - Class : text
   Output: "Let's walk through the order of operations in the above case. First the
@@ -263,9 +257,9 @@
 
 - Class: mult_question
   Output: Which one of the following expressions evaluates to `TRUE`?
-  CorrectAnswer: "`TRUE && FALSE || 9 >= 4 && 3 < 6`"
+  CorrectAnswer: '`TRUE && FALSE || 9 >= 4 && 3 < 6`'
   AnswerChoices: |
-    "`TRUE && FALSE || 9 >= 4 && 3 < 6`; `TRUE && 62 < 62 && 44 >= 44`; `99.99 > 100 || 45 < 7.3 || 4 != 4.0`; `FALSE || TRUE && FALSE`"
+    `TRUE && FALSE || 9 >= 4 && 3 < 6`; `TRUE && 62 < 62 && 44 >= 44`; `99.99 > 100 || 45 < 7.3 || 4 != 4.0`; `FALSE || TRUE && FALSE`
   AnswerTests: omnitest(correctVal='`TRUE && FALSE || 9 >= 4 && 3 < 6`')
   Hint: 'Try to evaluate each expression in isolation and build up an answer.'
   
@@ -297,19 +291,18 @@
   
 - Class : cmd_question
   Output: |
-    "The function `identical()` will return `TRUE` if the two R objects passed to it as arguments are identical. Try out the `identical()` function by typing: 
+    The function `identical()` will return `TRUE` if the two R objects passed to it as arguments are identical. Try out the `identical()` function by typing: 
     ```
     identical('twins', 'twins')
     ```
-    "
+    
   CorrectAnswer: "identical('twins', 'twins')"
   AnswerTests: omnitest(correctExpr="identical('twins', 'twins')")
   Hint: |
-    "If you want to see if two R objects are identical, type: 
+    If you want to see if two R objects are identical, type: 
     ```
     identical('twins', 'twins')
     ```
-    "
   
 - Class: mult_question
   Output: Which of the following evaluates to `TRUE`?
@@ -320,15 +313,14 @@
   
 - Class : cmd_question
   Output: |
-    "You should also be aware of the `xor()` function, which takes two arguments. The `xor()` function stands for exclusive OR. If one argument evaluates to `TRUE` and one argument evaluates to `FALSE`, then this function will return `TRUE`, otherwise it will return `FALSE`. Try out the `xor()` function by typing: xor(5 == 6, !FALSE)"
+    You should also be aware of the `xor()` function, which takes two arguments. The `xor()` function stands for exclusive OR. If one argument evaluates to `TRUE` and one argument evaluates to `FALSE`, then this function will return `TRUE`, otherwise it will return `FALSE`. Try out the `xor()` function by typing: xor(5 == 6, !FALSE)
   CorrectAnswer: "xor(5 == 6, !FALSE)"
   AnswerTests: omnitest(correctExpr='xor(5 == 6, !FALSE)')
   Hint: |
-    "Test out the `xor()` function by typing: 
+    Test out the `xor()` function by typing: 
     ```
     xor(5 == 6, !FALSE)
     ```
-    "
   
 - Class : text
   Output: "`5 == 6` evaluates to `FALSE`, `!FALSE` evaluates to `TRUE`, so `xor(FALSE, TRUE)`
@@ -341,30 +333,29 @@
   CorrectAnswer: "`xor(4 >= 9, 8 != 8.0)`"
   AnswerChoices: "`xor(4 >= 9, 8 != 8.0)`; `xor(!isTRUE(TRUE), 6 > -1)`; `xor(identical(xor, 'xor'), 7 == 7.0)`; `xor(!!TRUE, !!FALSE)`"
   AnswerTests: omnitest(correctVal='`xor(4 >= 9, 8 != 8.0)`')
-  Hint: "For `xor()` to evaluate to `TRUE`, one argument must be `TRUE` and one must be `FALSE`."
+  Hint: For `xor()` to evaluate to `TRUE`, one argument must be `TRUE` and one must be `FALSE`.
     
 - Class : cmd_question
   Output: |
-    "For the next few questions, we're going to need to create a vector of integers called `ints`. Create this vector by typing: 
+    For the next few questions, we're going to need to create a vector of integers called `ints`. Create this vector by typing: 
     ```
     ints <- sample(10)
     ```
-    "
+
   CorrectAnswer: "ints <- sample(10)"
   AnswerTests: omnitest(correctExpr='ints <- sample(10)')
   Hint: |
-    "To create a vector of ten integers without replacement type: 
+    To create a vector of ten integers without replacement type: 
     ```
     ints <- sample(10)
     ```
-    "
   
 - Class : cmd_question
   Output: "Now simply display the contents of `ints`."
   CorrectAnswer: "ints"
   AnswerTests: omnitest(correctExpr='ints')
   Hint: "To view the vector type: ints"
-  
+
 - Class : cmd_question
   Output: "The vector `ints` is a random sampling of integers from 1 to 10 without
     replacement. Let's say we wanted to ask some logical questions about contents
@@ -372,15 +363,15 @@
     whether each element of `ints` is greater than 5. Try typing: `ints > 5`"
   CorrectAnswer: "ints > 5"
   AnswerTests: omnitest(correctExpr='ints > 5')
-  Hint: "To see which elements of `ints` are larger than `5` type: `ints > 5`"
+  Hint: "To see which elements of `ints` are larger than `5` type `ints > 5`."
   
 - Class : text
   Output: |
-    "We can use the resulting logical vector to ask other questions about ints. The `which()` function takes a logical vector as an argument and returns the indices of the vector that are `TRUE`. For example
+    We can use the resulting logical vector to ask other questions about ints. The `which()` function takes a logical vector as an argument and returns the indices of the vector that are `TRUE`. For example
     ```
     which(c(TRUE, FALSE, TRUE))
     ```
-    would return the vector `c(1, 3)`."
+    would return the vector `c(1, 3)`.
 
 - Class : cmd_question
   Output: "Use the `which()` function to find the indices of ints that are greater than 7."

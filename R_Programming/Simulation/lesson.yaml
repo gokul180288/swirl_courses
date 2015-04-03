@@ -35,9 +35,7 @@
 
 - Class: cmd_question
   Output: |
-    Now repeat the command to see how your result differs. The probability of rolling the exact same result is 
-    $$\frac{1}{4}^4 = 0.00077,$$
-    which is pretty small!)
+    Now repeat the command to see how your result differs. The probability of rolling the exact same result is (1/4)^4 = 0.00077, which is pretty small!
   CorrectAnswer: sample(1:6, 4, replace = TRUE)
   AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
   Hint: |

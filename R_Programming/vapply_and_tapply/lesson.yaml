@@ -48,7 +48,8 @@
     Try 
     ```
     vapply(flags, unique, numeric(1))
-    ```, which says that you expect each element of the result to be a numeric vector of length 1. Since this is NOT actually the case, you will get an error. Once you get the error, type `ok()` to continue to the next question.
+    ```
+    which says that you expect each element of the result to be a numeric vector of length 1. Since this is NOT actually the case, you will get an error. Once you get the error, type `ok()` to continue to the next question.
   CorrectAnswer: ok()
   AnswerTests: omnitest(correctExpr="ok()")
   Hint: |

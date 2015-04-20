@@ -47,7 +47,7 @@
     to assign the result of num_vect < 1 to a variable called `tf`.
 
 - Class: mult_question
-  Output: What do you think tf will look like?
+  Output: What do you think `tf` will look like?
   CorrectAnswer: a vector of 4 logical values
   AnswerChoices: a vector of 4 logical values; a single logical value
   AnswerTests: omnitest(correctVal='a vector of 4 logical values')
@@ -193,16 +193,16 @@
 
 - Class: cmd_question
   Output: |
-    'To add (or ''concatenate'') your name to the end of my_char, use the `c()` function like this: 
+    'To add (or ''concatenate'') datacamp to the end of my_char, use the `c()` function like this: 
     ```
-    c(my_char, "your_name_here")
+    c(my_char, "datacamp")
     ```
-    Place your name in double quotes where I''ve put "your_name_here". Try it now, storing the result in a new variable called `my_name`.'
+    Try it now, storing the result in a new variable called `my_name`.'
   CorrectAnswer: my_name <- c(my_char, "Swirl")
   AnswerTests: var_is_a("character", "my_name"); expr_uses_func("c"); expr_creates_var("my_name");
     val_has_length(4)
   Hint: |
-    Tack your name on to the end of the my_char vector using the `c()` function.  Be sure to assign the result to a new variable called my_name. If your name was `"Swirl"`, you would type
+    Tack datacamp on to the end of the my_char vector using the `c()` function.  Be sure to assign the result to a new variable called my_name. If you wanted to instead type `"Swirl"`, you would type
     ```
     my_name <- c(my_char, "Swirl")
     ```

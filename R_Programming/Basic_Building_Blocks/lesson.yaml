@@ -237,7 +237,7 @@
 
 - Class: cmd_question
   Output: To see another example of how this vector 'recycling' works, try adding
-    c(1, 2, 3, 4) and c(0, 10). Don't worry about saving the result in a new variable.
+    `c(1, 2, 3, 4)` and `c(0, 10)`. Don't worry about saving the result in a new variable.
   CorrectAnswer: c(1, 2, 3, 4) + c(0, 10)
   AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4) + c(0, 10)')
   Hint: |

@@ -72,3 +72,90 @@ test_func7 <- function() {
   }, silent = TRUE)
   exists('ok') && isTRUE(ok)
 }
+
+test_eval1 <- function(){
+  try({
+    e <- get("e", parent.frame())
+    expr <- e$expr
+    t1 <- identical(expr[[3]], 6)
+    expr[[3]] <- 7
+    t2 <- identical(eval(expr), 8)
+    ok <- all(t1, t2)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
+
+test_eval2 <- function(){
+  try({
+    e <- get("e", parent.frame())
+    expr <- e$expr
+    t1 <- identical(expr[[3]], quote(c(8, 4, 0)))
+    t2 <- identical(expr[[1]], quote(evaluate))
+    expr[[3]] <- c(5, 6)
+    t3 <- identical(eval(expr), 5)
+    ok <- all(t1, t2, t3)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
+
+test_eval3 <- function(){
+  try({
+    e <- get("e", parent.frame())
+    expr <- e$expr
+    t1 <- identical(expr[[3]], quote(c(8, 4, 0)))
+    t2 <- identical(expr[[1]], quote(evaluate))
+    expr[[3]] <- c(5, 6)
+    t3 <- identical(eval(expr), 6)
+    ok <- all(t1, t2, t3)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
+
+# Get the swirl state
+getState <- function(){
+  # Whenever swirl is running, its callback is at the top of its call stack.
+  # Swirl's state, named e, is stored in the environment of the callback.
+  environment(sys.function(1))$e
+}
+
+# Get the value which a user either entered directly or was computed
+# by the command he or she entered.
+getVal <- function(){
+  getState()$val
+}
+
+# Get the last expression which the user entered at the R console.
+getExpr <- function(){
+  getState()$expr
+}
+
+coursera_on_demand <- function(){
+  selection <- getState()$val
+  if(selection == "Yes"){
+    email <- readline("What is your email address? ")
+    token <- readline("What is your assignment token? ")
+    
+    payload <- sprintf('{  
+      "assignmentKey": "Q4-fkq8YEeW1-RKql4-XpQ",
+      "submitterEmail": "%s",  
+      "secret": "%s",  
+      "parts": {  
+        "3MwYt": {  
+          "output": "correct"  
+        }  
+      }  
+    }', email, token)
+    url <- 'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
+  
+    respone <- httr::POST(url, body = payload)
+    if(respone$status_code >= 200 && respone$status_code < 300){
+      message("Grade submission succeeded!")
+    } else {
+      message("Grade submission failed.")
+      message("Press ESC if you want to exit this lesson and you")
+      message("want to try to submit your grade at a later time.")
+      return(FALSE)
+    }
+  }
+  TRUE
+}

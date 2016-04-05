@@ -2,7 +2,7 @@
   Course: Regression Models
   Lesson: Residuals Diagnostics and Variation
   Author: Swirl Coders
-  Type: Coursera
+  Type: Standard
   Organization: Johns Hopkins Bloomberg School of Public Health
   Version: 2.2.0
 
@@ -177,7 +177,7 @@
   Hint: Enter dy <- predict(fitno, out2)-predict(fit, out2) or an equivalent expression at the R prompt.
 
 - Class: cmd_question
-  Output: "Recall the we calculated the sample standard deviation of fit's residual, sigma, earlier. Divide the summed squares of dy by 2*sigma^2 to calculate the outlier's Cook's distance. There is no need to store the result in a variable."
+  Output: "Recall that we calculated the sample standard deviation of fit's residual, sigma, earlier. Divide the summed squares of dy by 2*sigma^2 to calculate the outlier's Cook's distance. There is no need to store the result in a variable."
   CorrectAnswer: sum(dy^2)/(2*sigma^2)
   AnswerTests: calculates_same_value('sum(dy^2)/(2*sigma^2)')
   Hint: Enter sum(dy^2)/(2*sigma^2) or an equivalent expression at the R prompt.
@@ -190,3 +190,11 @@
 
 - Class: text
   Output: "That concludes swirl's coverage of Residuals, Diagnostics, and Variation. The HTML5 slides for this as well as other units in the Johns Hopkins Data Science Specialization can be found here: https://github.com/DataScienceSpecialization/courses. They must be downloaded and viewed locally."
+
+- Class: mult_question
+  Output: "Would you like to receive credit for completing this course on
+    Coursera.org?"
+  CorrectAnswer: NULL
+  AnswerChoices: Yes;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""

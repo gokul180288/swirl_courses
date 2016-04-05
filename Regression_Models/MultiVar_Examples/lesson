@@ -2,7 +2,7 @@
   Course: Regression_Models
   Lesson: MultiVar_Examples
   Author: Swirl Coders
-  Type: Coursera
+  Type: Standard
   Organization: Johns Hopkins Bloomberg School of Public Health
   Version: 2.2.0
 
@@ -124,10 +124,18 @@
 
 - Class: mult_question  
   Output:  This tells us that
-  AnswerChoices: Adding ec doesn't change the model; Adding ec zeroes out the coefficients; R is a really cool 
+  AnswerChoices: Adding ec doesn't change the model; Adding ec zeroes out the coefficients; R is really cool 
   CorrectAnswer: Adding ec doesn't change the model
   AnswerTests: omnitest(correctVal='Adding ec doesn\'t change the model')
   Hint: Since ec is a linear combination of two othe variables it doesn't change the model.
 
 - Class: text
   Output: Congrats! You've concluded this first lesson on multivariable linear models.
+
+- Class: mult_question
+  Output: "Would you like to receive credit for completing this course on
+    Coursera.org?"
+  CorrectAnswer: NULL
+  AnswerChoices: Yes;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""

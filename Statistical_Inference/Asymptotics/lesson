@@ -2,7 +2,7 @@
   Course: Statistical_Inference
   Lesson: Asymptotics
   Author: Swirl Coders
-  Type: Coursera
+  Type: Standard
   Organization: Johns Hopkins Bloomberg School of Public Health
   Version: 2.2.0
 
@@ -78,7 +78,7 @@
   FigureType: new
 
 - Class: text
-  Output: Notice that the CLT said nothing about the original population being normally distributed. That's precisely where its usefulness lies! We can assume normality of a population mean no matter what kind of population we have, as long as our sample size is large enough and our samples are independent. Let's look at how it works with a binomial experiment like flipping a coin.
+  Output: Notice that the CLT said nothing about the original population being normally distributed. That's precisely where its usefulness lies! We can assume normality of a sample mean no matter what kind of population we have, as long as our sample size is large enough and our samples are independent. Let's look at how it works with a binomial experiment like flipping a coin.
 
 - Class: text
   Output: Recall that if the probability of a head (call it 1) is p, then the probability of a tail (0) is 1-p. The expected value then is p and the variance is p-p^2 or p(1-p). Suppose we do n coin flips and let p' represent the average of these n flips. We normalize p' by subtracting the mean p and dividing by the std deviation sqrt(p(1-p)/n). Let's do this for 1000 trials and plot the resulting histogram. 
@@ -174,7 +174,7 @@
 - Class: cmd_question
   Output: With the formula  p'+/- qnorm(.975)*sqrt(p'(1-p')/100), use the p' and n values from above and the R construct p'+c(-1,1)... to handle the plus/minus portion of the formula. You should see bounds similar to the ones you just estimated.
   CorrectAnswer: .6 + c(-1,1)*qnorm(.975)*sqrt(.6*.4/100)
-  AnswerTests: omnitest(correctExpr='.6 + c(-1,1)*qnorm(.975)*sqrt(.6*.4/100)')
+  AnswerTests: any_of_exprs('.6 + c(-1,1)*qnorm(.975)*sqrt(.6*.4/100)', '.6 + c(-1,1)*qnorm(.975)*sqrt(.6*(1-0.6)/100)')
   Hint: Type .6 + c(-1,1)*qnorm(.975)*sqrt(.6*.4/100) at the command prompt. 
 
 - Class: cmd_question
@@ -369,3 +369,10 @@
 - Class: text
   Output: Congrats! You've concluded this lesson on asymptotics. We hope you feel confident and are asymptomatic after going through it.
 
+- Class: mult_question
+  Output: "Would you like to receive credit for completing this course on
+    Coursera.org?"
+  CorrectAnswer: NULL
+  AnswerChoices: Yes;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""

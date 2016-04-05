@@ -2,7 +2,7 @@
   Course: Statistical_Inference
   Lesson: Resampling
   Author: Swirl Coders
-  Type: Coursera
+  Type: Standard
   Organization: Johns Hopkins Bloomberg School of Public Health
   Version: 2.2.0
 
@@ -52,7 +52,7 @@
   Output:  For the heck of it, compute the expected die roll for a fair die.
   CorrectAnswer: 3.5
   AnswerTests: equiv_val(3.5)
-  Hint: Type sum(1\:6)/6 at the command prompt.
+  Hint: Type sum(1:6)/6 at the command prompt.
 
 - Class: figure
   Output: Theoretically, the average is 3.5. Here, we've run code and plotted a histogram after we took 1000 such averages, each of 50 dice rolls. Note the unusual y-axis scale. We're displaying this as a density function so the area of the salmon-colored region is theoretically 1. With this scale, though, all the heights of the bins actually add up to 5. So  you have multiply each height  by .2 and add up all the results to get 1. 
@@ -345,3 +345,11 @@
 
 - Class: text
   Output: Congrats! We hope you weren't bugged too much by this lesson and feel like you've pulled yourself up by your bootstraps.
+
+- Class: mult_question
+  Output: "Would you like to receive credit for completing this course on
+    Coursera.org?"
+  CorrectAnswer: NULL
+  AnswerChoices: Yes;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""

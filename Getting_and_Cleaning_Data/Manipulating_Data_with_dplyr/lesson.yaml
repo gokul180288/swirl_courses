@@ -45,13 +45,13 @@
   Output: Use `dim()` to look at the dimensions of `mydf`.
   CorrectAnswer: dim(mydf)
   AnswerTests: omnitest(correctExpr='dim(mydf)')
-  Hint: `dim(mydf)` will give you the dimensions of the dataset.
+  Hint: Using `dim(mydf)` will give you the dimensions of the dataset.
 
 - Class: cmd_question
   Output: Now use `head()` to preview the data.
   CorrectAnswer: head(mydf)
   AnswerTests: omnitest(correctExpr='head(mydf)')
-  Hint: `head(mydf)` will show you the first six rows of `mydf`.
+  Hint: Using `head(mydf)` will show you the first six rows of `mydf`.
 
 - Class: text
   Output: The dplyr package was automatically installed (if necessary) and loaded at the beginning of this lesson.
@@ -118,7 +118,7 @@
   Output: Use `?select` to pull up the documentation for the first these core functions.
   CorrectAnswer: ?select
   AnswerTests: omnitest(correctExpr='?select')
-  Hint: `?select` will display the documentation for dplyr's select() function.
+  Hint: Use `?select` will display the documentation for dplyr's select() function.
   
 - Class: text
   Output: Help files for the other functions are accessible in the same way.
@@ -154,13 +154,13 @@
     `r_arch` and ending with country.
   CorrectAnswer: select(cran, r_arch:country)
   AnswerTests: omnitest(correctExpr='select(cran, r_arch:country)')
-  Hint: `select(cran, r_arch:country)` will select all columns from `r_arch` through country (left to right).
+  Hint: The command `select(cran, r_arch:country)` will select all columns from `r_arch` through country (left to right).
 
 - Class: cmd_question
   Output: We can also select the same columns in reverse order. Give it a try.
   CorrectAnswer: select(cran, country:r_arch)
   AnswerTests: omnitest(correctExpr='select(cran, country:r_arch)')
-  Hint: `select(cran, country:r_arch)` will select all columns starting from `country` and ending with `r_arch` (right 
+  Hint: The line `select(cran, country:r_arch)` will select all columns starting from `country` and ending with `r_arch` (right 
     to left).
 
 - Class: cmd_question
@@ -194,7 +194,7 @@
     with the sequence of numbers, then apply the negative sign to the whole thing.
   CorrectAnswer: -(5:20)
   AnswerTests: omnitest(correctExpr='-(5:20)')
-  Hint: `-(5:20)` will do the job.
+  Hint: Try `-(5:20)`.
 
 - Class: cmd_question
   Output: Use this knowledge to omit all columns `X:size` using `select()`.
@@ -211,7 +211,7 @@
     Be sure to use two equals signs side-by-side!
   CorrectAnswer: filter(cran, package == "swirl")
   AnswerTests: omnitest(correctExpr='filter(cran, package == "swirl")')
-  Hint: `filter(cran, package == "swirl")` will give you only those rows for which the package variable is equal to "swirl".
+  Hint: Using `filter(cran, package == "swirl")` will give you only those rows for which the package variable is equal to "swirl".
 
 - Class: text
   Output: Again, note that `filter()` recognizes `package` as a column of cran, without you having to explicitly 
@@ -231,7 +231,7 @@
     will return all rows of cran corresponding to downloads from users in the US running R version 3.1.1. Try it out.
   CorrectAnswer: filter(cran, r_version == "3.1.1", country == "US")
   AnswerTests: any_of_exprs('filter(cran, r_version == "3.1.1", country == "US")', 'filter(cran, country == "US", r_version == "3.1.1")')
-  Hint: `filter(cran, r_version == "3.1.1", country == "US")` will return all rows of cran corresponding to downloads 
+  Hint: The command `filter(cran, r_version == "3.1.1", country == "US")` will return all rows of cran corresponding to downloads 
     from users in the US running R version 3.1.1. Don't forget the quotes around 3.1.1 and US!
 
 - Class: cmd_question
@@ -239,7 +239,7 @@
     relevant documentation with `?Comparison` (that's an uppercase C).
   CorrectAnswer: ?Comparison
   AnswerTests: omnitest(correctExpr='?Comparison')
-  Hint: `?Comparison` will pull up the relevant help file.
+  Hint: Type `?Comparison` to pull up the relevant help file.
 
 - Class: cmd_question
   Output: Edit your previous call to `filter()` to instead return rows corresponding to users in `"IN"` (India) running 
@@ -247,7 +247,7 @@
     forget your double quotes!
   CorrectAnswer: filter(cran, r_version <= "3.0.2", country == "IN")
   AnswerTests: any_of_exprs('filter(cran, r_version <= "3.0.2", country == "IN")', 'filter(cran, country == "IN", r_version <= "3.0.2")')
-  Hint: `filter(cran, r_version <= "3.0.2", country == "IN")` will return all rows for which r_version is less than or 
+  Hint: Using `filter(cran, r_version <= "3.0.2", country == "IN")` will return all rows for which r_version is less than or 
     equal to "3.0.2" and country is equal to `"IN"`.
 
 - Class: cmd_question
@@ -257,7 +257,7 @@
     either "US" or "IN". Give it a go.
   CorrectAnswer: filter(cran, country == "US" | country == "IN")
   AnswerTests: any_of_exprs('filter(cran, country == "US" | country == "IN")', 'filter(cran, country == "IN" | country == "US")')
-  Hint: `filter(cran, country == "US" | country == "IN")` will return all rows for which country equals `"US"` or 
+  Hint: The line `filter(cran, country == "US" | country == "IN")` will return all rows for which country equals `"US"` or 
     `"IN"`. The `|` symbol (called a pipe operator) probably shares a key with the backslash on your keyboard.
 
 - Class: cmd_question
@@ -281,10 +281,10 @@
 
 - Class: cmd_question
   Output: 'Now, put an exclamation point `!` before `is.na()` to change all of the `TRUE`s to `FALSE`s and all of 
-    the `FALSE`s to `TRUE`s, thus telling us what is NOT NA: `!is.na(c(3, 5, NA, 10))`.'
+    the `FALSE`s to `TRUE`s, thus telling us what is NOT NA `!is.na(c(3, 5, NA, 10))`.'
   CorrectAnswer: "!is.na(c(3, 5, NA, 10))"
   AnswerTests: omnitest('!is.na(c(3, 5, NA, 10))')
-  Hint: `!is.na(c(3, 5, NA, 10))` will negate the previous command, thus telling us what is NOT NA.
+  Hint: The line `!is.na(c(3, 5, NA, 10))` will negate the previous command, thus telling us what is NOT NA.
 
 - Class: cmd_question
   Output: 'Okay, ready to put all of this together? Use `filter()` to return all rows of `cran` for which `r_version` 
@@ -315,14 +315,14 @@
     is the last column.
   CorrectAnswer: arrange(cran2, ip_id)
   AnswerTests: omnitest('arrange(cran2, ip_id)')
-  Hint: `arrange(cran2, ip_id)` will order the rows of `cran2` from smallest `ip_id` to largest `ip_id`.
+  Hint: Using `arrange(cran2, ip_id)` will order the rows of `cran2` from smallest `ip_id` to largest `ip_id`.
 
 - Class: cmd_question
   Output: To do the same, but in descending order, change the second argument to `desc(ip_id)`, where `desc()` 
     stands for 'descending'. Go ahead.
   CorrectAnswer: arrange(cran2, desc(ip_id))
   AnswerTests: omnitest('arrange(cran2, desc(ip_id))')
-  Hint: `arrange(cran2, desc(ip_id))` will order the rows of our dataset from largest `ip_id` to smallest `ip_id`.
+  Hint: Use `arrange(cran2, desc(ip_id))` will order the rows of our dataset from largest `ip_id` to smallest `ip_id`.
 
 - Class: cmd_question
   Output: We can also arrange the data according to the values of multiple variables. For example, 
@@ -334,11 +334,11 @@
   Hint: Use `arrange(cran2, package, ip_id)` to sort the data primarily by package name and secondarily by `ip_id`.
 
 - Class: cmd_question
-  Output: 'Arrange `cran2` by the following three variables, in this order: `country` (ascending), 
+  Output: 'Arrange `cran2` by the following three variables, in this order `country` (ascending), 
     `r_version` (descending), and `ip_id` (ascending).'
   CorrectAnswer: arrange(cran2, country, desc(r_version), ip_id)
   AnswerTests: omnitest('arrange(cran2, country, desc(r_version), ip_id)')
-  Hint: `arrange(cran2, country, desc(r_version), ip_id)` will sort the data by `country` (ascending) first, 
+  Hint: Try `arrange(cran2, country, desc(r_version), ip_id)` to sort the data by `country` (ascending) first, 
     then by `r_version` (descending), and finally by `ip_id` (ascending).
 
 - Class: cmd_question
@@ -347,7 +347,7 @@
     result in a new variable called `cran3`.
   CorrectAnswer: cran3 <- select(cran, ip_id, package, size)
   AnswerTests: omnitest('cran3 <- select(cran, ip_id, package, size)')
-  Hint: `cran3 <- select(cran, ip_id, package, size)` will store just these three columns in a new variable called `cran3`.
+  Hint: Try `cran3 <- select(cran, ip_id, package, size)` to store just these three columns in a new variable called `cran3`.
 
 - Class: cmd_question
   Output: Take a look at `cran3` now.
@@ -369,7 +369,7 @@
     do it:\n\n`mutate(cran3, size_mb = size / 2^20)`"
   CorrectAnswer: mutate(cran3, size_mb = size / 2^20)
   AnswerTests: omnitest('mutate(cran3, size_mb = size / 2^20)')
-  Hint: `mutate(cran3, size_mb = size / 2^20)` will add a new column called size_mb that contains the download 
+  Hint: Try `mutate(cran3, size_mb = size / 2^20)` to add a new column called size_mb that contains the download 
     size in megabytes.
 
 - Class: text
@@ -391,7 +391,7 @@
     create just one new column called `correct_size` that contains the correct size.
   CorrectAnswer: mutate(cran3, correct_size = size + 1000)
   AnswerTests: omnitest('mutate(cran3, correct_size = size + 1000)')
-  Hint: `mutate(cran3, correct_size = size + 1000)` will create one new column that is equal to the original sizes plus 1000.
+  Hint: Using `mutate(cran3, correct_size = size + 1000)` will create one new column that is equal to the original sizes plus 1000.
 
 - Class: cmd_question
   Output: The last of the five core dplyr verbs, `summarize()`, collapses the dataset to a single row. Let's say we're 
@@ -399,7 +399,7 @@
     of the size variable. Here we've chosen to label the result `avg_bytes`, but we could have named it anything. Give it a try.
   CorrectAnswer: summarize(cran, avg_bytes = mean(size))
   AnswerTests: omnitest('summarize(cran, avg_bytes = mean(size))')
-  Hint: `summarize(cran, avg_bytes = mean(size))` will give us the mean size and label the result `avg_bytes`.
+  Hint: Use `summarize(cran, avg_bytes = mean(size))` to give us the mean size and label the result `avg_bytes`.
 
 - Class: text
   Output: That's not particularly interesting. `summarize()` is most useful when working with data that has been grouped by 

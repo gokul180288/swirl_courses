@@ -37,7 +37,7 @@
     DESCRIPTION, a list of available functions, and a link to the official package vignette.
   CorrectAnswer: help(package = lubridate)
   AnswerTests: omnitest(correctExpr='help(package = lubridate)')
-  Hint: `help(package = lubridate)` will bring up the package documentation.
+  Hint: '`help(package = lubridate)` will bring up the package documentation.'
 
 - Class: text
   Output: Let's get going!
@@ -68,14 +68,14 @@
     as a number, such that `1 = Sunday`, `2 = Monday`, `3 = Tuesday`, etc. Give it a shot.
   CorrectAnswer: wday(this_day)
   AnswerTests: omnitest('wday(this_day)')
-  Hint: `wday(this_day)` will give the day of the week, represented as a number.
+  Hint: '`wday(this_day)` will give the day of the week, represented as a number.'
 
 - Class: cmd_question
   Output: "Now try the same thing again, except this time add a second argument, `label = TRUE`, to display the 
     *name* of the weekday (represented as an ordered factor)."
   CorrectAnswer: wday(this_day, label = TRUE)
   AnswerTests: omnitest('wday(this_day, label = TRUE)')
-  Hint: `wday(this_day, label = TRUE)` will give you the day of the week, represented as a character string.
+  Hint: '`wday(this_day, label = TRUE)` will give you the day of the week, represented as a character string.'
 
 - Class: text
   Output: In addition to handling dates, lubridate is great for working with date and time combinations, referred 
@@ -103,8 +103,8 @@
   Hint: Use `hour()`, `minute()`, or `second()` to extract a single piece of time information from `this_moment`.
 
 - Class: text
-  Output: `today()` and `now()` provide neatly formatted date-time information. When working with dates and times 
-    'in the wild', this won't always (and perhaps rarely will) be the case.
+  Output: '`today()` and `now()` provide neatly formatted date-time information. When working with dates and times 
+    'in the wild', this won't always (and perhaps rarely will) be the case.'
 
 - Class: text
   Output: Fortunately, lubridate offers a variety of functions for parsing date-times. 
@@ -151,8 +151,8 @@
     Give it a try.
   CorrectAnswer: mdy("March 12, 1975")
   AnswerTests: any_of_exprs('mdy("March 12, 1975")', 'mdy("March 12 1975")')
-  Hint: `mdy()` will correctly parse `"March 12, 1975"`. The function name, `mdy()`, stands for year (y), month (m), 
-    and day (d), in order from left to right.
+  Hint: '`mdy()` will correctly parse `"March 12, 1975"`. The function name, `mdy()`, stands for year (y), month (m), 
+    and day (d), in order from left to right.'
 
 - Class: cmd_question
   Output: We can even throw something funky at it and lubridate will often know the right thing to do. Parse 
@@ -176,7 +176,7 @@
     want January 2, 1920.
   CorrectAnswer: ymd("1920/1/2")
   AnswerTests: any_of_exprs('ymd("1920/1/2")', 'ymd("1920-1-2")')
-  Hint: `ymd("1920/1/2")` is more explicit than `ymd("192012")` and lubridate knows how to handle it.
+  Hint: '`ymd("1920/1/2")` is more explicit than `ymd("192012")` and lubridate knows how to handle it.'
 
 - Class: cmd_question
   Output: In addition to dates, we can parse date-times. I've created a date-time object called `dt1`. Take a look at it now.
@@ -188,7 +188,7 @@
   Output: Now parse `dt1` with `ymd_hms()`.
   CorrectAnswer: ymd_hms(dt1)
   AnswerTests: omnitest('ymd_hms(dt1)')
-  Hint: `ymd_hms(dt1)` will parse `dt1`.
+  Hint: '`ymd_hms(dt1)` will parse `dt1`.'
 
 - Class: cmd_question
   Output: What if we have a time, but no date? Use the appropriate lubridate function to parse `"03:22:14"` (hh:mm:ss).
@@ -217,8 +217,8 @@
     ```
   CorrectAnswer: update(this_moment, hours = 8, minutes = 34, seconds = 55)
   AnswerTests: omnitest('update(this_moment, hours = 8, minutes = 34, seconds = 55)')
-  Hint: `update(this_moment, hours = 8, minutes = 34, seconds = 55)` will update this_moment to reflect a new time of 
-    `08:34:55`.
+  Hint: '`update(this_moment, hours = 8, minutes = 34, seconds = 55)` will update this_moment to reflect a new time of 
+    `08:34:55`.'
 
 - Class: cmd_question
   Output: It's important to recognize that the previous command does not alter `this_moment` unless we reassign the 
@@ -253,12 +253,12 @@
     time to 17:34.
 
 - Class: cmd_question
-  Output: 'To find the current date in New York, we''ll use the `now()` function again. This time, however, we''ll 
+  Output: "To find the current date in New York, we''ll use the `now()` function again. This time, however, we''ll 
     specify the time zone that we want: `"America/New_York"`. Store the result in a variable called `nyc`. Check out 
-    `?now` if you need help.'
+    `?now` if you need help."
   CorrectAnswer: nyc <- now("America/New_York")
   AnswerTests: match_call('nyc <- now("America/New_York")')
-  Hint: `now("America/New_York")` will give the current date in New York. Store the result in a variable called `nyc`.
+  Hint: '`now("America/New_York")` will give the current date in New York. Store the result in a variable called `nyc`.'
 
 - Class: text
   Output: "For a complete list of valid time zones for use with lubridate, check out the following Wikipedia 
@@ -335,7 +335,7 @@
     it will get the new value.
   CorrectAnswer: arrive <- with_tz(arrive, "Asia/Hong_Kong")
   AnswerTests: match_call('arrive <- with_tz(arrive, "Asia/Hong_Kong")')
-  Hint: `with_tz(arrive, "Asia/Hong_Kong")` will convert arrive to Hong Kong time. Assign the result back to `arrive`.
+  Hint: '`with_tz(arrive, "Asia/Hong_Kong")` will convert arrive to Hong Kong time. Assign the result back to `arrive`.'
 
 - Class: cmd_question
   Output: Print the value of `arrive` to the console, so that you can tell your friend what time to pick you up from 
@@ -381,7 +381,7 @@
   Output: Now use `as.period(how_long)` to see how long it's been.
   CorrectAnswer: as.period(how_long)
   AnswerTests: omnitest('as.period(how_long)')
-  Hint: `as.period(how_long)` will tell you how many years, months, days, etc. have passed since you last saw your friend.
+  Hint: '`as.period(how_long)` will tell you how many years, months, days, etc. have passed since you last saw your friend.'
 
 - Class: text
   Output: This is where things get a little tricky. Because of things like leap years, leap seconds, and daylight 

@@ -131,7 +131,7 @@
     `quantile(pack_sum$count, probs = 0.99)` to determine this number.
   CorrectAnswer: quantile(pack_sum$count, probs = 0.99)
   AnswerTests: omnitest('quantile(pack_sum$count, probs = 0.99)')
-  Hint: `quantile(pack_sum$count, probs = 0.99)` will give us the 0.99, or 99%, sample quantile for the `count` variable.
+  Hint: Using `quantile(pack_sum$count, probs = 0.99)` will give us the 0.99, or 99%, sample quantile for the `count` variable.
 
 - Class: cmd_question
   Output: Now we can isolate only those packages which had more than 679 total downloads. Use `filter()` to 
@@ -159,12 +159,12 @@
     If you are having trouble, we recommend using RStudio.
 
 - Class: cmd_question
-  Output: `arrange()` the rows of `top_counts` based on the `count` column and assign the result to a new variable 
+  Output: Arrange the rows of `top_counts` based on the `count` column and assign the result to a new variable 
     called `top_counts_sorted`. We want the packages with the highest number of downloads at the top, which means we 
     want `count` to be in descending order. If you need help, check out `?arrange` and/or `?desc`.
   CorrectAnswer: top_counts_sorted <- arrange(top_counts, desc(count))
   AnswerTests: omnitest('top_counts_sorted <- arrange(top_counts, desc(count))')
-  Hint: `arrange(top_counts, desc(count))` will arrange the rows of `top_counts` based on the values of the `count` 
+  Hint: The line `arrange(top_counts, desc(count))` will arrange the rows of `top_counts` based on the values of the `count` 
     variable, in descending order. Don't forget to assign the result to `top_counts_sorted`.
 
 - Class: cmd_question
@@ -198,7 +198,7 @@
     greater than 465. Assign the result to a variable called `top_unique`.
   CorrectAnswer: top_unique <- filter(pack_sum, unique > 465)
   AnswerTests: omnitest('top_unique <- filter(pack_sum, unique > 465)')
-  Hint: `filter(pack_sum, unique > 465)` will select all rows corresponding to values of `unique` that are strictly 
+  Hint: Use `filter(pack_sum, unique > 465)` to select all rows corresponding to values of `unique` that are strictly 
     greater than 465. Assign the result to `top_unique`.
 
 - Class: cmd_question
@@ -212,14 +212,14 @@
     downloaded from the greatest number of unique IP addresses. Assign the result to `top_unique_sorted`.
   CorrectAnswer: top_unique_sorted <- arrange(top_unique, desc(unique))
   AnswerTests: omnitest('top_unique_sorted <- arrange(top_unique, desc(unique))')
-  Hint: `arrange(top_unique, desc(unique))` will arrange the rows of `top_unique` based on the values of the `unique` 
+  Hint: Typing `arrange(top_unique, desc(unique))` will arrange the rows of `top_unique` based on the values of the `unique` 
     variable, in descending order. Assign the result to `top_unique_sorted`.
 
 - Class: cmd_question
-  Output: `View()` the sorted data.
+  Output: View the sorted data.
   CorrectAnswer: View(top_unique_sorted)
   AnswerTests: omnitest('View(top_unique_sorted)')
-  Hint: `View(top_unique_sorted)` will display the sorted data.
+  Hint: Try `View(top_unique_sorted)` to display the sorted data.
 
 - Class: text
   Output: Now `Rcpp` is in the lead, followed by `stringr`, `digest`, `plyr`, and `ggplot2`. `swirl` moved up a 
@@ -278,7 +278,7 @@
   Output: Once again, let's `View()` the full data, which has been stored in `result3`.
   CorrectAnswer: View(result3)
   AnswerTests: omnitest('View(result3)')
-  Hint: `View(result3)` will display the full data, instead of just the first 10 rows.
+  Hint: Using `View(result3)` will display the full data, instead of just the first 10 rows.
 
 - Class: text
   Output: It looks like `Rcpp` is on top with downloads from 84 different countries, followed by `digest`, `stringr`, 

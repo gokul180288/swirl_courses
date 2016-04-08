@@ -118,7 +118,7 @@
   Output: Use `?select` to pull up the documentation for the first these core functions.
   CorrectAnswer: ?select
   AnswerTests: omnitest(correctExpr='?select')
-  Hint: '`?select` will display the documentation for dplyr's select() function.'
+  Hint: "`?select` will display the documentation for dplyr's select() function."
   
 - Class: text
   Output: Help files for the other functions are accessible in the same way.

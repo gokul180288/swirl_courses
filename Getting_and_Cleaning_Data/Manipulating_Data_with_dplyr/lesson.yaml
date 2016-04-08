@@ -261,9 +261,9 @@
     `"IN"`. The `|` symbol (called a pipe operator) probably shares a key with the backslash on your keyboard.
 
 - Class: cmd_question
-  Output: "Now, use `filter()` to fetch all rows for which size is strictly greater than (`>`) `100500` (no quotes, 
-    since size is numeric) AND `r_os` equals `"linux-gnu"`. Hint: You are passing three arguments to `filter()`: the 
-    name of the dataset, the first condition, and the second condition."
+  Output: 'Now, use `filter()` to fetch all rows for which size is strictly greater than (`>`) `100500` (no quotes, 
+    since size is numeric) AND `r_os` equals `"linux-gnu"`. You are passing three arguments to `filter()` the 
+    name of the dataset, the first condition, and the second condition.'
   CorrectAnswer: filter(cran, size > 100500, r_os == "linux-gnu")
   AnswerTests: any_of_exprs('filter(cran, size > 100500, r_os == "linux-gnu")', 'filter(cran, r_os == "linux-gnu", size > 100500)')
   Hint: This is a tricky one. `filter(cran, size > 100500, r_os == "linux-gnu")` will give us all rows for which size 

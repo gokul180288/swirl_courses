@@ -45,13 +45,13 @@
   Output: Use `dim()` to look at the dimensions of `mydf`.
   CorrectAnswer: dim(mydf)
   AnswerTests: omnitest(correctExpr='dim(mydf)')
-  Hint: Using `dim(mydf)` will give you the dimensions of the dataset.
+  Hint: '`dim(mydf)` will give you the dimensions of the dataset.'
 
 - Class: cmd_question
   Output: Now use `head()` to preview the data.
   CorrectAnswer: head(mydf)
   AnswerTests: omnitest(correctExpr='head(mydf)')
-  Hint: Using `head(mydf)` will show you the first six rows of `mydf`.
+  Hint: '`head(mydf)` will show you the first six rows of `mydf`.'
 
 - Class: text
   Output: The dplyr package was automatically installed (if necessary) and loaded at the beginning of this lesson.
@@ -61,7 +61,7 @@
     now to load the package again.
   CorrectAnswer: library(dplyr)
   AnswerTests: omnitest(correctExpr='library(dplyr)')
-  Hint: Use `library(dplyr)` to load the dplyr package.
+  Hint: '`library(dplyr)` will load the dplyr package.'
 
 - Class: cmd_question
   Output: It's important that you have dplyr version 0.4.0 or later. To confirm this, type `packageVersion("dplyr")`.
@@ -85,7 +85,7 @@
     workspace with `rm("mydf")`.
   CorrectAnswer: rm("mydf")
   AnswerTests: omnitest(correctExpr='rm("mydf")')
-  Hint: Use `rm("mydf")` to remove the original data frame from your workspace.
+  Hint: '`rm("mydf")` will remove the original data frame from your workspace.'
 
 - Class: cmd_question
   Output: From `?tbl_df`, "The main advantage to using a `tbl_df` over a regular data frame is the printing." Let's 
@@ -118,7 +118,7 @@
   Output: Use `?select` to pull up the documentation for the first these core functions.
   CorrectAnswer: ?select
   AnswerTests: omnitest(correctExpr='?select')
-  Hint: Use `?select` will display the documentation for dplyr's select() function.
+  Hint: '`?select` will display the documentation for dplyr's select() function.'
   
 - Class: text
   Output: Help files for the other functions are accessible in the same way.
@@ -175,7 +175,7 @@
     To see how this works, do `select(cran, -time)` to omit the time column.
   CorrectAnswer: select(cran, -time)
   AnswerTests: omnitest(correctExpr='select(cran, -time)')
-  Hint: Use `select(cran, -time)` to get rid of the time column.
+  Hint: '`select(cran, -time)` will get rid of the time column.'
 
 - Class: cmd_question
   Output: "The negative sign in front of time tells `select()` that we DON''T want the time column. Now, let's 
@@ -211,7 +211,7 @@
     Be sure to use two equals signs side-by-side!
   CorrectAnswer: filter(cran, package == "swirl")
   AnswerTests: omnitest(correctExpr='filter(cran, package == "swirl")')
-  Hint: Using `filter(cran, package == "swirl")` will give you only those rows for which the package variable is equal to "swirl".
+  Hint: '`filter(cran, package == "swirl")` will give you only those rows for which the package variable is equal to "swirl".'
 
 - Class: text
   Output: Again, note that `filter()` recognizes `package` as a column of cran, without you having to explicitly 
@@ -247,8 +247,8 @@
     forget your double quotes!
   CorrectAnswer: filter(cran, r_version <= "3.0.2", country == "IN")
   AnswerTests: any_of_exprs('filter(cran, r_version <= "3.0.2", country == "IN")', 'filter(cran, country == "IN", r_version <= "3.0.2")')
-  Hint: Using `filter(cran, r_version <= "3.0.2", country == "IN")` will return all rows for which r_version is less than or 
-    equal to "3.0.2" and country is equal to `"IN"`.
+  Hint: '`filter(cran, r_version <= "3.0.2", country == "IN")` will return all rows for which r_version is less than or 
+    equal to "3.0.2" and country is equal to `"IN"`.'
 
 - Class: cmd_question
   Output: Our last two calls to `filter()` requested all rows for which some condition AND another condition were `TRUE`. 
@@ -315,14 +315,14 @@
     is the last column.
   CorrectAnswer: arrange(cran2, ip_id)
   AnswerTests: omnitest('arrange(cran2, ip_id)')
-  Hint: Using `arrange(cran2, ip_id)` will order the rows of `cran2` from smallest `ip_id` to largest `ip_id`.
+  Hint: '`arrange(cran2, ip_id)` will order the rows of `cran2` from smallest `ip_id` to largest `ip_id`.'
 
 - Class: cmd_question
   Output: To do the same, but in descending order, change the second argument to `desc(ip_id)`, where `desc()` 
     stands for 'descending'. Go ahead.
   CorrectAnswer: arrange(cran2, desc(ip_id))
   AnswerTests: omnitest('arrange(cran2, desc(ip_id))')
-  Hint: Use `arrange(cran2, desc(ip_id))` will order the rows of our dataset from largest `ip_id` to smallest `ip_id`.
+  Hint: '`arrange(cran2, desc(ip_id))` will order the rows of our dataset from largest `ip_id` to smallest `ip_id`.'
 
 - Class: cmd_question
   Output: We can also arrange the data according to the values of multiple variables. For example, 
@@ -331,7 +331,7 @@
     will be sorted by `ip_id` (ascending numerically). Try `arrange(cran2, package, ip_id)` now.
   CorrectAnswer: arrange(cran2, package, ip_id)
   AnswerTests: omnitest('arrange(cran2, package, ip_id)')
-  Hint: Use `arrange(cran2, package, ip_id)` to sort the data primarily by package name and secondarily by `ip_id`.
+  Hint: '`arrange(cran2, package, ip_id)` will sort the data primarily by package name and secondarily by `ip_id`.'
 
 - Class: cmd_question
   Output: 'Arrange `cran2` by the following three variables, in this order `country` (ascending), 
@@ -383,7 +383,7 @@
     equal to `size_mb / 2^10`.
   CorrectAnswer: mutate(cran3, size_mb = size / 2^20, size_gb = size_mb / 2^10)
   AnswerTests: omnitest('mutate(cran3, size_mb = size / 2^20, size_gb = size_mb / 2^10)')
-  Hint: Use `mutate(cran3, size_mb = size / 2^20, size_gb = size_mb / 2^10)` to create two new columns called `size_mb` and `size_gb`, respectively.
+  Hint: '`mutate(cran3, size_mb = size / 2^20, size_gb = size_mb / 2^10)` will create two new columns called `size_mb` and `size_gb`, respectively.'
 
 - Class: cmd_question
   Output: Let's try one more for practice. Pretend we discovered a glitch in the system that provided the original 
@@ -391,7 +391,7 @@
     create just one new column called `correct_size` that contains the correct size.
   CorrectAnswer: mutate(cran3, correct_size = size + 1000)
   AnswerTests: omnitest('mutate(cran3, correct_size = size + 1000)')
-  Hint: Using `mutate(cran3, correct_size = size + 1000)` will create one new column that is equal to the original sizes plus 1000.
+  Hint: '`mutate(cran3, correct_size = size + 1000)` will create one new column that is equal to the original sizes plus 1000.'
 
 - Class: cmd_question
   Output: The last of the five core dplyr verbs, `summarize()`, collapses the dataset to a single row. Let's say we're 

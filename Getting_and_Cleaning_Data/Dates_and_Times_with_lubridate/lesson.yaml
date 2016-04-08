@@ -16,7 +16,7 @@
 
 - Class: cmd_question
   Output: Unfortunately, due to different date and time representations, this lesson is only guaranteed to work with 
-    an "en_US.UTF-8" locale. To view your locale, type `Sys.getlocale("LC_TIME")`.
+    an "en_US.UTF-8" locale. To view your locale, type `Sys.getlocale("LC_TIME")`
   CorrectAnswer: Sys.getlocale("LC_TIME")
   AnswerTests: start_timer(); omnitest(correctExpr='Sys.getlocale("LC_TIME")')
   Hint: Type `Sys.getlocale("LC_TIME")` to view your time locale.

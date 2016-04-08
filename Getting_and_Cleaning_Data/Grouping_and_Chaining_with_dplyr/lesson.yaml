@@ -7,8 +7,8 @@
   Version: 2.2.13
   
 - Class: text
-  Output: "Warning: This lesson makes use of the `View()` function. `View()` may not work properly in every programming 
-    environment. We highly recommend the use of RStudio for this lesson."
+  Output: 'Warning: This lesson makes use of the `View()` function. `View()` may not work properly in every programming 
+    environment. We highly recommend the use of RStudio for this lesson.'
 
 - Class: text
   Output: 'In the last lesson, you learned about the five main data manipulation ''verbs'' in `dplyr`: `select()`, 
@@ -20,8 +20,8 @@
     the values of one or more variables. The `group_by()` function is reponsible for doing this."
 
 - Class: text
-  Output: "We'll continue where we left off with RStudio's CRAN download log from July 8, 2014, which contains information 
-    on roughly 225,000 R package downloads (http://cran-logs.rstudio.com/)."
+  Output: 'We'll continue where we left off with RStudio's CRAN download log from July 8, 2014, which contains information 
+    on roughly 225,000 R package downloads (http://cran-logs.rstudio.com/).'
 
 - Class: cmd_question
   Output: As with the last lesson, the `dplyr` package was automatically installed (if necessary) and loaded at the 

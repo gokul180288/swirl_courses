@@ -118,7 +118,7 @@
 
 - Class: text
   Output: It's important that you understand how each column of `pack_sum` was created and what it means. Now that we've 
-  summarized the data by individual packages, let's play around with it some more to see what we can learn.
+    summarized the data by individual packages, let's play around with it some more to see what we can learn.
 
 - Class: text
   Output: Naturally, we'd like to know which packages were most popular on the day these data were collected 

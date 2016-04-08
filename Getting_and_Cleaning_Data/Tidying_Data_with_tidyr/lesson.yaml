@@ -82,7 +82,7 @@
     `count`, `-grade`. Note the minus sign before `grade`, which says we want to gather all columns EXCEPT grade."
   CorrectAnswer: gather(students, sex, count, -grade)
   AnswerTests: match_call('gather(students, sex, count, -grade)')
-  Hint: Using `gather(students, sex, count, -grade)` will properly tidy the students data, so that it has three columns: 
+  Hint: "Using `gather(students, sex, count, -grade)` will properly tidy the students data, so that it has three columns, 
     `grade`, `sex`, and `count`."
 
 - Class: text
@@ -138,7 +138,7 @@
   Output: "Call `separate()` on res to split the `sex_class` column into `sex` and `class`. You only need to specify the 
     first three arguments: `data = res`, `col = sex_class`, `into = c("sex", "class")`. You don''t have to provide the 
     argument names as long as they are in the correct order."
-  CorrectAnswer: `separate(res, sex_class, c("sex", "class"))`
+  CorrectAnswer: separate(res, sex_class, c("sex", "class"))
   AnswerTests: match_call('separate(res, sex_class, c("sex", "class"))')
   Hint: Use `separate(res, sex_class, c("sex", "class"))` to split the `sex_class` column into `sex` and `class`.
 

@@ -16,7 +16,7 @@
   Output: tidyr was automatically installed (if necessary) and loaded when you started this lesson. Just to build the habit, (re)load the package with library(tidyr).
   CorrectAnswer: library(tidyr)
   AnswerTests: omnitest('library(tidyr)')
-  Hint: Type 'library(tidyr)' to (re)load the tidyr package.
+  Hint: Type `library(tidyr)` to (re)load the tidyr package.
 
 - Class: text
   Output: "The author of tidyr, Hadley Wickham, discusses his philosophy of tidy data in his 'Tidy Data' paper:\n\nhttp://vita.had.co.nz/papers/tidy-data.pdf\n\nThis paper should be required reading for anyone who works with data, but it's not required in order to complete this lesson."
@@ -38,7 +38,7 @@
   Output: The first problem is when you have column headers that are values, not variable names. I've created a simple dataset called 'students' that demonstrates this scenario. Type students to take a look.
   CorrectAnswer: students
   AnswerTests: prints_var('students')
-  Hint: Type 'students' to view the data.
+  Hint: Type `students` to view the data.
 
 - Class: text
   Output: The first column represents each of five possible grades that students could receive for a particular class. The second and third columns give the number of male and female students, respectively, that received each grade.
@@ -50,13 +50,13 @@
   Output: To tidy the students data, we need to have one column for each of these three variables. We'll use the gather() function from tidyr to accomplish this. Pull up the documentation for this function with ?gather.
   CorrectAnswer: ?gather
   AnswerTests: gets_help('gather')
-  Hint: Use '?gather' to pull up the documentation.
+  Hint: Use `?gather` to pull up the documentation.
 
 - Class: cmd_question
   Output: "Using the help file as a guide, call gather() with the following arguments (in order): students, sex, count, -grade. Note the minus sign before grade, which says we want to gather all columns EXCEPT grade."
   CorrectAnswer: gather(students, sex, count, -grade)
   AnswerTests: match_call('gather(students, sex, count, -grade)')
-  Hint: "gather(students, sex, count, -grade) will properly tidy the students data, so that it has three columns: grade, sex, and count."
+  Hint: `gather(students, sex, count, -grade)` will properly tidy the students data, so that it has three columns: grade, sex, and count."
 
 - Class: text
   Output: Each row of the data now represents exactly one observation, characterized by a unique combination of the grade and sex variables. Each of our variables (grade, sex, and count) occupies exactly one column. That's tidy data!
@@ -68,7 +68,7 @@
   Output: The second messy data case we'll look at is when multiple variables are stored in one column. Type students2 to see an example of this.
   CorrectAnswer: students2
   AnswerTests: prints_var('students2')
-  Hint: Type 'students2' to view the data.
+  Hint: Type `students2` to view the data.
 
 - Class: text
   Output: This dataset is similar to the first, except now there are two separate classes, 1 and 2, and we have total counts for each sex within each class. students2 suffers from the same messy data problem of having column headers that are values (male_1, female_1, etc.) and not variable names (sex, class, and count).
@@ -80,7 +80,7 @@
   Output: Let's start by using gather() to stack the columns of students2, like we just did with students. This time, name the 'key' column sex_class and the 'value' column count. Save the result to a new variable called res. Consult ?gather again if you need help.
   CorrectAnswer: res <- gather(students2, sex_class, count, -grade)
   AnswerTests: match_call('res <- gather(students2, sex_class, count, -grade)')
-  Hint: "Call gather() with the following arguments (in order): students2, sex_class, count, -grade). Store the result in a variable called res."
+  Hint: "Call `gather()` with the following arguments (in order): `students2`, `sex_class`, `count`, `-grade`). Store the result in a variable called `res`."
 
 - Class: cmd_question
   Output: Print res to the console to see what we accomplished.
@@ -92,13 +92,13 @@
   Output: That got us half way to tidy data, but we still have two different variables, sex and class, stored together in the sex_class column. tidyr offers a convenient separate() function for the purpose of separating one column into multiple columns. Pull up the help file for separate() now.
   CorrectAnswer: ?separate
   AnswerTests: gets_help('separate')
-  Hint: Type '?separate' to pull up the help file.
+  Hint: Type `?separate` to pull up the help file.
 
 - Class: cmd_question
   Output: 'Call separate() on res to split the sex_class column into sex and class. You only need to specify the first three arguments: data = res, col = sex_class, into = c("sex", "class"). You don''t have to provide the argument names as long as they are in the correct order.'
   CorrectAnswer: separate(res, sex_class, c("sex", "class"))
   AnswerTests: match_call('separate(res, sex_class, c("sex", "class"))')
-  Hint: 'separate(res, sex_class, c("sex", "class"))' will split the 'sex_class' column into sex and class.
+  Hint: `separate(res, sex_class, c("sex", "class"))` will split the `sex_class` column into `sex` and `class`.
 
 - Class: text
   Output: Conveniently, separate() was able to figure out on its own how to separate the sex_class column. Unless you request otherwise with the 'sep' argument, it splits on non-alphanumeric values. In other words, it assumes that the values are separated by something other than a letter or number (in this case, an underscore.)
@@ -109,14 +109,14 @@
 - Class: script
   Output: I've opened an R script for you to give this a try. Follow the directions in the script, then save the script and type submit() at the prompt when you are ready. If you get stuck and want to start over, you can type reset() to reset the script to its original state.
   AnswerTests: script_vals_identical()
-  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to its original state.
+  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to its original state.
   Script: script1.R
 
 - Class: cmd_question
   Output: A third symptom of messy data is when variables are stored in both rows and columns. students3 provides an example of this. Print students3 to the console.
   CorrectAnswer: students3
   AnswerTests: prints_var('students3')
-  Hint: Type students3 to view its contents.
+  Hint: Type `students3` to view its contents.
 
 - Class: text
   Output: In students3, we have midterm and final exam grades for five students, each of whom were enrolled in exactly two of five possible classes.
@@ -127,38 +127,38 @@
 - Class: script
   Output: This will require multiple steps, which we will build up gradually using %>%. Edit the R script, save it, then type submit() when you are ready. Type reset() to reset the script to its original state.
   AnswerTests: script_vals_identical()
-  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to its original state.
+  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to its original state.
   Script: script2.R
 
 - Class: cmd_question
   Output: The next step will require the use of spread(). Pull up the documentation for spread() now.
   CorrectAnswer: ?spread
   AnswerTests: gets_help('spread')
-  Hint: Type ?spread to pull up the documentation.
+  Hint: Type `?spread` to pull up the documentation.
 
 - Class: script
   Output: Edit the R script, then save it and type submit() when you are ready. Type reset() to reset the script to its original state.
   AnswerTests: script_vals_identical()
-  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to its original state.
+  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to its original state.
   Script: script3.R
 
 - Class: cmd_question
   Output: Lastly, we want the values in the class column to simply be 1, 2, ..., 5 and not class1, class2, ..., class5. We can use the extract_numeric() function from tidyr to accomplish this. To see how it works, try extract_numeric("class5").
   CorrectAnswer: extract_numeric("class5")
   AnswerTests: omnitest('extract_numeric("class5")')
-  Hint: Type extract_numeric("class5") to see how it works.
+  Hint: Type `extract_numeric("class5")` to see how it works.
 
 - Class: script
   Output: Now, the final step. Edit the R script, then save it and type submit() when you are ready. Type reset() to reset the script to its original state.
   AnswerTests: script_vals_identical()
-  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to its original state.
+  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to its original state.
   Script: script4.R
 
 - Class: cmd_question
   Output: The fourth messy data problem we'll look at occurs when multiple observational units are stored in the same table. students4 presents an example of this. Take a look at the data now.
   CorrectAnswer: students4
   AnswerTests: prints_var('students4')
-  Hint: Type 'students4' to view its contents.
+  Hint: Type `students4` to view its contents.
 
 - Class: text
   Output: students4 is almost the same as our tidy version of students3. The only difference is that students4 provides a unique id for each student, as well as his or her sex (M = male; F = female).
@@ -169,19 +169,19 @@
 - Class: script
   Output: "Our solution will be to break students4 into two separate tables -- one containing basic student information (id, name, and sex) and the other containing grades (id, class, midterm, final).\n\nEdit the R script, save it, then type submit() when you are ready. Type reset() to reset the script to its original state."
   AnswerTests: script_vals_identical()
-  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to its original state.
+  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to its original state.
   Script: script5.R
 
 - Class: script
   Output: Notice anything strange about student_info? It contains five duplicate rows! See the script for directions on how to fix this. Save the script and type submit() when you are ready, or type reset() to reset the script to its original state.
   AnswerTests: script_vals_identical()
-  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to its original state.
+  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to its original state.
   Script: script6.R
 
 - Class: script
   Output: "Now, using the script I just opened for you, create a second table called gradebook using the id, class, midterm, and final columns (in that order).\n\nEdit the R script, save it, then type submit() when you are ready. Type reset() to reset the script to its original state."
   AnswerTests: script_vals_identical()
-  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to its original state.
+  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to its original state.
   Script: script7.R
 
 - Class: text
@@ -194,13 +194,13 @@
   Output: To illustrate this, we've created two datasets, passed and failed. Take a look at passed now.
   CorrectAnswer: passed
   AnswerTests: prints_var('passed')
-  Hint: Type 'passed' to view its contents.
+  Hint: Type `passed` to view its contents.
 
 - Class: cmd_question
   Output: Now view the contents of failed.
   CorrectAnswer: failed
   AnswerTests: prints_var('failed')
-  Hint: Type 'failed' to view its contents.
+  Hint: Type `failed` to view its contents.
 
 - Class: text
   Output: Teachers decided to only take into consideration final exam grades in determining whether students passed or failed each class. As you may have inferred from the data, students passed a class if they received a final exam grade of A or B and failed otherwise.
@@ -212,19 +212,19 @@
   Output: Use dplyr's mutate() to add a new column to the passed table. The column should be called status and the value, "passed" (a character string), should be the same for all students. 'Overwrite' the current version of passed with the new one.
   CorrectAnswer: passed <- passed %>% mutate(status = "passed")
   AnswerTests: any_of_exprs('passed <- passed %>% mutate(status = "passed")', 'passed <- mutate(passed, status = "passed")')
-  Hint: 'passed <- passed %>% mutate(status = "passed")' will do the trick.
+  Hint: `passed <- passed %>% mutate(status = "passed")` will do the trick.
 
 - Class: cmd_question
   Output: Now, do the same for the failed table, except the status column should have the value "failed" for all students.
   CorrectAnswer: failed <- failed %>% mutate(status = "failed")
   AnswerTests: any_of_exprs('failed <- failed %>% mutate(status = "failed")', 'failed <- mutate(failed, status = "failed")')
-  Hint: 'failed <- failed %>% mutate(status = "failed")' is what you're looking for.
+  Hint: `failed <- failed %>% mutate(status = "failed")` is what you're looking for.
 
 - Class: cmd_question
   Output: "Now, pass as arguments the passed and failed tables (in order) to the dplyr function bind_rows(), which will join them together into a single unit. Check ?bind_rows if you need help.\n\nNote: bind_rows() is only available in dplyr 0.4.0 or later. If you have an older version of dplyr, please quit the lesson, update dplyr, then restart the lesson where you left off. If you're not sure what version of dplyr you have, type packageVersion('dplyr')."
   CorrectAnswer: bind_rows(passed, failed)
   AnswerTests: match_call('bind_rows(passed, failed)')
-  Hint: Call 'bind_rows()' with two arguments, 'passed' and 'failed' (in that order), to join the two tables.
+  Hint: Call `bind_rows()` with two arguments, `passed` and `failed` (in that order), to join the two tables.
 
 - Class: text
   Output: Of course, we could arrange the rows however we wish at this point, but the important thing is that each row is an observation, each column is a variable, and the table contains a single observational unit. Thus, the data are tidy.
@@ -239,7 +239,7 @@
   Output: I've created a variable called 'sat' in your workspace, which contains data on all college-bound seniors who took the SAT exam in 2013. Print the dataset now.
   CorrectAnswer: sat
   AnswerTests: prints_var('sat')
-  Hint: Type 'sat' to view its contents.
+  Hint: Type `sat` to view its contents.
 
 - Class: script
   Output: As we've done before, we'll build up a series of chained commands, using functions from both tidyr and dplyr. Edit the R script, save it, then type submit() when you are ready. Type reset() to reset the script to its original state.
@@ -250,7 +250,7 @@
 - Class: script
   Output: Finish off the job by following the directions in the script. Save the script and type submit() when you are ready, or type reset() to reset the script to its original state.
   AnswerTests: script_vals_identical()
-  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to its original state.
+  Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to its original state.
   Script: script9.R
 
 - Class: text

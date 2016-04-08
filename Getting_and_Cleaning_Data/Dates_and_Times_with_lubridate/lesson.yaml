@@ -210,11 +210,11 @@
   Hint: Use `ymd(dt2)` to parse the vector of dates named `dt2`.
 
 - Class: cmd_question
-  Output: The `update()` function allows us to update one or more components of a date-time. For example, let's say the 
+  Output: "The `update()` function allows us to update one or more components of a date-time. For example, let's say the 
     current time is `08:34:55` (hh:mm:ss). Update this_moment to the new time using the following command:
     ```
     update(this_moment, hours = 8, minutes = 34, seconds = 55)
-    ```
+    ```"
   CorrectAnswer: update(this_moment, hours = 8, minutes = 34, seconds = 55)
   AnswerTests: omnitest('update(this_moment, hours = 8, minutes = 34, seconds = 55)')
   Hint: '`update(this_moment, hours = 8, minutes = 34, seconds = 55)` will update this_moment to reflect a new time of 
@@ -233,8 +233,8 @@
     so that `this_moment` will contain the new time.
   CorrectAnswer: this_moment <- update(this_moment, hours = 10, minutes = 16, seconds = 0)
   AnswerTests: expr_uses_func('update'); func_uses_args('hours', 'minutes'); expr_creates_var('this_moment')
-  Hint: Try `update(this_moment, hours = 10, minutes = 16, seconds = 0)`, which will update the time to `10:16:00`. 
-    Make sure to reassign the result to `this_moment`.
+  Hint: "Try `update(this_moment, hours = 10, minutes = 16, seconds = 0)`, which will update the time to `10:16:00`. 
+    Make sure to reassign the result to `this_moment`."
 
 - Class: cmd_question
   Output: Take one more look at `this_moment` to see that it's been updated.
@@ -243,9 +243,9 @@
   Hint: Type `this_moment` to see its new value.
 
 - Class: text
-  Output: Now, pretend you are in New York City and you are planning to visit a friend in Hong Kong. You seem to have 
+  Output: "Now, pretend you are in New York City and you are planning to visit a friend in Hong Kong. You seem to have 
     misplaced your itinerary, but you know that your flight departs New York at 17:34 (5:34pm) the day after tomorrow. 
-    You also know that your flight is scheduled to arrive in Hong Kong exactly 15 hours and 50 minutes after departure.
+    You also know that your flight is scheduled to arrive in Hong Kong exactly 15 hours and 50 minutes after departure."
 
 - Class: text
   Output: Let's reconstruct your itinerary from what you can remember, starting with the full date and time of your 

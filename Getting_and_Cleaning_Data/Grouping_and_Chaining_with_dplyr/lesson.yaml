@@ -20,8 +20,8 @@
     the values of one or more variables. The `group_by()` function is reponsible for doing this."
 
 - Class: text
-  Output: 'We'll continue where we left off with RStudio's CRAN download log from July 8, 2014, which contains information 
-    on roughly 225,000 R package downloads (http://cran-logs.rstudio.com/).'
+  Output: "We'll continue where we left off with RStudio's CRAN download log from July 8, 2014, which contains information 
+    on roughly 225,000 R package downloads (http://cran-logs.rstudio.com/)."
 
 - Class: cmd_question
   Output: As with the last lesson, the `dplyr` package was automatically installed (if necessary) and loaded at the 

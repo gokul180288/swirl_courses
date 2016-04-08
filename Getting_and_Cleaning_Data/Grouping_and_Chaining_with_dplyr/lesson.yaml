@@ -16,12 +16,12 @@
     applied to grouped data.'
 
 - Class: text
-  Output: The main idea behind grouping data is that you want to break up your dataset into groups of rows based on 
-    the values of one or more variables. The `group_by()` function is reponsible for doing this.
+  Output: "The main idea behind grouping data is that you want to break up your dataset into groups of rows based on 
+    the values of one or more variables. The `group_by()` function is reponsible for doing this."
 
 - Class: text
-  Output: We'll continue where we left off with RStudio's CRAN download log from July 8, 2014, which contains information 
-    on roughly 225,000 R package downloads (http://cran-logs.rstudio.com/).
+  Output: "We'll continue where we left off with RStudio's CRAN download log from July 8, 2014, which contains information 
+    on roughly 225,000 R package downloads (http://cran-logs.rstudio.com/)."
 
 - Class: cmd_question
   Output: As with the last lesson, the `dplyr` package was automatically installed (if necessary) and loaded at the 
@@ -135,7 +135,7 @@
 
 - Class: cmd_question
   Output: Now we can isolate only those packages which had more than 679 total downloads. Use `filter()` to 
-    select all rows from `pack_sum `for which `count` is strictly greater (`>`) than 679. Store the result in a 
+    select all rows from `pack_sum `for which `count` is strictly greater `>` than 679. Store the result in a 
     new variable called `top_counts`.
   CorrectAnswer: top_counts <- filter(pack_sum, count > 679)
   AnswerTests: omnitest('top_counts <- filter(pack_sum, count > 679)')

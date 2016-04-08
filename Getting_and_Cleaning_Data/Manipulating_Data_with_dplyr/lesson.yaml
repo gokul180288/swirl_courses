@@ -178,9 +178,9 @@
   Hint: Use `select(cran, -time)` to get rid of the time column.
 
 - Class: cmd_question
-  Output: 'The negative sign in front of time tells `select()` that we DON'T want the time column. Now, let's 
+  Output: "The negative sign in front of time tells `select()` that we DON''T want the time column. Now, let's 
     combine strategies to omit all columns from X through size (`X:size`). To see how this might work, let's look 
-    at a numerical example with `-5:20`.'
+    at a numerical example with `-5:20`."
   CorrectAnswer: -5:20
   AnswerTests: omnitest(correctExpr='-5:20')
   Hint: See what `-5:20` gives us.

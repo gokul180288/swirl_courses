@@ -254,7 +254,7 @@
 
 - Class: cmd_question
   Output: "To find the current date in New York, we''ll use the `now()` function again. This time, however, we''ll 
-    specify the time zone that we want: `"America/New_York"`. Store the result in a variable called `nyc`. Check out 
+    specify the time zone that we want, `"America/New_York"`. Store the result in a variable called `nyc`. Check out 
     `?now` if you need help."
   CorrectAnswer: nyc <- now("America/New_York")
   AnswerTests: match_call('nyc <- now("America/New_York")')
@@ -273,7 +273,7 @@
 - Class: cmd_question
   Output: "Your flight is the day after tomorrow (in New York time), so we want to add two days to nyc. One nice aspect 
     of lubridate is that it allows you to use arithmetic operators on dates and times. In this case, we'd like to add 
-    two days to `nyc`, so we can use the following expression: `nyc + days(2)`. Give it a try, storing the result 
+    two days to `nyc`, so we can use the following expression `nyc + days(2)`. Give it a try, storing the result 
     in a variable called depart."
   CorrectAnswer: depart <- nyc + days(2)
   AnswerTests: any_of_exprs('depart <- nyc + days(2)', 'depart <- days(2) + nyc')
@@ -290,11 +290,11 @@
     and minutes (34) to depart. Reassign the result to depart.
   CorrectAnswer: depart <- update(depart, hours = 17, minutes = 34)
   AnswerTests: any_of_exprs('depart <- update(depart, hours = 17, minutes = 34)', 'depart <- update(depart, minutes = 34, hours = 17)')
-  Hint: Use 
+  Hint: "Use 
     ```
     depart <- update(depart, hours = 17, minutes = 34)
     ```
-    to update depart with the correct time of `17:34`.
+    to update depart with the correct time of `17:34`."
 
 - Class: cmd_question
   Output: Take one more look at `depart`.

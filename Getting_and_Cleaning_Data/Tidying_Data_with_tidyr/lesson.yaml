@@ -23,12 +23,18 @@
 
 - Class: text
   Output: "The author of `tidyr`, Hadley Wickham, discusses his philosophy of tidy data in his 'Tidy Data' 
-    paper:\n\nhttp://vita.had.co.nz/papers/tidy-data.pdf\n\nThis paper should be required reading for anyone 
-    who works with data, but it's not required in order to complete this lesson."
+    paper:\n\nhttp://vita.had.co.nz/papers/tidy-data.pdf\n\n"
+
+- Class: text
+  Output: This paper should be required reading for anyone 
+    who works with data, but it's not required in order to complete this lesson.
 
 - Class: text
   Output: "Tidy data is formatted in a standard way that facilitates exploration and analysis and works 
-    seamlessly with other tidy data tools. Specifically, tidy data satisfies three conditions:\n\n1) Each 
+    seamlessly with other tidy data tools."
+
+- Class: text
+  Output: "Specifically, tidy data satisfies three conditions:\n\n1) Each 
     variable forms a column\n\n2) Each observation forms a row\n\n3) Each type of observational unit forms a table"
 
 - Class: mult_question

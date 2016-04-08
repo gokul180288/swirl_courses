@@ -15,7 +15,7 @@
     earlier in the course.
 
 - Class: cmd_question
-  Output: `tidyr` was automatically installed (if necessary) and loaded when you started this lesson. 
+  Output: tidyr was automatically installed (if necessary) and loaded when you started this lesson. 
     Just to build the habit, (re)load the package with `library(tidyr)`.
   CorrectAnswer: library(tidyr)
   AnswerTests: omnitest('library(tidyr)')
@@ -82,7 +82,7 @@
     `count`, `-grade`. Note the minus sign before `grade`, which says we want to gather all columns EXCEPT grade."
   CorrectAnswer: gather(students, sex, count, -grade)
   AnswerTests: match_call('gather(students, sex, count, -grade)')
-  Hint: `gather(students, sex, count, -grade)` will properly tidy the students data, so that it has three columns: 
+  Hint: Using `gather(students, sex, count, -grade)` will properly tidy the students data, so that it has three columns: 
     `grade`, `sex`, and `count`."
 
 - Class: text
@@ -135,12 +135,12 @@
   Hint: Type `?separate` to pull up the help file.
 
 - Class: cmd_question
-  Output: 'Call `separate()` on res to split the `sex_class` column into `sex` and `class`. You only need to specify the 
+  Output: "Call `separate()` on res to split the `sex_class` column into `sex` and `class`. You only need to specify the 
     first three arguments: `data = res`, `col = sex_class`, `into = c("sex", "class")`. You don''t have to provide the 
-    argument names as long as they are in the correct order.'
+    argument names as long as they are in the correct order."
   CorrectAnswer: `separate(res, sex_class, c("sex", "class"))`
   AnswerTests: match_call('separate(res, sex_class, c("sex", "class"))')
-  Hint: `separate(res, sex_class, c("sex", "class"))` will split the `sex_class` column into `sex` and `class`.
+  Hint: Use `separate(res, sex_class, c("sex", "class"))` to split the `sex_class` column into `sex` and `class`.
 
 - Class: text
   Output: Conveniently, `separate()` was able to figure out on its own how to separate the `sex_class` column. Unless 
@@ -226,8 +226,8 @@
   Hint: Type `students4` to view its contents.
 
 - Class: text
-  Output: `students4`is almost the same as our `tidy` version of `students3`. The only difference is that `students4` 
-    provides a unique id for each student, as well as his or her sex (`M` = male; `F` = female).
+  Output: '`students4`is almost the same as our `tidy` version of `students3`. The only difference is that `students4` 
+    provides a unique id for each student, as well as his or her sex (`M` = male; `F` = female).'
 
 - Class: text
   Output: At first glance, there doesn't seem to be much of a problem with `students4`. All columns are variables and 
@@ -303,13 +303,13 @@
     of passed with the new one.
   CorrectAnswer: passed <- passed %>% mutate(status = "passed")
   AnswerTests: any_of_exprs('passed <- passed %>% mutate(status = "passed")', 'passed <- mutate(passed, status = "passed")')
-  Hint: `passed <- passed %>% mutate(status = "passed")` will do the trick.
+  Hint: '`passed <- passed %>% mutate(status = "passed")` will do the trick.'
 
 - Class: cmd_question
   Output: Now, do the same for the `failed` table, except the status column should have the value `failed` for all students.
   CorrectAnswer: failed <- failed %>% mutate(status = "failed")
   AnswerTests: any_of_exprs('failed <- failed %>% mutate(status = "failed")', 'failed <- mutate(failed, status = "failed")')
-  Hint: `failed <- failed %>% mutate(status = "failed")` is what you're looking for.
+  Hint: '`failed <- failed %>% mutate(status = "failed")` is what you're looking for.'
 
 - Class: cmd_question
   Output: "Now, pass as arguments the passed and `failed` tables (in order) to the `dplyr` function `bind_rows()`, 

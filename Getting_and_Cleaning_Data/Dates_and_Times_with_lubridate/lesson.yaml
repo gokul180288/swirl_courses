@@ -253,9 +253,9 @@
     time to 17:34.
 
 - Class: cmd_question
-  Output: "To find the current date in New York, we''ll use the `now()` function again. This time, however, we''ll 
-    specify the time zone that we want, `"America/New_York"`. Store the result in a variable called `nyc`. Check out 
-    `?now` if you need help."
+  Output: 'To find the current date in New York, we''ll use the `now()` function again. This time, however, 
+    we''ll specify the time zone that we want `"America/New_York"`. Store the result in a variable called `nyc`. 
+    Check out `?now` if you need help.'
   CorrectAnswer: nyc <- now("America/New_York")
   AnswerTests: match_call('nyc <- now("America/New_York")')
   Hint: '`now("America/New_York")` will give the current date in New York. Store the result in a variable called `nyc`.'

@@ -17,7 +17,7 @@
 
 - Class: text
   Output: The main idea behind grouping data is that you want to break up your dataset into groups of rows based on 
-  the values of one or more variables. The `group_by()` function is reponsible for doing this.
+    the values of one or more variables. The `group_by()` function is reponsible for doing this.
 
 - Class: text
   Output: We'll continue where we left off with RStudio's CRAN download log from July 8, 2014, which contains information 

@@ -103,8 +103,8 @@
   Hint: Use `hour()`, `minute()`, or `second()` to extract a single piece of time information from `this_moment`.
 
 - Class: text
-  Output: '`today()` and `now()` provide neatly formatted date-time information. When working with dates and times 
-    'in the wild', this won't always (and perhaps rarely will) be the case.'
+  Output: "`today()` and `now()` provide neatly formatted date-time information. When working with dates and times 
+    'in the wild', this won't always (and perhaps rarely will) be the case."
 
 - Class: text
   Output: Fortunately, lubridate offers a variety of functions for parsing date-times. 

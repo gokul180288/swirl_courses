@@ -107,8 +107,8 @@
     that didn't fit on our screen.
 
 - Class: text
-  Output: Specifically, dplyr supplies five ''verbs'' that cover most fundamental data manipulation tasks: 
-    `select()`, `filter()`, `arrange()`, `mutate()`, and `summarize()`.
+  Output: 'Specifically, dplyr supplies five ''verbs'' that cover most fundamental data manipulation tasks: 
+    `select()`, `filter()`, `arrange()`, `mutate()`, and `summarize()`.'
 
 - Class: text
   Output: According to the "Introduction to dplyr" vignette written by the package authors, "The dplyr philosophy 
@@ -142,26 +142,26 @@
     column in the original dataset.
 
 - Class: cmd_question
-  Output: Recall that in R, the `:` operator provides a compact notation for creating a sequence of numbers. For example, 
-    try `5:20`.
+  Output: 'Recall that in R, the `:` operator provides a compact notation for creating a sequence of numbers. For example, 
+    try `5:20`.'
   CorrectAnswer: 5:20
   AnswerTests: omnitest(correctExpr='5:20')
-  Hint: Type `5:20` to see how `:` can be used to create a sequence of numbers.
+  Hint: 'Type `5:20` to see how `:` can be used to create a sequence of numbers.'
 
 - Class: cmd_question
-  Output: Normally, this notation is reserved for numbers, but `select()` allows you to specify a sequence of columns 
+  Output: 'Normally, this notation is reserved for numbers, but `select()` allows you to specify a sequence of columns 
     this way, which can save a bunch of typing. Use `select(cran, r_arch:country)` to select all columns starting from 
-    `r_arch` and ending with country.
+    `r_arch` and ending with country.'
   CorrectAnswer: select(cran, r_arch:country)
   AnswerTests: omnitest(correctExpr='select(cran, r_arch:country)')
-  Hint: The command `select(cran, r_arch:country)` will select all columns from `r_arch` through country (left to right).
+  Hint: 'The command `select(cran, r_arch:country)` will select all columns from `r_arch` through country (left to right).'
 
 - Class: cmd_question
   Output: We can also select the same columns in reverse order. Give it a try.
   CorrectAnswer: select(cran, country:r_arch)
   AnswerTests: omnitest(correctExpr='select(cran, country:r_arch)')
-  Hint: The line `select(cran, country:r_arch)` will select all columns starting from `country` and ending with `r_arch` (right 
-    to left).
+  Hint: 'The line `select(cran, country:r_arch)` will select all columns starting from `country` and ending with `r_arch` (right 
+    to left).'
 
 - Class: cmd_question
   Output: Print the entire dataset again, just to remind yourself of what it looks like. You can do this at anytime 
@@ -178,9 +178,9 @@
   Hint: Use `select(cran, -time)` to get rid of the time column.
 
 - Class: cmd_question
-  Output: The negative sign in front of time tells `select()` that we DON'T want the time column. Now, let's 
+  Output: 'The negative sign in front of time tells `select()` that we DON'T want the time column. Now, let's 
     combine strategies to omit all columns from X through size (`X:size`). To see how this might work, let's look 
-    at a numerical example with `-5:20`.
+    at a numerical example with `-5:20`.'
   CorrectAnswer: -5:20
   AnswerTests: omnitest(correctExpr='-5:20')
   Hint: See what `-5:20` gives us.
@@ -197,7 +197,7 @@
   Hint: Try `-(5:20)`.
 
 - Class: cmd_question
-  Output: Use this knowledge to omit all columns `X:size` using `select()`.
+  Output: 'Use this knowledge to omit all columns `X:size` using `select()`.'
   CorrectAnswer: select(cran, -(X:size))
   AnswerTests: omnitest(correctExpr='select(cran, -(X:size))')
   Hint: Use `select(cran, -(X:size))` to omit all columns from X through size.

@@ -86,7 +86,7 @@
   Output: Print `res` to the console to see what we accomplished.
   CorrectAnswer: res
   AnswerTests: prints_var('res')
-  Hint: Type 'res' to view its contents.
+  Hint: Type `res` to view its contents.
 
 - Class: cmd_question
   Output: That got us half way to tidy data, but we still have two different variables, `sex` and `class`, stored together in the `sex_class` column. `tidyr` offers a convenient `separate()` function for the purpose of separating one column into multiple columns. Pull up the help file for `separate()` now.
@@ -161,7 +161,7 @@
   Hint: Type `students4` to view its contents.
 
 - Class: text
-  Output: `students4``is almost the same as our `tidy` version of `students3`. The only difference is that `students4` provides a unique id for each student, as well as his or her sex (`M` = male; `F` = female).
+  Output: `students4`is almost the same as our `tidy` version of `students3`. The only difference is that `students4` provides a unique id for each student, as well as his or her sex (`M` = male; `F` = female).
 
 - Class: text
   Output: At first glance, there doesn't seem to be much of a problem with `students4`. All columns are variables and all rows are observations. However, notice that each `id`, `name`, and `sex` is repeated twice, which seems quite redundant. This is a hint that our data contains multiple observational units in a single table.

@@ -10,12 +10,12 @@
   Output: In this lesson, you'll learn how to manipulate data using dplyr.
 
 - Class: text
-  Output: dplyr is a fast and powerful R package written by Hadley Wickham and Romain Francois that provides a consistent 
-    and concise grammar for manipulating tabular data.
+  Output: dplyr is a powerful R package written by Hadley Wickham and Romain Francois that provides 
+    concise grammar for manipulating data.
 
 - Class: text
-  Output: One unique aspect of dplyr is that the same set of tools allow you to work with tabular data from a variety 
-    of sources, including data frames, data tables, databases and multidimensional arrays.
+  Output: dplyr provides a set of tools to allow you to work with tabular data from a variety 
+    of sources, like data frames, data tables, and databases.
 
 - Class: text
   Output: In this lesson, we'll focus on data frames, but everything you learn will apply equally to other formats.
@@ -29,7 +29,7 @@
     available (http://cran-logs.rstudio.com/).
 
 - Class: text
-  Output: We''ll be working with the log from July 8, 2014, which contains information on roughly 225,000 package downloads.'
+  Output: "We'll be working with the log from July 8, 2014, which contains information on roughly 225,000 package downloads."
 
 - Class: text
   Output: I've created a variable called `path2csv`, which contains the full file path to the dataset. 
@@ -75,7 +75,7 @@
 
 - Class: cmd_question
   Output: "The first step of working with data in dplyr is to load the data into what the package authors call a 
-    'data frame tbl' or 'tbl_df'. Use the following code to create a new tbl_df called `cran`: \n\n`cran <- tbl_df(mydf)`."
+    'data frame tbl' or 'tbl_df'. Use the following code to create a new tbl_df via `cran <- tbl_df(mydf)`."
   CorrectAnswer: cran <- tbl_df(mydf)
   AnswerTests: omnitest(correctExpr='cran <- tbl_df(mydf)')
   Hint: Type `cran <- tbl_df(mydf)` to create a new tbl_df called cran.
@@ -178,7 +178,7 @@
   Hint: '`select(cran, -time)` will get rid of the time column.'
 
 - Class: cmd_question
-  Output: "The negative sign in front of time tells `select()` that we DON''T want the time column. Now, let's 
+  Output: "The negative sign in front of time tells `select()` that we DON'T want the time column. Now, let's 
     combine strategies to omit all columns from X through size (`X:size`). To see how this might work, let's look 
     at a numerical example with `-5:20`."
   CorrectAnswer: -5:20

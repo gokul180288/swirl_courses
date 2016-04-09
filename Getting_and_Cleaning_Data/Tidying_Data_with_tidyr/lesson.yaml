@@ -66,10 +66,12 @@
     class. The second and third columns give the number of male and female students, respectively, that received each grade.
 
 - Class: text
-  Output: "This dataset actually has three variables: `grade`, `sex`, and `count`. The first variable, grade, 
-    is already a column, so that should remain as it is. The second variable, `sex`, is captured by the second 
-    and third column headings. The third variable, `count`, is the number of students for each combination of 
-    `grade` and `sex`."
+  Output: "This dataset actually has three variables: `grade`, `sex`, and `count`."
+
+- Class: text
+  Output: "The first variable, grade, is already a column, so that should remain as it is. The second variable, 
+    `sex`, is captured by the second and third column headings. The third variable, `count`, is the number of 
+    students for each combination of `grade` and `sex`."
 
 - Class: cmd_question
   Output: To tidy the students data, we need to have one column for each of these three variables. We'll use the 
@@ -92,9 +94,9 @@
 
 - Class: text
   Output: It's important to understand what each argument to `gather()` means. The data argument, `students`, gives 
-    the name of the original dataset. The key and value arguments -- `sex` and `count`, respectively -- give the 
+    the name of the original dataset. The key and value arguments -- `sex` and `count` -- give the 
     column names for our tidy dataset. The final argument, `-grade`, says that we want to gather all columns EXCEPT 
-    the grade column (since grade is already a proper column variable.)
+    the grade column.
 
 - Class: cmd_question
   Output: The second messy data case we'll look at is when multiple variables are stored in one column. Type `students2` 
@@ -205,7 +207,7 @@
 - Class: cmd_question
   Output: "Lastly, we want the values in the class column to simply be 1, 2, ..., 5 and not `class1`, `class2`, ..., 
     `class5`. We can use the `extract_numeric()` function from `tidyr` to accomplish this. To see how it works, 
-    try `extract_numeric(''class5'')`."
+    try `extract_numeric(''class5'')`"
   CorrectAnswer: extract_numeric("class5")
   AnswerTests: omnitest('extract_numeric("class5")')
   Hint: "Type `extract_numeric(''class5'')` to see how it works."
@@ -268,8 +270,8 @@
 
 - Class: text
   Output: It's important to note that we left the id column in both tables. In the world of relational databases, 'id' 
-    is called our 'primary key' since it allows us to connect each student listed in student_info with their grades 
-    listed in gradebook. Without a unique identifier, we might not know how the tables are related. (In this case, we 
+    is called our 'primary key' since it allows us to connect each student listed in `student_info` with their grades 
+    listed in `gradebook`. Without a unique identifier, we might not know how the tables are related. (In this case, we 
     could have also used the name variable, since each student happens to have a unique name.)
 
 - Class: text
@@ -314,10 +316,7 @@
 
 - Class: cmd_question
   Output: "Now, pass as arguments the passed and `failed` tables (in order) to the `dplyr` function `bind_rows()`, 
-    which will join them together into a single unit. Check `?bind_rows` if you need help.\n\nNote `bind_rows()` 
-    is only available in dplyr 0.4.0 or later. If you have an older version of dplyr, please quit the lesson, update 
-    dplyr, then restart the lesson where you left off. If you're not sure what version of dplyr you have, type 
-    `packageVersion('dplyr')`."
+    which will join them together into a single unit. Check `?bind_rows` if you need help."
   CorrectAnswer: bind_rows(passed, failed)
   AnswerTests: match_call('bind_rows(passed, failed)')
   Hint: Call `bind_rows()` with two arguments, `passed` and `failed` (in that order), to join the two tables.

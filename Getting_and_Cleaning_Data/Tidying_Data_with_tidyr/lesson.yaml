@@ -37,9 +37,11 @@
   Output: "Specifically, tidy data satisfies three conditions:\n\n1) Each 
     variable forms a column\n\n2) Each observation forms a row\n\n3) Each type of observational unit forms a table"
 
+- Class: text
+  Output: "Any dataset that doesn't satisfy these conditions is considered 'messy' data."
+
 - Class: mult_question
-  Output: Any dataset that doesn't satisfy these conditions is considered 'messy' data. Therefore, all of the 
-    following are characteristics of messy data, EXCEPT...
+  Output: Therefore, all of the following are characteristics of messy data, EXCEPT...
   AnswerChoices: Every column contains a different variable; Column headers are values, not variable names; 
     Multiple variables are stored in one column; Variables are stored in both rows and columns; 
     Multiple types of observational units are stored in the same table;

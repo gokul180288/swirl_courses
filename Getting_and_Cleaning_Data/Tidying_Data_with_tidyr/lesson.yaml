@@ -309,7 +309,7 @@
   Output: Now, do the same for the `failed` table, except the status column should have the value `failed` for all students.
   CorrectAnswer: failed <- failed %>% mutate(status = "failed")
   AnswerTests: any_of_exprs('failed <- failed %>% mutate(status = "failed")', 'failed <- mutate(failed, status = "failed")')
-  Hint: '`failed <- failed %>% mutate(status = "failed")` is what you're looking for.'
+  Hint: "`failed <- failed %>% mutate(status = ''failed'')` is what you are looking for."
 
 - Class: cmd_question
   Output: "Now, pass as arguments the passed and `failed` tables (in order) to the `dplyr` function `bind_rows()`, 

@@ -135,12 +135,12 @@
   Hint: Type `?separate` to pull up the help file.
 
 - Class: cmd_question
-  Output: "Call `separate()` on res to split the `sex_class` column into `sex` and `class`. You only need to specify the 
-    first three arguments `data = res`, `col = sex_class`, `into = c("sex", "class")`. You don't have to provide the 
+  Output: "Call `separate()` on `res` to split the `sex_class` column into `sex` and `class`. You only need to specify the 
+    first three arguments `data = res`, `col = sex_class`, `into = c(''sex'', ''class'')`. You don't have to provide the 
     argument names as long as they are in the correct order."
   CorrectAnswer: separate(res, sex_class, c("sex", "class"))
   AnswerTests: match_call('separate(res, sex_class, c("sex", "class"))')
-  Hint: Use `separate(res, sex_class, c("sex", "class"))` to split the `sex_class` column into `sex` and `class`.
+  Hint: "`separate(res, sex_class, c(''sex'', ''class''))` will split the `sex_class` column into `sex` and `class`."
 
 - Class: text
   Output: Conveniently, `separate()` was able to figure out on its own how to separate the `sex_class` column. Unless 
@@ -173,9 +173,9 @@
     exactly two of five possible classes.
 
 - Class: text
-  Output: The first variable, `name`, is already a column and should remain as it is. The headers of the last five 
+  Output: "The first variable, `name`, is already a column and should remain as it is. The headers of the last five 
     columns, `class1` through `class5`, are all different values of what should be a class variable. The values in the 
-    `test` column, `midterm` and `final`, should each be its own variable containing the respective grades for each student.
+    `test` column, `midterm` and `final`, should each be its own variable containing the respective grades for each student."
 
 - Class: script
   Output: This will require multiple steps, which we will build up gradually using `%>%`. Edit the R script, save it, 
@@ -202,9 +202,9 @@
   Script: script3.R
 
 - Class: cmd_question
-  Output: Lastly, we want the values in the class column to simply be 1, 2, ..., 5 and not `class1`, `class2`, ..., 
+  Output: "Lastly, we want the values in the class column to simply be 1, 2, ..., 5 and not `class1`, `class2`, ..., 
     `class5`. We can use the `extract_numeric()` function from `tidyr` to accomplish this. To see how it works, 
-    try `extract_numeric("class5")`.
+    try `extract_numeric("class5")`."
   CorrectAnswer: extract_numeric("class5")
   AnswerTests: omnitest('extract_numeric("class5")')
   Hint: Type `extract_numeric("class5")` to see how it works.
@@ -288,9 +288,9 @@
   Hint: Type `failed` to view its contents.
 
 - Class: text
-  Output: Teachers decided to only take into consideration final exam grades in determining whether students passed or 
+  Output: "Teachers decided to only take into consideration final exam grades in determining whether students passed or 
     failed each class. As you may have inferred from the data, students passed a class if they received a final exam 
-    grade of A or B and failed otherwise.
+    grade of A or B and failed otherwise."
 
 - Class: text
   Output: The name of each dataset actually represents the value of a new variable that we will call `status`. 

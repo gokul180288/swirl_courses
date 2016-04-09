@@ -204,10 +204,10 @@
 - Class: cmd_question
   Output: "Lastly, we want the values in the class column to simply be 1, 2, ..., 5 and not `class1`, `class2`, ..., 
     `class5`. We can use the `extract_numeric()` function from `tidyr` to accomplish this. To see how it works, 
-    try `extract_numeric("class5")`."
+    try `extract_numeric(''class5'')`."
   CorrectAnswer: extract_numeric("class5")
   AnswerTests: omnitest('extract_numeric("class5")')
-  Hint: Type `extract_numeric("class5")` to see how it works.
+  Hint: "Type `extract_numeric(''class5'')` to see how it works."
 
 - Class: script
   Output: Now, the final step. Edit the R script, then save it and type `submit()` when you are ready. Type `reset()` 

@@ -42,8 +42,7 @@
     following are characteristics of messy data, EXCEPT...
   AnswerChoices: Every column contains a different variable; Column headers are values, not variable names; 
     Multiple variables are stored in one column; Variables are stored in both rows and columns; 
-    Multiple types of observational units are stored in the same table; A single observational 
-    unit is stored in multiple tables
+    Multiple types of observational units are stored in the same table;
   CorrectAnswer: Every column contains a different variable
   AnswerTests: omnitest(correctVal= 'Every column contains a different variable')
   Hint: Scroll up to review the three characteristics of tidy data. Any dataset that violates at least 

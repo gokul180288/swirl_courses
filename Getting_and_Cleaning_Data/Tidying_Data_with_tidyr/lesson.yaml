@@ -138,9 +138,9 @@
   Hint: Type `?separate` to pull up the help file.
 
 - Class: cmd_question
-  Output: "Call `separate()` on `res` to split the `sex_class` column into `sex` and `class`. You only need to specify the 
-    first three arguments `data = res`, `col = sex_class`, `into = c(''sex'', ''class'')`. You don't have to provide the 
-    argument names as long as they are in the correct order."
+  Output: Call `separate()` on `res` to split the `sex_class` column into `sex` and `class`. You only need to specify the 
+    first three arguments `data = res`, `col = sex_class`, `into = c("sex", "class")`. You don't have to provide the 
+    argument names as long as they are in the correct order.
   CorrectAnswer: separate(res, sex_class, c("sex", "class"))
   AnswerTests: match_call('separate(res, sex_class, c("sex", "class"))')
   Hint: "`separate(res, sex_class, c(''sex'', ''class''))` will split the `sex_class` column into `sex` and `class`."
@@ -156,12 +156,12 @@
 
 - Class: script
   Output: I've opened an R script for you to give this a try. Follow the directions in the script, then save the script 
-    and type`submit()` at the prompt when you are ready. If you get stuck and want to start over, you can type 
-    `reset()` to reset the script to its original state.
+    and type`submit()` at the prompt when you are ready. If you get stuck and want to start over, you can refresh your 
+    browser. Your two calls from before were `gather(students2, sex_class, count, -grade)` and 
+    `separate(res, sex_class, c("sex", "class"))`
   AnswerTests: script_vals_identical()
   Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling 
-    you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script 
-    to its original state.
+    you. Save the script and type `submit()` at the prompt when you are ready, or refresh your browsers to reset the script.
   Script: script1.R
 
 - Class: cmd_question
@@ -182,11 +182,10 @@
 
 - Class: script
   Output: This will require multiple steps, which we will build up gradually using `%>%`. Edit the R script, save it, 
-    then type `submit()` when you are ready. Type `reset()` to reset the script to its original state.
+    then type `submit()` when you are ready. Refresh you browser to reset the script to its original state.
   AnswerTests: script_vals_identical()
   Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is 
-    telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset 
-    the script to its original state.
+    telling you. Save the script and type `submit()` at the prompt when you are ready.
   Script: script2.R
 
 - Class: cmd_question
@@ -213,12 +212,12 @@
   Hint: "Type `extract_numeric(''class5'')` to see how it works."
 
 - Class: script
-  Output: Now, the final step. Edit the R script, then save it and type `submit()` when you are ready. Type `reset()` 
+  Output: Now, the final step. Edit the R script, then save it and type `submit()` when you are ready. Refresh your browser
     to reset the script to its original state.
   AnswerTests: script_vals_identical()
   Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling 
-    you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script 
-    to its original state.
+    you. Save the script and type `submit()` at the prompt when you are ready, or refresh your browser
+    to reset the script to its original state.
   Script: script4.R
 
 - Class: cmd_question
@@ -240,32 +239,32 @@
 - Class: script
   Output: "Our solution will be to break `students4` into two separate tables -- one containing basic student 
     information (`id`, `name`, and `sex`) and the other containing grades (`id`, `class`, `midterm`, `final`).\n\nEdit 
-    the R script, save it, then type `submit()` when you are ready. Type `reset()` to reset the script to its original 
-    state."
+    the R script, save it, then type `submit()` when you are ready.  Refresh your browser
+    to reset the script to its original state."
   AnswerTests: script_vals_identical()
   Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling 
-    you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script 
-    to its original state.
+    you. Save the script and type `submit()` at the prompt when you are ready, or refresh your browser
+    to reset the script to its original state.
   Script: script5.R
 
 - Class: script
   Output: Notice anything strange about `student_info`? It contains five duplicate rows! See the script for directions 
-    on how to fix this. Save the script and type `submit()` when you are ready, or type `reset()` to reset the script 
-    to its original state.
+    on how to fix this. Save the script and type `submit()` when you are ready, or type refresh your browser
+    to reset the script to its original state.
   AnswerTests: script_vals_identical()
   Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling 
-    you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to 
-    its original state.
+    you. Save the script and type `submit()` at the prompt when you are ready, or refresh your browser
+    to reset the script to its original state.
   Script: script6.R
 
 - Class: script
   Output: "Now, using the script I just opened for you, create a second table called gradebook using the `id`, `class`, 
     `midterm`, and `final` columns (in that order).Edit the R script, save it, then type `submit()` when you are 
-    ready. Type `reset()` to reset the script to its original state."
+    ready.  Refresh your browser to reset the script to its original state."
   AnswerTests: script_vals_identical()
   Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling 
-    you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset the script to 
-    its original state.
+    you. Save the script and type `submit()` at the prompt when you are ready, or type refresh your browser
+    to reset the script to its original state.
   Script: script7.R
 
 - Class: text
@@ -343,21 +342,21 @@
 
 - Class: script
   Output: As we've done before, we'll build up a series of chained commands, using functions from both `tidyr` and 
-    `dplyr`. Edit the R script, save it, then type `submit()` when you are ready. Type `reset()` to reset the script 
-    to its original state.
+    `dplyr`. Edit the R script, save it, then type `submit()` when you are ready.  Refresh your browser
+    to reset the script to its original state.
   AnswerTests: script_vals_identical()
   Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is telling 
-    you. Save the script and type 'submit()' at the prompt when you are ready, or type 'reset()' to reset the script to 
-    its original state.
+    you. Save the script and type 'submit()' at the prompt when you are ready, or refresh your browser
+    to reset the script to its original state.
   Script: script8.R
 
 - Class: script
   Output: Finish off the job by following the directions in the script. Save the script and type `submit()` when 
-    you are ready, or type `reset()` to reset the script to its original state.
+    you are ready, or refresh your browser to reset the script to its original state.
   AnswerTests: script_vals_identical()
   Hint: Read the directions in the script carefully. If R is giving you an error, try to understand what it is 
-    telling you. Save the script and type `submit()` at the prompt when you are ready, or type `reset()` to reset 
-    the script to its original state.
+    telling you. Save the script and type `submit()` at the prompt when you are ready, or refresh your browser
+    to reset the script to its original state.
   Script: script9.R
 
 - Class: text

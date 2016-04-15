@@ -6,7 +6,7 @@ try(dev.off(),silent=TRUE)
 plot.new()
 
 pathtofile <- function(fileName){
-  mypath <- file.path(find.package("swirl"),
+  mypath <- file.path("~", ".datacamp",
                       "Courses/Exploratory_Data_Analysis/Hierarchical_Clustering/",
                       fileName)
 }

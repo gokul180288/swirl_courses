@@ -1,5 +1,5 @@
 # Put initialization code in this file.
- file.copy(from=file.path(find.package("swirl"),
+ file.copy(from=file.path("~", ".datacamp",
                           "Courses/Regression_Models",
                           "Variance_Inflation_Factors/vifSims.R"), 
                           to="vifSims.R")

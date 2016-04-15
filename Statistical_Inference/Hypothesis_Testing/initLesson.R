@@ -4,7 +4,7 @@ quants <- c(-1:7)
 mybin <- pbinom(quants,size=8,p=.5,lower.tail=FALSE)
 #get correct paths for plotting
 pathtofile <- function(fileName){
-  mypath <- file.path(find.package("swirl"),
+  mypath <- file.path("~", ".datacamp",
                       "Courses/Statistical_Inference/Hypothesis_Testing",
                       fileName)
 }

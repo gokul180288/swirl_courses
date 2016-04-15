@@ -1,5 +1,5 @@
 swiss <- datasets::swiss
-file.copy(from=file.path(find.package("swirl"),
+file.copy(from=file.path("~", ".datacamp",
                          "Courses/Regression_Models",
                          "Overfitting_and_Underfitting/fitting.R"), 
           to="fitting.R")

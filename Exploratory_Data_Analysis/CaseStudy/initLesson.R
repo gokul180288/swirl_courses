@@ -7,7 +7,7 @@ plot.new()
 
 pathtofile <- function(fileName){
   mypath <- file.path("~", ".datacamp", 
-                      "Courses/Exploratory_Data_Analysis/CaseStudy",
+                      "Courses/Exploratory_Data_Analysis/CaseStudy/",
                       fileName)
 }
 fxfer <- function(fileName){

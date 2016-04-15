@@ -9,7 +9,7 @@ md <- mean(g2)-mean(g1)
 mn <- mean(g2-g1)
 #get correct paths for plotting
 pathtofile <- function(fileName){
-  mypath <- file.path(find.package("swirl"),
+  mypath <- file.path("~", ".datacamp",
                       "Courses/Statistical_Inference/T_Confidence_Intervals",
                       fileName)
  }

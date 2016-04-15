@@ -2,9 +2,9 @@
 # here will show up in the user's workspace when he or she begins
 # the lesson.
 
-file.copy(from=file.path(find.package("swirl"),
+file.copy(from=file.path("~", ".datacamp",
                          "Courses/Regression_Models/MultiVar_Examples3/hunger.csv"),
           to="hunger.csv")
                          
-hunger <-read.csv(file.path(find.package("swirl"),
+hunger <-read.csv(file.path("~", ".datacamp",
                             "Courses/Regression_Models/MultiVar_Examples3/hunger.csv"))

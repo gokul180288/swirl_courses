@@ -1,6 +1,6 @@
 # Put initialization code in this file.
 pathtofile <- function(fileName){
-  mypath <- file.path(find.package("swirl"),
+  mypath <- file.path("~", ".datacamp",
                     "Courses/Statistical_Inference/Multiple_Testing",
                     fileName)
 }

@@ -3,7 +3,7 @@ library(ggplot2)
 data(InsectSprays)
 #get correct paths for plotting
 pathtofile <- function(fileName){
-  mypath <- file.path(find.package("swirl"),
+  mypath <- file.path("~", ".datacamp",
                       "Courses/Statistical_Inference/Resampling",
                       fileName)
 }

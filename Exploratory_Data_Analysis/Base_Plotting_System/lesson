@@ -58,7 +58,7 @@
   Output: So the measurements range from 1 to 168. First we'll do a simple histogram of this ozone column to show the distribution of measurements. Use the R command hist with the argument airquality$Ozone.   
   CorrectAnswer: hist(airquality$Ozone)
   AnswerTests: omnitest(correctExpr='hist(airquality$Ozone)')
-  Hint: Type hist(airquality$Ozone) at the command prompt.
+  Hint: Type `hist(airquality$Ozone)` at the command prompt.
  
 - Class: mult_question
   Output: Simple, right? R put a title on the histogram and labeled both axes for you. What is the most frequent count? 

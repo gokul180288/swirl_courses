@@ -19,16 +19,16 @@
   FigureType: new
 
 - Class: cmd_question
-  Output:  This is dataMatrix, a matrix of 400 random normal numbers (mean 0 and standard deviation 1).  We're displaying it with the R command image. Run the R command head with dataMatrix as its argument to see what dataMatrix looks like.
+  Output:  This is dataMatrix, a matrix of 400 random normal numbers (mean 0 and standard deviation 1).  We're displaying it with the R command image. Run the R command `head` with `dataMatrix` as its argument to see what `dataMatrix` looks like.
   CorrectAnswer: head(dataMatrix)
   AnswerTests: omnitest(correctExpr='head(dataMatrix)')
-  Hint: Type head(dataMatrix) at the command prompt.
+  Hint: Type `head(dataMatrix)` at the command prompt.
 
 - Class: cmd_question
-  Output:  So we see that dataMatrix has 10 columns (and hence 40 rows) of random numbers. The image here looks pretty random. Let's see how the data clusters. Run the R command heatmap with dataMatrix as its only argument.
+  Output:  So we see that `dataMatrix` has 10 columns (and hence 40 rows) of random numbers. The image here looks pretty random. Let's see how the data clusters. Run the R command `heatmap` with `dataMatrix` as its only argument.
   CorrectAnswer: heatmap(dataMatrix)
   AnswerTests: omnitest(correctExpr='heatmap(dataMatrix)')
-  Hint: Type heatmap(dataMatrix) at the command prompt.
+  Hint: Type `heatmap(dataMatrix)` at the command prompt.
 
 - Class: text
   Output: We can see that even with the clustering that heatmap provides, permuting the rows (observations) and columns (variables) independently, the data still looks random. 

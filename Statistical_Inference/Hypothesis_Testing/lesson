@@ -13,16 +13,16 @@
   Output: In this lesson, as the name suggests, we'll discuss hypothesis testing which is concerned with making decisions about populations using observed data.
 
 - Class: text
-  Output: An important concept in hypothesis testing is the NULL hypothesis, usually denoted as H_0. This is the hypothesis that represents the status_quo and is assumed true. It's a baseline against which you're testing alternative hypotheses, usually denoted by H_a. Statistical evidence is required to reject H_0 in favor of the research or alternative hypothesis. 
+  Output: An important concept in hypothesis testing is the NULL hypothesis, usually denoted as `H_0`. This is the hypothesis that represents the status_quo and is assumed true. It's a baseline against which you're testing alternative hypotheses, usually denoted by `H_a`. Statistical evidence is required to reject `H_0` in favor of the research or alternative hypothesis. 
 
 - Class: text
-  Output: We'll consider the motivating example from the slides. A respiratory disturbance index (RDI) of more than 30 events / hour is considered evidence of severe sleep disordered breathing (SDB). Suppose that in a sample of 100 overweight subjects with other risk factors for (SDB) at a sleep clinic, the mean RDI (X') was 32 events / hour with a standard deviation (s) of 10 events / hour.
+  Output: We'll consider the motivating example from the slides. A respiratory disturbance index (`RDI`) of more than `30` events / hour is considered evidence of severe sleep disordered breathing (`SDB`). Suppose that in a sample of `100` overweight subjects with other risk factors for (`SDB`) at a sleep clinic, the mean `RDI` (`X'`) was `32` events / hour with a standard deviation (s) of `10` events / hour.
 
 - Class: text
-  Output: We want to test the null hypothesis H_0 that mu = 30. Our alternative hypothesis H_a is mu>30. Here mu represents the hypothesized population mean RDI.
+  Output: We want to test the null hypothesis `H_0` that `mu = 30`. Our alternative hypothesis `H_a` is `mu>30`. Here `mu` represents the hypothesized population mean `RDI`.
  
 - Class: text
-  Output: So we have two competing hypotheses, H_0 and H_a, of which we'll have to pick one (using statistical evidence). That means we have four possible outcomes determined by what really is (the truth) and which hypothesis we accept based on our data. Two of the outcomes are correct and two are errors. 
+  Output: So we have two competing hypotheses, `H_0` and `H_a`, of which we'll have to pick one (using statistical evidence). That means we have four possible outcomes determined by what really is (the truth) and which hypothesis we accept based on our data. Two of the outcomes are correct and two are errors. 
 
 - Class: mult_question
   Output: Which of the following outcomes would be correct?
@@ -45,7 +45,7 @@
   Output: The errors are also clear - rejecting a true hypothesis or accepting a false one. 
 
 - Class: text
-  Output: We distinguish between these two errors. A Type I error REJECTS a TRUE null hypothesis H_0 and a Type II error ACCEPTS a FALSE null hypothesis H_0. 
+  Output: We distinguish between these two errors. A Type I error REJECTS a TRUE null hypothesis `H_0` and a Type II error ACCEPTS a FALSE null hypothesis `H_0`. 
 
 - Class: mult_question
   Output: Can we ever be sure that we're absolutely right? 
@@ -68,86 +68,86 @@
   Hint: You're rejecting a true null hypothesis. Recall that a Type II error accepts a false null hypothesis.
 
 - Class: mult_question
-  Output: You might send the innocent man to jail by rejecting H_0. Suppose a guilty person is not convicted. What type of error is this?
+  Output: You might send the innocent man to jail by rejecting `H_0`. Suppose a guilty person is not convicted. What type of error is this?
   AnswerChoices: Type I; Type II
   CorrectAnswer: Type II
   AnswerTests: omnitest(correctVal='Type II')
   Hint: You're accepting a null hypothesis (innocence) that is false. Recall that a Type I error rejects the truth.
 
 - Class: text
-  Output: Back to sleep (example)! A reasonable strategy would reject the null hypothesis if our sample mean X' was larger than some constant C. We choose C so that the probability of a Type I error, alpha, is .05 (or some other favorite constant). Many scientific papers use .05 as a standard level of rejection.
+  Output: Back to sleep (example)! A reasonable strategy would reject the null hypothesis if our sample mean `X'` was larger than some constant `C`. We choose `C` so that the probability of a Type I error, `alpha`, is `.05` (or some other favorite constant). Many scientific papers use `.05` as a standard level of rejection.
 
 - Class: text
-  Output:  This means that  alpha, the Type I error rate, is the probability of rejecting the null hypothesis when, in fact, it is correct. We don't want alpha too low because then we would never reject the null hypothesis even if it's false.
+  Output:  This means that `alpha`, the Type I error rate, is the probability of rejecting the null hypothesis when, in fact, it is correct. We don't want `alpha` too low because then we would never reject the null hypothesis even if it's false.
 
 - Class: cmd_question
-  Output: Recall that the standard error of a sample mean is given by the formula s/sqrt(n). Recall in our sleep example we had a sample of 100 subjects, our mean RDI (X') was 32 events / hour with a standard deviation (s) of 10 events / hour. What is the standard error of the mean in this example?
+  Output: Recall that the standard error of a sample mean is given by the formula `s/sqrt(n)`. Recall in our sleep example we had a sample of `100 subjects, our mean `RDI` (`X'`) was `32` events / hour with a standard deviation (`s`) of `10` events / hour. What is the standard error of the mean in this example?
   CorrectAnswer: 1
   AnswerTests: equiv_val(1)
-  Hint: Divide s by sqrt(n).
+  Hint: Divide `s` by `sqrt(n)`.
 
 - Class: text
-  Output: Under H_0, X' is normally distributed with mean mu=30 and variance 1. (We're estimating the variance as the square of the standard error which in this case is 1.) We want to choose the constant C so that the probability that X is greater than C given H_0 is 5%. That is, P(X > C| H_0) is 5%. Sound familiar? 
+  Output: Under `H_0`, `X'` is normally distributed with mean `mu=30` and variance `1`. (We're estimating the variance as the square of the standard error which in this case is `1`.) We want to choose the constant `C` so that the probability that `X` is greater than `C` given `H_0` is 5%. That is, `P(X > C| H_0)` is 5%. Sound familiar? 
 
 - Class: figure
-  Output: Here's a plot to show what we mean. The shaded portion represents 5% of the area under the curve and those X values in it are those for which the probability that X>C is 5%. 
+  Output: Here's a plot to show what we mean. The shaded portion represents 5% of the area under the curve and those `X` values in it are those for which the probability that `X>C` is 5%. 
   Figure: conf_5pct.R
   FigureType: new
 
 - Class: mult_question
-  Output: The shaded portion represents 5% of the area under this normal density curve. Which expression represents the smallest value X for which the area is shaded, assuming this is standard normal (which it really isn't)?
+  Output: The shaded portion represents 5% of the area under this normal density curve. Which expression represents the smallest value `X` for which the area is shaded, assuming this is standard normal (which it really isn't)?
   AnswerChoices: qnorm(.95); rnorm(.95); dnorm(.95); qt(.95,99)
   CorrectAnswer: qnorm(.95)
   AnswerTests: omnitest(correctVal='qnorm(.95)')
-  Hint: The shading begins at the 95th percentile and the smallest value X for which the area is shaded represents the 95th quantile. 
+  Hint: The shading begins at the 95th percentile and the smallest value `X` for which the area is shaded represents the 95th quantile. 
 
 - Class: text
-  Output: The 95th percentile of a standard normal distribution is 1.645 standard deviations from the mean, so in our example  we have to set C to be 1.645 standard deviations MORE than our hypothesized mean of 30, that is,  C = 30 +  1.645 * 1 = 31.645 (recall that the variance and standard deviation equalled 1).
+  Output: The 95th percentile of a standard normal distribution is `1.645` standard deviations from the mean, so in our example  we have to set `C` to be `1.645` standard deviations MORE than our hypothesized mean of `30`, that is,  `C = 30 +  1.645 * 1 = 31.645` (recall that the variance and standard deviation equalled `1`).
 
 - Class: text
-  Output: This means that if our OBSERVED (sample) mean X' >= C, then it's only a 5% chance that a random draw from this N(30,1) distribution is larger than C.
+  Output: This means that if our OBSERVED (sample) mean `X' >= C`, then it's only a 5% chance that a random draw from this `N(30,1)` distribution is larger than `C`.
 
 - Class: mult_question
-  Output: Recall that our observed mean X' is 32 which is greater than C=31.645, so it falls in that 5% region. What do we do with H_0?
+  Output: Recall that our observed mean `X'` is `32` which is greater than `C=31.645`, so it falls in that 5% region. What do we do with `H_0`?
   AnswerChoices: reject it; fail to reject it; give it another chance
   CorrectAnswer: reject it
   AnswerTests: omnitest(correctVal='reject it')
-  Hint: The observed sample mean X' falls in the region of rejection so we toss out H_0.
+  Hint: The observed sample mean `X'` falls in the region of rejection so we toss out `H_0`.
 
 - Class: text
-  Output: So the rule "Reject H_0 when the sample mean X' >= 31.645" has the property that the probability of rejecting H_0 when it is TRUE is 5% given the model of this example - hypothesized mean mu=30, variance=1 and n=100.
+  Output: So the rule `"Reject H_0 when the sample mean X' >= 31.645"` has the property that the probability of rejecting `H_0` when it is TRUE is 5% given the model of this example - hypothesized mean `mu=30`, `variance=1` and `n=100`.
 
 - Class: text
-  Output:  Instead of computing a constant C as a cutpoint for accepting or rejecting the null hypothesis, we can simply compute a Z score, the number of standard deviations the sample mean is from the hypothesized mean. We can then  compare it to quantile determined by alpha.
+  Output:  Instead of computing a constant `C` as a cutpoint for accepting or rejecting the null hypothesis, we can simply compute a Z score, the number of standard deviations the sample mean is from the hypothesized mean. We can then  compare it to quantile determined by alpha.
 
 - Class: text
-  Output: How do we do this? Compute the distance between the two means (32-30) and divide by the standard error of the mean, that is  (s/sqrt(n)). 
+  Output: How do we do this? Compute the distance between the two means (`32-30`) and divide by the standard error of the mean, that is  (`s/sqrt(n)`). 
 
 - Class: cmd_question
-  Output: What is the Z score for this example? Recall the Z score is X'-mu divided by the standard error of the mean. In this example X'=32, mu=30 and the standard error is 10/sqrt(100)=1. 
+  Output: What is the `Z` score for this example? Recall the `Z` score is `X'-mu` divided by the standard error of the mean. In this example `X'=32`, `mu=30` and the standard error is `10/sqrt(100)=1`. 
   CorrectAnswer: 2
   AnswerTests: equiv_val(2)
-  Hint: Divide 2 by 1.
+  Hint: Divide `2` by `1`.
 
 - Class: mult_question
-  Output: The Z score is  2. The quantile is 1.645, so since 2>1.645. What do we do with H_0?
+  Output: The `Z` score is  `2`. The quantile is `1.645`, so since `2>1.645`. What do we do with `H_0`?
   AnswerChoices: reject it; fail to reject it; give it another chance
   CorrectAnswer: reject it
   AnswerTests: omnitest(correctVal='reject it')
-  Hint: Since the Z score exceeded the quantile the observed sample mean X' falls in the region of rejection so we toss out H_0.
+  Hint: Since the `Z` score exceeded the quantile the observed sample mean `X'` falls in the region of rejection so we toss out `H_0`.
 
 - Class: text
-  Output:  The general rule for rejection is if sqrt(n) * ( X' - mu) / s > Z_{1-alpha}.
+  Output:  The general rule for rejection is if `sqrt(n) * ( X' - mu) / s > Z_{1-alpha}`.
 
 - Class: text
-  Output: Our test statistic is (X'-mu) / s/sqrt(n) which is standard normal.
+  Output: Our test statistic is `(X'-mu) / s/sqrt(n)` which is standard normal.
 
 - Class: mult_question
   Output: This means that our test statistic has what mean and standard deviation?
   AnswerChoices: 0 and 1; 1 and 0; 0 and 0; 1 and 1
   CorrectAnswer: 0 and 1
   AnswerTests: omnitest(correctVal='0 and 1')
-  Hint: The standard normal is centered around 0 and has a standard deviation of 1.
+  Hint: The standard normal is centered around `0` and has a standard deviation of `1`.
 
 - Class: text
   Output: Let's review and expand. Our null hypothesis is that the population mean mu equals the value mu_0 and alpha=.05. (This is the probability that we reject H_0 if it's true.) We can have several different alternative hypotheses.

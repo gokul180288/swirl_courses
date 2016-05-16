@@ -181,11 +181,3 @@
 
 - Class: text
   Output: Congrats! You've concluded this plotting lesson. We hope you didn't find it plodding.
-
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

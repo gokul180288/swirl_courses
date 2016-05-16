@@ -356,11 +356,3 @@
 
 - Class: text
   Output: Congrats! We hope this lesson didn't leave you climbing the trellis.
-
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

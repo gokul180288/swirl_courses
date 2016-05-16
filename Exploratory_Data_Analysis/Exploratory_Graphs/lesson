@@ -398,10 +398,4 @@
 - Class: text
   Output: Congrats! You've concluded exploring this lesson on graphics. We hope you didn't find it too quick or dirty.  
 
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""
+

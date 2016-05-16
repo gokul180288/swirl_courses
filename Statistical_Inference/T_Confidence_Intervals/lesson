@@ -37,7 +37,7 @@
   AnswerChoices: X'; mu; s; n
   CorrectAnswer: s
   AnswerTests: omnitest(correctVal='s')
-  Hint: `X'` and mu represent means, and `n` usually represents an integer like sample size.
+  Hint: "`X'` and mu represent means, and `n` usually represents an integer like sample size."
 
 - Class: text
   Output: These `t` confidence intervals are very handy, and if you have a choice between these and normal, pick these. We'll see that as datasets get larger, `t-intervals` look normal. We'll cover the one- and two-group versions which depend on the data you have.
@@ -358,14 +358,5 @@
 - Class: text
   Output: Don't worry about these nasty calculations. R makes things a lot easier. If you call `t.test` with `var.equal` set to `FALSE`, then R calculates the  degrees of freedom for you. You don't have to memorize the formula.
 
-
 - Class: text
   Output: Congrats! You've concluded this rather t-dious lesson on all things `t` related - statistics, distributions, intervals. Hope you're not too teed off!
-
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

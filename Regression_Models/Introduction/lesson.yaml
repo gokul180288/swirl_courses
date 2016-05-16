@@ -111,10 +111,3 @@
 - Class: text
   Output: This concludes our lesson on regression toward the mean. We hope you found it above average!
 
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

@@ -14,7 +14,7 @@
   Output:  In another lesson, we gave you an overview of the three plotting systems in R. In this lesson we'll focus on the third and newest plotting system in R, `ggplot2`.  As we did with the other two systems, we'll focus on creating graphics on the screen device rather than another graphics device.
 
 - Class: text
-  Output:  The `ggplot2` package is an add-on package available from `CRAN` via `install.packages()`. (Don't worry, we've installed it for you already.) It is an implementation of The Grammar of Graphics, an abstract concept (as well as book) authored and invented by Leland Wilkinson and implemented by Hadley Wickham while he was a graduate student at Iowa State. The web site http://ggplot2.org provides complete documentation.
+  Output:  "The `ggplot2` package is an add-on package available from `CRAN` via `install.packages()`. (Don't worry, we've installed it for you already.) It is an implementation of The Grammar of Graphics, an abstract concept (as well as book) authored and invented by Leland Wilkinson and implemented by Hadley Wickham while he was a graduate student at Iowa State. The web site http://ggplot2.org provides complete documentation."
 
 - Class: text
   Output: A grammar of graphics represents an abstraction of graphics, that is,  a theory of graphics which conceptualizes basic pieces from which you can build new graphics and graphical objects. The  goal of the grammar is to “Shorten the distance from mind to page”. From Hadley Wickham's book  we learn that 
@@ -208,11 +208,3 @@
 
 - Class: text
   Output: Congrats! You've finished plot 1 of  ggplot2. In the next lesson the plot thickens.
-
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

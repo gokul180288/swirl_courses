@@ -60,7 +60,7 @@
   Output: We'll see that when we vary or tweak the slope and intercept values of the regression line which are stored in `fit$coef`, the resulting squared residuals are approximately equal to the sum of two sums of squares - that of the original regression residuals and that of the tweaks themselves. More precisely, up to numerical error, 
 
 - Class: text
-  Output: ```sqe(ols.slope+sl,ols.intercept+ic) == deviance(fit) + sum(est(sl,ic)ˆ2 )```
+  Output: "```sqe(ols.slope+sl,ols.intercept+ic) == deviance(fit) + sum(est(sl,ic)ˆ2 )```"
 
 - Class: text
   Output: Equivalently, ```sqe(ols.slope+sl,ols.intercept+ic) == sqe(ols.slope, ols.intercept) + sum(est(sl,ic)ˆ2 )```

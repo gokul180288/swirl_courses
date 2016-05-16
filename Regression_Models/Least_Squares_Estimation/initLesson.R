@@ -1,7 +1,7 @@
 # Put initialization code in this file. The variables you create
 # here will show up in the user's workspace when he or she begins
 # the lesson.
-galton <- read.csv("~", ".datacamp", "Courses/Regression_Models/Introduction", "galton.csv")
+galton <- read.csv(file.path("~", ".datacamp", "Courses/Regression_Models/Introduction", "galton.csv"))
 gch <- galton$child
 gpa <- galton$parent
 gpa_nor <- (gpa - mean(gpa))/sd(gpa)

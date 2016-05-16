@@ -39,7 +39,7 @@
   AnswerChoices: (X'-30)/(s/sqrt(n)); X'/(s^2/n); (X'-30)/(s^2/n); 30/(s/sqrt(n))
   CorrectAnswer:  (X'-30)/(s/sqrt(n))
   AnswerTests: omnitest(correctVal='(X\'-30)/(s/sqrt(n))')
-  Hint:  `(X'-30)/(s/sqrt(n))` measures the number of standard errors the sample mean is from the mean hypothesized by `H_0`.
+  Hint:  "`(X'-30)/(s/sqrt(n))` measures the number of standard errors the sample mean is from the mean hypothesized by `H_0`."
 
 - Class: mult_question
   Output: In the expression for the test statistic `(X'-30)/(s/sqrt(n))` what does `(s/sqrt(n))` represent?
@@ -312,7 +312,7 @@
   AnswerChoices: mu_0; mu_a; beta; alpha
   CorrectAnswer: mu_0
   AnswerTests: omnitest(correctVal='mu_0')
-  Hint: `H_0` simply proposes a null mean.
+  Hint: "`H_0` simply proposes a null mean."
 
 - Class: mult_question
   Output: After the null mean `mu_0` is proposed what does the designer of the hypothesis test specify in order to reject or fail-to-reject `H_0`? In other words, what is the level size of the test?
@@ -476,10 +476,3 @@
 - Class: text
   Output: Congrats! You finished this powerful lesson. We hope you feel emPOWERED.
 
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

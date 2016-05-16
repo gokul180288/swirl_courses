@@ -159,11 +159,3 @@
 
 - Class: text
   Output: Congrats! With probability 1, you've aced this first lesson on basic probability. 
-
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

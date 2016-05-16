@@ -369,10 +369,4 @@
 - Class: text
   Output: Congrats! You've concluded this lesson on asymptotics. We hope you feel confident and are asymptomatic after going through it.
 
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""
+

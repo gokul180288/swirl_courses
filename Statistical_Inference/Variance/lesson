@@ -16,7 +16,7 @@
   Output: The variance of a random variable, as a measure of spread or dispersion,  is, like a mean, defined as an expected value. It is the expected squared distance of the variable from its mean. Squaring the distance makes it positive so values less than and greater than the mean are treated the same. In mathematical terms, if `X` comes from a population with mean `mu`, then
 
 - Class: text
-  Output: `Var(X) = E( (X-mu)^2 ) = E( (X-E(X))^2 ) =  E(X^2)-E(X)^2` 
+  Output: "`Var(X) = E( (X-mu)^2 ) = E( (X-E(X))^2 ) =  E(X^2)-E(X)^2`" 
 
 - Class: text
   Output: So variance is the difference between two expected values. Recall that `E(X)`, the expected value of a random variable from the population, is `mu`, the mean of that population. 
@@ -130,7 +130,7 @@
   AnswerChoices: n*(sigma)^2; n*mu; n*E(mu); (n^2)*Var(sigma)
   CorrectAnswer: n*(sigma)^2
   AnswerTests: omnitest(correctVal='n*(sigma)^2')
-  Hint: `Var(X_i)` is the constant value `sigma^2` and we're summing over `n` of them.
+  Hint: "`Var(X_i)` is the constant value `sigma^2` and we're summing over `n` of them."
 
 - Class: text
   Output: So we've shown that `Var(X')=Var(1/n*Sum(X_i))=(1/n^2)*Var(Sum(X_i))=(1/n^2)*Sum(sigma^2)=sigma^2/n` for infinite populations when our samples are independent. 
@@ -208,10 +208,10 @@
   Hint: Type `1/(2*sqrt(10))` at the command prompt.
 
 - Class: cmd_question
-  Output: Now check it as we did before. Use the expression `sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))`. 
+  Output: "Now check it as we did before. Use the expression `sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))`." 
   CorrectAnswer: sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))
   AnswerTests: omnitest(correctExpr='sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))')
-  Hint: Type `sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))` at the command prompt.
+  Hint: "Type `sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))` at the command prompt."
 
 - Class: text
   Output: Finally, here's something interesting. Chebyshev's inequality helps interpret variances. It states that the probability that a random variable `X` is at least `k` standard deviations from its mean is less than `1/(k^2)`. In other words, the probability that `X` is at least `2` standard deviations from the mean is less than `1/4`, `3` standard deviations `1/9`, `4` standard deviations `1/16`, etc.
@@ -265,10 +265,3 @@
 - Class: text
   Output: Congrats! You've concluded this vary long lesson on variance. We hope you liked it vary much.
 
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

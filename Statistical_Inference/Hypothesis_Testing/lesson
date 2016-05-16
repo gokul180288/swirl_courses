@@ -363,7 +363,7 @@
   Output: So `mybin[1]=1.0`, meaning that with probability `1` there are at least `0` girls, `and mybin[2]=.996` is the probability that there's at least `1` girl out of the `8`, and so forth. The probabilities decrease as `i` increases. What is the least value of `i` for which the probability is less than `.05`?
   CorrectAnswer: 8
   AnswerTests: equiv_val(8)
-  Hint: `mybin[7]=.144` and `mybin[8]=.035`.
+  Hint: "`mybin[7]=.144` and `mybin[8]=.035`."
 
 - Class: mult_question
   Output: So  `mybin[8]=.03` is the probability  of having at least `7` girls out of a sample of size `8` under `H_0` (if `p actually is `.5`) which is what our sample has. This is less than `.05` so  our sample falls in this region of rejection. Does that mean we accept or reject `H_0`, (that either gender is equally likely) based on this sample of size `8`?
@@ -377,11 +377,4 @@
 
 - Class: text
   Output: Congrats! We confidently hypothesize that you're happy to have finished this lesson. Can we test this?
-
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""
+  

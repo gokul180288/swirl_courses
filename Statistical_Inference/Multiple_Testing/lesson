@@ -294,11 +294,3 @@
 
 - Class: text
   Output: Congrats! We hope you liked the multiple concepts and questions you saw in this lesson.
-
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

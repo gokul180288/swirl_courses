@@ -33,7 +33,7 @@
   Output: We represent the conditional probability of an event `A` given that `B` has occurred with the notation `P(A|B)`. More specifically, we define the conditional probability of event `A`, given that `B` has occurred with the following.
 
 - Class: text
-  Output:   `P(A|B) = P(A & B)/ P(B)` . `P(A|B)` is the probability that BOTH `A` and `B` occur divided by the probability that `B` occurs.
+  Output:   "`P(A|B) = P(A & B)/ P(B)` . `P(A|B)` is the probability that BOTH `A` and `B` occur divided by the probability that `B` occurs."
 
 - Class: mult_question
   Output: Back to our dice example. Which of the following expressions represents `P(A&B)`, where `A` is the event of rolling a 3 and `B` is the event of the roll being odd?
@@ -53,7 +53,7 @@
   Output: From the definition of `P(A|B)`, we can write `P(A&B) = P(A|B) * P(B)`, right?  Let's use this to express `P(B|A)`.
 
 - Class: text
-  Output: `P(B|A) = P(B&A)/P(A) = P(A|B) * P(B)/P(A)`. This is a simple form of Bayes' Rule which relates the two conditional probabilities.
+  Output: "`P(B|A) = P(B&A)/P(A) = P(A|B) * P(B)/P(A)`. This is a simple form of Bayes' Rule which relates the two conditional probabilities."
 
 - Class: text
   Output: Suppose we don't know `P(A)` itself, but only know its conditional probabilities, that is, the probability that it occurs if B occurs and the probability that it occurs if B doesn't occur. These are  `P(A|B)` and `P(A|~B)`, respectively. We use `~B` to represent `not B` or `B complement`. 
@@ -62,7 +62,7 @@
   Output: We can then express `P(A) = P(A|B) * P(B) + P(A|~B) * P(~B)` and substitute this is into the denominator of Bayes' Formula. 
 
 - Class: text
-  Output: `P(B|A) = P(A|B) * P(B) / ( P(A|B) * P(B) + P(A|~B) * P(~B) )`
+  Output: "`P(B|A) = P(A|B) * P(B) / ( P(A|B) * P(B) + P(A|~B) * P(~B) )`"
 
 - Class: text
   Output: Bayes' Rule has applicability to medical diagnostic tests. We'll now discuss the example of the HIV test from the slides. 
@@ -140,7 +140,7 @@
   Output:  Now a little more about likelihood ratios. Recall Bayes Formula. `P(D|+) = P(+|D) * P(D) / ( P(+|D) * P(D) + P(+|~D) * P(~D) )` and notice that if we replace all occurrences of `D` with `~D`, the denominator doesn't change. This means that if we formed a ratio of `P(D|+)` to `P(~D|+)` we'd get a much simpler expression (since the complicated denominators would cancel each other out). Like this....
 
 - Class: text
-  Output:   `P(D|+) / P(~D|+) = P(+|D) * P(D) / (P(+|~D) * P(~D)) = P(+|D)/P(+|~D) * P(D)/P(~D)`.
+  Output:   "`P(D|+) / P(~D|+) = P(+|D) * P(D) / (P(+|~D) * P(~D)) = P(+|D)/P(+|~D) * P(D)/P(~D)`."
 
 - Class: mult_question
   Output: The left side of the equation represents the post-test odds of disease given a positive test result. The equation says that the post-test odds of disease equals the pre-test odds  of disease (that is, `P(D)/P(~D)` ) times
@@ -198,10 +198,3 @@
 - Class: text
   Output: Congrats! You've concluded this lesson on conditional probability. We hope you liked it unconditionally.
 
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

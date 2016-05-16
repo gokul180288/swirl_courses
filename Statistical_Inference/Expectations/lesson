@@ -146,7 +146,7 @@
   Output: What's the expected value of the mean? Recall that `E(aX)=aE(X)`, so `E( (X_1+..+X_n)/n ) =`
 
 - Class: text
-  Output: `1/n * (E(X_1) + E(X_2) + ... + E(X_n)) = (1/n)*n*mu = mu`. Each `E(X_i)` equals `mu` since `X_i` is drawn from the population with mean `mu`. We expect, on average, a random `X_i` will equal `mu`.
+  Output: "`1/n * (E(X_1) + E(X_2) + ... + E(X_n)) = (1/n)*n*mu = mu`. Each `E(X_i)` equals `mu` since `X_i` is drawn from the population with mean `mu`. We expect, on average, a random `X_i` will equal `mu`."
 
 - Class: text
   Output: Now that was theory.  We can also show this empirically with more simulations.
@@ -212,11 +212,3 @@
 
 - Class: text
   Output: Congrats! You've concluded this lesson on expectations. We hope it met yours.
-
-- Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
-  CorrectAnswer: NULL
-  AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
-  Hint: ""

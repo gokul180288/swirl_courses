@@ -23,7 +23,7 @@
   Output: "Outliers may or may not belong in the data. They may represent real events or they may be spurious. In any case, they should be examined. In order to spot them, R provides various diagnostic plots and measures of influence. In this lesson we'll illustrate their meanings and use. The basic technique is to examine the effects of leaving one sample out, as we did in comparing the black and orange lines above. We'll use the influential outlier to illustrate, since leaving it out has clear effects."
 
 - Class: cmd_question
-  Output: "The influential outlier is in a data frame named `out2`. It has two columns, labeled `y` and `x`, respectively. To begin, create a model named fit using `fit <- lm(y ~ x, out2)` or an equivalent expression."
+  Output: "The influential outlier is in a data frame named `out2`. It has two columns, labeled `y` and `x`, respectively. To begin, create a model named `fit` using `fit <- lm(y ~ x, out2)` or an equivalent expression."
   CorrectAnswer: fit <- lm(y ~ x, out2)
   AnswerTests: creates_lm_model('fit <- lm(y ~ x, out2)')
   Hint: "Enter `fit <- lm(y ~ x, out2)` or something equivalent at the R prompt."
@@ -57,7 +57,7 @@
   Hint: "Enter ```fitno <- lm(y ~ x, out2[-1, ])``` or something equivalent at the R prompt."
 
 - Class: cmd_question
-  Output: "Display a Residuals vs Fitted plot for fitno. Remember to use `which=1`."
+  Output: "Display a Residuals vs Fitted plot for `fitno`. Remember to use `which=1`."
   CorrectAnswer: plot(fitno, which=1)
   AnswerTests: omnitest('plot(fitno, which=1)')
   Hint: Type `plot(fitno, which=1)` at the R prompt
@@ -68,7 +68,7 @@
   Output: "This plot has none of the patterned appearance of the first. It looks as we would expect if residuals were independently and (almost) identically distributed with zero mean, and were uncorrelated with the fit."
 
 - Class: cmd_question
-  Output: "The change which inclusion or exclusion of a sample induces in coefficents is a simple measure of its influence. Subtract coef(fitno) from coef(fit) to see the change induced by including the influential first sample."
+  Output: "The change which inclusion or exclusion of a sample induces in coefficents is a simple measure of its influence. Subtract `coef(fitno)` from `coef(fit)` to see the change induced by including the influential first sample."
   CorrectAnswer: coef(fit)-coef(fitno)
   AnswerTests: ANY_of_exprs('coef(fit)-coef(fitno)', 'fit$coef-fitno$coef', 'fit$coefficients-fitno$coefficients')
   Hint: "Just enter `coef(fit)-coef(fitno)` at the R prompt."
@@ -88,7 +88,7 @@
   FigureType: new
 
 - Class: cmd_question
-  Output: "This measure is sometimes called influence, sometimes leverage, and sometimes hat value. Since it is 1 minus the ratio of two residuals, to calculate it from scratch we must first obtain the two residuals. The ratio's numerator (orange dots) is the residual of the first sample of the model we called fit. The model fitno, which excludes this sample, also excludes its residual, so we will have to calculate its value. This is easily done. We use R's `predict` function to calculate `fitno's` predicted value of `y` and subtract it from the actual value. Use the expression ```resno <- out2[1, \"y\"] - predict(fitno, out2[1,])``` to do the calculation."
+  Output: "This measure is sometimes called influence, sometimes leverage, and sometimes hat value. Since it is 1 minus the ratio of two residuals, to calculate it from scratch we must first obtain the two residuals. The ratio's numerator (orange dots) is the residual of the first sample of the model we called `fit`. The model `fitno`, which excludes this sample, also excludes its residual, so we will have to calculate its value. This is easily done. We use R's `predict` function to calculate `fitno's` predicted value of `y` and subtract it from the actual value. Use the expression ```resno <- out2[1, \"y\"] - predict(fitno, out2[1,])``` to do the calculation."
   CorrectAnswer: resno <- out2[1, "y"] - predict(fitno, out2[1,])
   AnswerTests: ANY_of_exprs('resno <- out2[1, "y"] - predict(fitno, out2[1,])', "resno <- out2[1, 'y'] - predict(fitno, out2[1,])")
   Hint: Enter the expression resno <- out2[1, "y"] - predict(fitno, out2[1,]) at the R prompt.
@@ -109,25 +109,25 @@
   Output: "Residuals of individual samples are sometimes treated as having the same variance, which is estimated as the sample variance of the entire set of residuals. Theoretically, however, residuals of individual samples have different variances and these differences can become large in the presence of outliers. `Standardized` and `Studentized residuals` attempt to compensate for this effect in two slightly different ways. Both use hat values."
 
 - Class: cmd_question
-  Output: "We'll consider standardized residuals first. To begin, calculate the sample standard deviation of fit's residual by dividing fit's deviance, i.e., its residual sum of squares, by the residual degrees of freedom and taking the square root. Store the result in a variable called `sigma`."
+  Output: "We'll consider standardized residuals first. To begin, calculate the sample standard deviation of `fit's` residual by dividing `fit's` deviance, i.e., its residual sum of squares, by the residual degrees of freedom and taking the square root. Store the result in a variable called `sigma`."
   CorrectAnswer: sigma <- sqrt(deviance(fit)/df.residual(fit))
   AnswerTests: calculates_same_value('sigma <- sqrt(deviance(fit)/df.residual(fit))');expr_creates_var('sigma')
   Hint: "Enter `sigma <- sqrt(deviance(fit)/df.residual(fit))` or an equivalent expression at the R prompt."
 
 - Class: cmd_question
-  Output: "Ordinarily we would just divide fit's residual (which has mean 0) by `sigma`. In the present case we multiply `sigma` times `sqrt(1-hatvalues(fit))` to estimate standard deviations of individual samples. Thus, instead of dividing `resid(fit)` by `sigma`, we divide by `sigma*sqrt(1-hatvalues(fit))`. The result is called the standardized residual. Compute fit's standardized residual and store it in a variable named `rstd`."
+  Output: "Ordinarily we would just divide `fit's` residual (which has mean 0) by `sigma`. In the present case we multiply `sigma` times `sqrt(1-hatvalues(fit))` to estimate standard deviations of individual samples. Thus, instead of dividing `resid(fit)` by `sigma`, we divide by `sigma*sqrt(1-hatvalues(fit))`. The result is called the standardized residual. Compute `fit's` standardized residual and store it in a variable named `rstd`."
   CorrectAnswer: rstd <- resid(fit)/(sigma * sqrt(1-hatvalues(fit)))
   AnswerTests: calculates_same_value('rstd <- resid(fit)/(sigma * sqrt(1-hatvalues(fit)))');expr_creates_var('rstd')
   Hint: "Enter ```rstd <- resid(fit)/(sigma * sqrt(1-hatvalues(fit)))``` or an equivalent expression at the R prompt."
 
 - Class: cmd_question
-  Output: "`rstandard`: The function, `rstandard`, computes the standardized residual which we have just computed step by step. Use `head(cbind(rstd, rstandard(fit)))` or `View(cbind(rstd, rstandard(fit))) to compare the two calculations."
+  Output: "`rstandard`: The function, `rstandard`, computes the standardized residual which we have just computed step by step. Use `head(cbind(rstd, rstandard(fit)))` or `View(cbind(rstd, rstandard(fit)))` to compare the two calculations."
   CorrectAnswer: head(cbind(rstd, rstandard(fit)))
   AnswerTests: ANY_of_exprs('head(cbind(rstd, rstandard(fit)))', 'View(cbind(rstd, rstandard(fit)))')
   Hint: "Enter `head(cbind(rstd, rstandard(fit)))` or `View(cbind(rstd, rstandard(fit)))` at the R prompt."
 
 - Class: cmd_question
-  Output: "A Scale-Location plot shows the square root of standardized residuals against fitted values. Use `plot(fit, which=3) to display it."
+  Output: "A Scale-Location plot shows the square root of standardized residuals against fitted values. Use `plot(fit, which=3)` to display it."
   CorrectAnswer: plot(fit, which=3)
   AnswerTests: omnitest(correctExpr='plot(fit, which=3)')
   Hint: Enter `plot(fit, which=3)` at the R prompt.
@@ -177,7 +177,7 @@
   Hint: Enter ```dy <- predict(fitno, out2)-predict(fit, out2)``` or an equivalent expression at the R prompt.
 
 - Class: cmd_question
-  Output: "Recall that we calculated the sample standard deviation of fit's residual, `sigma`, earlier. Divide the summed squares of `dy` by `2*sigma^2` to calculate the outlier's Cook's distance. There is no need to store the result in a variable."
+  Output: "Recall that we calculated the sample standard deviation of `fit's` residual, `sigma`, earlier. Divide the summed squares of `dy` by `2*sigma^2` to calculate the outlier's Cook's distance. There is no need to store the result in a variable."
   CorrectAnswer: sum(dy^2)/(2*sigma^2)
   AnswerTests: calculates_same_value('sum(dy^2)/(2*sigma^2)')
   Hint: Enter `sum(dy^2)/(2*sigma^2)` or an equivalent expression at the R prompt.

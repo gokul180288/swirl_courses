@@ -17,19 +17,19 @@
 
 
 - Class: cmd_question
-  Output: We'll demonstrate these concepts now. First regenerate the regression line and call it fit. Use the R function `lm`. Recall that by default its first argument is a formula such as `child ~ parent` and its second is the dataset, in this case `galton`. 
+  Output: We'll demonstrate these concepts now. First regenerate the regression line and call it `fit`. Use the R function `lm`. Recall that by default its first argument is a formula such as `child ~ parent` and its second is the dataset, in this case `galton`. 
   CorrectAnswer: fit <- lm(child ~ parent, galton)
   AnswerTests: creates_lm_model('fit <- lm(child ~ parent, galton)')
   Hint: Type `fit <- lm(child ~ parent, galton)` at the R prompt.
 
 - Class: cmd_question
-  Output: Now we'll examine fit to see its slope and intercept. The residuals we're interested in are stored in the  928-long vector fit$residuals. If you type fit$residuals you'll see a lot of numbers scroll by which isn't very useful; however if you  type `summary(fit)` you will see a more concise display of the regression data. Do this now.
+  Output: Now we'll examine `fit` to see its slope and intercept. The residuals we're interested in are stored in the  928-long vector fit$residuals. If you type `fit$residuals` you'll see a lot of numbers scroll by which isn't very useful; however if you  type `summary(fit)` you will see a more concise display of the regression data. Do this now.
   CorrectAnswer: summary(fit)
   AnswerTests: omnitest(correctExpr='summary(fit)')
   Hint: Type `summary(fit)` at the R prompt.
 
 - Class: cmd_question
-  Output: First check the mean of fit$residuals to see if it's close to 0.
+  Output: First check the `mean` of `fit$residuals` to see if it's close to 0.
   CorrectAnswer: mean(fit$residuals)
   AnswerTests: omnitest(correctExpr='mean(fit$residuals)')
   Hint: Type `mean(fit$residuals)` at the R prompt.
@@ -63,7 +63,7 @@
   Output: "```sqe(ols.slope+sl,ols.intercept+ic) == deviance(fit) + sum(est(sl,ic)ˆ2 )```"
 
 - Class: text
-  Output: Equivalently, ```sqe(ols.slope+sl,ols.intercept+ic) == sqe(ols.slope, ols.intercept) + sum(est(sl,ic)ˆ2 )```
+  Output: Equivalently, ```sqe(ols.slope + sl,ols.intercept + ic) == sqe(ols.slope, ols.intercept) + sum(est(sl,ic)ˆ2 )```
 
 
 - Class: text
@@ -120,18 +120,18 @@
   Output: Now use the function `all.equal` to compare `varChild` and the sum of `varRes` and `varEst`.
   CorrectAnswer: all.equal(varChild,varEst+varRes)
   AnswerTests: ANY_of_exprs('all.equal(varChild,varEst+varRes)','all.equal(varEst+varRes,varChild)','all.equal(varChild,varRes+varEst)','all.equal(varRes+varEst,varChild)')
-  Hint: Type ```all.equal(varChild,varEst+varRes)``` at the R prompt.
+  Hint: Type ```all.equal(varChild, varEst + varRes)``` at the R prompt.
 
 
 - Class: text
   Output: Since variances are sums of squares (and hence always positive), this equation which we've just demonstrated,  ```var(data)=var(estimate)+var(residuals)```, shows that the variance of the estimate is ALWAYS less than the variance of the data.
 
 - Class: mult_question
-  Output: Since ```var(data)=var(estimate)+var(residuals)``` and variances are always positive, the variance of residuals
+  Output: Since ```var(data )= var(estimate) + var(residuals)``` and variances are always positive, the variance of residuals
   AnswerChoices: is less than the variance of data; is greater than the variance of data; is unknown without actual data
   CorrectAnswer: is less than variance of data
   AnswerTests: omnitest(correctVal='is less than the variance of data')
-  Hint: The equation says ```var(residuals)=var(data)-var(estimate)```; we're subtracting a positive number from `var(data)` to give us `var(residuals)`
+  Hint: The equation says ```var(residuals) = var(data) - var(estimate)```; we're subtracting a positive number from `var(data)` to give us `var(residuals)`
 
 
 - Class: text

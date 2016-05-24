@@ -16,7 +16,7 @@
   Output: It can also be shown that, given a model, the maximum likelihood estimate of the variance of the random error is the average squared residual. However, since our linear model with one predictor requires two parameters we have only `(n-2)` degrees of freedom. Therefore, to calculate an "average" squared residual to estimate the variance we use the formula ```1/(n-2) * (the sum of the squared residuals)```. If we divided the sum of the squared residuals by `n`, instead of `n-2`, the result would give a biased estimate.
 
 - Class: cmd_question
-  Output: To see this we'll use our favorite Galton height data. First regenerate the regression line and call it fit. Use the R function `lm` and recall that by default its first argument is a formula such as `child ~ parent` and its second is the dataset, in this case `galton`. 
+  Output: To see this we'll use our favorite Galton height data. First regenerate the regression line and call it `fit`. Use the R function `lm` and recall that by default its first argument is a formula such as `child ~ parent` and its second is the dataset, in this case `galton`. 
   CorrectAnswer: fit <- lm(child ~ parent, galton)
   AnswerTests: omnitest(correctExpr='fit <- lm(child ~ parent, galton)')
   Hint: Type `fit <- lm(child ~ parent, galton)` at the R prompt.
@@ -32,7 +32,7 @@
 
 
 - Class: cmd_question
-  Output: Now look at the `sigma` portion of the summary of fit, `summary(fit)$sigma`.
+  Output: Now look at the `sigma` portion of the summary of `fit`, `summary(fit)$sigma`.
   CorrectAnswer: summary(fit)$sigma 
   AnswerTests: omnitest(correctExpr='summary(fit)$sigma')
   Hint: Type `summary(fit)$sigma` at the R prompt.

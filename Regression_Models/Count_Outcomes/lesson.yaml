@@ -115,7 +115,7 @@
   Hint: Just type `hits[704,]`.
 
 - Class: cmd_question
-  Output: "The maximum number of visits, 94, occurred on December 4, 2012, of which 64 came from the Simply Statistics blog. We might consider the 64 visits to be a special event, over and above normal. Can the difference, `94-64=30` visits, be attributed to normal traffic as estimated by our model? To check, we will need the value of lambda on December 4, 2012. This will be entry 704 of the fitted.values element of our model. Extract `mdl$fitted.values[704]` and store it in a variable named lambda."
+  Output: "The maximum number of visits, 94, occurred on December 4, 2012, of which 64 came from the Simply Statistics blog. We might consider the 64 visits to be a special event, over and above normal. Can the difference, `94-64=30` visits, be attributed to normal traffic as estimated by our model? To check, we will need the value of lambda on December 4, 2012. This will be entry 704 of the `fitted.values` element of our model. Extract `mdl$fitted.values[704]` and store it in a variable named lambda."
   CorrectAnswer: lambda <- mdl$fitted.values[704]
   AnswerTests: omnitest(correctExpr='lambda <- mdl$fitted.values[704]');expr_creates_var('lambda')
   Hint: Just type `lambda <- mdl$fitted.values[704]`.
@@ -127,13 +127,13 @@
   Hint: Type `qpois(.95, lambda)` or `qpois(0.95, lambda)`.
 
 - Class: text
-  Output: "So, 95% of the time we would see 33 or fewer visits, hence 30 visits would not be rare according to our model. It would seem that on December 4, 2012, the very high number of visits was due to references from Simply Statistics. To gauge the importance of references from Simply Statistics we may wish to model the proportion of traffic such references represent. Doing so will also illustrate the use of glm's parameter, offset, to model frequencies and proportions."
+  Output: "So, 95% of the time we would see 33 or fewer visits, hence 30 visits would not be rare according to our model. It would seem that on December 4, 2012, the very high number of visits was due to references from Simply Statistics. To gauge the importance of references from Simply Statistics we may wish to model the proportion of traffic such references represent. Doing so will also illustrate the use of `glm's` parameter, offset, to model frequencies and proportions."
 
 - Class: text
   Output: "A Poisson process generates counts, and counts are whole numbers, 0, 1, 2, 3, etc. A proportion is a fraction. So how can a Poisson process model a proportion? The trick is to include the denominator of the fraction, or more precisely its log, as an offset. Recall that in our data set, 'simplystats' is the visits from Simply Statistics, and 'visits' is the total number of visits. We would like to model the fraction `simplystats/visits`, but to avoid division by zero we'll actually use `simplystats/(visits+1)`. A Poisson model assumes that log(lambda) is a linear combination of predictors. Suppose we assume that ```log(lambda) = log(visits+1) + b0 + b1*date```. In other words, if we insist that the coefficient of `log(visits+1)` be equal to 1, we are predicting the log of mean visits from Simply Statistics as a proportion of total visits: ```log(lambda/(visits+1)) = b0 + b1*date```."
 
 - Class: cmd_question
-  Output: "glm's parameter, offset, has precisely this effect. It fixes the coefficient of the offset to 1. To create a model for the proportion of visits from Simply Statistics, we let `offset=log(visits+1)`. Create such a Poisson model now and store it as a variable called `mdl2`."
+  Output: "`glm's` parameter, offset, has precisely this effect. It fixes the coefficient of the offset to 1. To create a model for the proportion of visits from Simply Statistics, we let `offset=log(visits+1)`. Create such a Poisson model now and store it as a variable called `mdl2`."
   CorrectAnswer: mdl2 <- glm(simplystats ~ date, poisson, hits, offset=log(visits+1))
   AnswerTests: creates_glm_model('mdl2 <- glm(simplystats ~ date, poisson, hits, offset=log(visits+1))')
   Hint: "Enter ```mdl2 <- glm(formula = simplystats ~ date, family = poisson, data = hits, offset = log(visits + 1))```, or something equivalent."
@@ -159,7 +159,7 @@
   Hint: Count outcomes and their means are never negative, but linear combinations of predictors may be.
 
 - Class: mult_question  
-  Output: "What parameter of the glm function allows you to include a predictor whose coefficient is fixed to the value 1?"
+  Output: "What parameter of the `glm` function allows you to include a predictor whose coefficient is fixed to the value 1?"
   AnswerChoices: offset;data;b0;family;formula
   CorrectAnswer: offset
   AnswerTests: omnitest(correctVal= 'offset')

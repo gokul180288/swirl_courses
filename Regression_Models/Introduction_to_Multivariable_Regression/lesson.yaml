@@ -13,7 +13,7 @@
   Output: "In this lesson we'll illustrate that regression in many variables amounts to a series of regressions in one. Using regression in one variable, we'll show how to eliminate any chosen regressor, thus reducing a regression in `N` variables, to a regression in `N-1`. Hence, if we know how to do a regression in 1 variable, we can do a regression in 2. Once we know how to do a regression in 2 variables, we can do a regression in 3, and so on. We begin with the galton data and a review of eliminating the intercept by subtracting the means."
 
 - Class: text
-  Output: "When we perform a regression in one variable, such as `lm(child ~ parent, galton)`, we get two coefficients, a slope and an intercept. The intercept is really the coefficient of a special regressor which has the same value, 1, at every sample. The function, lm, includes this regressor by default."
+  Output: "When we perform a regression in one variable, such as `lm(child ~ parent, galton)`, we get two coefficients, a slope and an intercept. The intercept is really the coefficient of a special regressor which has the same value, 1, at every sample. The function, `lm`, includes this regressor by default."
 
 - Class: cmd_question
   Output: "We'll demonstrate by substituting an all-ones regressor of our own. This regressor must have the same number of samples as galton (928.) Create such an object and name it ones, using `ones <- rep(1, nrow(galton))`, or some equivalent expression."
@@ -88,7 +88,7 @@
   Output: "The remaining function, eliminate, applies regressOneOnOne to all variables except a given predictor and collects the residuals in a data frame. We'll first show that when we eliminate one regressor from the data, a regression on the remaining will produce their correct coefficients. (Of course, the coefficient of the eliminated regressor will be missing, but more about that later.)"
 
 - Class: cmd_question
-  Output: "For reference, create a model named fit, based on all three regressors, `Girth`, `Height`, and `Constant`, and assign the result to a variable named fit. Use an expression such as ```fit <- lm(Volume ~ Girth + Height + Constant -1, trees)```. Don't forget the -1, and be sure to name the model fit for later use."
+  Output: "For reference, create a model named `fit`, based on all three regressors, `Girth`, `Height`, and `Constant`, and assign the result to a variable named `fit`. Use an expression such as ```fit <- lm(Volume ~ Girth + Height + Constant -1, trees)```. Don't forget the -1, and be sure to name the model `fit` for later use."
   CorrectAnswer: fit <- lm(Volume ~ . - 1, trees)
   AnswerTests: creates_lm_model('fit <- lm(Volume ~ . - 1, trees)')
   Hint: "Enter an expression such as ```fit <- lm(Volume ~ Girth + Height + Constant - 1, trees)```, or ```fit <- lm(Volume ~ . -1, trees)``` at the R prompt."

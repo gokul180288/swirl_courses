@@ -40,7 +40,7 @@
   Hint: Remember you need to pass a formula, `dependent ~ independent`, to the model. Also, you may need to specify the data set if it isn't clear from the variables you enter in the formula. So type ```fit <- lm(Numeric ~ Year, hunger)``` at the R prompt or more simply ```fit <- lm(hunger$Numeric ~ hunger$Year)```
 
 - Class: cmd_question
-  Output: Now look at the coef portion of the summary of fit.  
+  Output: Now look at the `coef` portion of the summary of `fit`.  
   CorrectAnswer: summary(fit)$coef
   AnswerTests: omnitest(correctExpr='summary(fit)$coef')
   Hint: Type `summary(fit)$coef` at the R prompt.

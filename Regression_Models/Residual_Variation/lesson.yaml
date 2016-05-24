@@ -50,7 +50,7 @@
   Output: Another useful fact shown in the slides was
 
 - Class: text
-  Output: Total Variation = Residual Variation + Regression Variation
+  Output: "```Total Variation = Residual Variation + Regression Variation```"
 
 - Class: mult_question
   Output: Recall the beauty of the  slide full of algebra which proved this fact. It had a bunch of `Y's`, some with hats and some with bars and several summations of squared values. The `Y's` with hats were the estimates provided by the model. (They were on the regression line.) The `Y` with the bar was the mean or average of the data. Which sum of squared term represented `Total Variation`?

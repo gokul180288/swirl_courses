@@ -54,7 +54,7 @@
   Output: It's not surprising that with 72 counts we'd have 12 count for each of the 6 sprays. In this lesson we'll consider multilevel factor levels and how we interpret linear models of data with more than 2 factors. 
 
 - Class: cmd_question
-  Output: Use the R function sapply to find out the classes of the columns of the data.
+  Output: Use the R function `sapply` to find out the classes of the columns of the data.
   CorrectAnswer: sapply(InsectSprays,class)
   AnswerTests: omnitest(correctExpr='sapply(InsectSprays,class)')
   Hint: Type `sapply(InsectSprays,class)` at the R prompt.
@@ -63,7 +63,7 @@
   Output: The class of the second `spray` column is factor. Recall from the slides that the equation representing the relationship between a particular outcome and several factors contains binary variables, one for each factor. This data has 6 factors so we need 6 dummy variables. Each will indicate if a particular outcome (a count) is associated with a specific factor or category (insect spray). 
 
 - Class: cmd_question
-  Output: Using R's `lm` function, generate the linear model in which count is the dependent variable and spray is the independent. Recall that in R formula has the form `y ~ x`, where `y` depends on the predictor `x`. The data set is `InsectSprays`. Store the model in the variable fit.
+  Output: Using R's `lm` function, generate the linear model in which count is the dependent variable and spray is the independent. Recall that in R formula has the form `y ~ x`, where `y` depends on the predictor `x`. The data set is `InsectSprays`. Store the model in the variable `fit`.
   CorrectAnswer: fit <- lm(count ~ spray, InsectSprays)
   AnswerTests: creates_lm_model('fit <- lm(count ~ spray, InsectSprays)')
   Hint: Type `fit <- lm(count ~ spray, InsectSprays)` at the R prompt.
@@ -110,7 +110,7 @@
   Hint: Type `nfit <- lm(count ~ spray - 1, InsectSprays)` at the R prompt.
 
 - Class: cmd_question
-  Output: Now, as before, look at the coefficient portion of the summary of nfit.
+  Output: Now, as before, look at the coefficient portion of the summary of `nfit`.
   CorrectAnswer: summary(nfit)$coef
   AnswerTests: omnitest(correctExpr='summary(nfit)$coef')
   Hint: Type `summary(nfit)$coef` at the R prompt.
@@ -179,7 +179,7 @@
   Output: Remember that with this model `sprayC` is the reference group, so the t-test statistics (shown in column 3 of the summary coefficients) compare the other sprays to `sprayC`. These can be computed by hand using the `Estimates` and standard error from the original model `(fit)` which used `sprayA` as the references. 
 
 - Class: cmd_question
-  Output: The slides show the details of this but here we'll demonstrate by calculating the `spray2B` t value.  Subtract fit's `sprayC` coefficient `(fit$coef[3])` from `sprayB's` `(fit$coef[2])` and divide by the standard error which we saw was 1.6011. The result is `spray2B's` t value. Do this now.
+  Output: The slides show the details of this but here we'll demonstrate by calculating the `spray2B` t value.  Subtract `fit's` `sprayC` coefficient `(fit$coef[3])` from `sprayB's` `(fit$coef[2])` and divide by the standard error which we saw was 1.6011. The result is `spray2B's` t value. Do this now.
   CorrectAnswer: (fit$coef[2]-fit$coef[3])/1.6011
   AnswerTests: omnitest(correctExpr='(fit$coef[2]-fit$coef[3])/1.6011')
   Hint: Type `(fit$coef[2]-fit$coef[3])/1.6011`1 at the R prompt.

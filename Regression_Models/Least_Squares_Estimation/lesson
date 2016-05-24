@@ -41,7 +41,7 @@
   Hint: Three of the four choices all plot.
 
 - Class: figure
-  Output: Now you can actually play with the code to use R's manipulate function and find the minimum squared error. You can adjust the slider with the left mouse button or use the right and left arrow keys to see how changing the slope (beta) affects the mean squared error (mse). If the slider disappears you can call it back by clicking on the little gear in the upper left corner of the plot window.
+  Output: Now you can actually play with the code to use R's `manipulate` function and find the minimum squared error. You can adjust the slider with the left mouse button or use the right and left arrow keys to see how changing the slope (beta) affects the mean squared error (mse). If the slider disappears you can call it back by clicking on the little gear in the upper left corner of the plot window.
   Figure: sourceit.R
   FigureType: new
 
@@ -76,21 +76,21 @@
   Hint: Have you really changed anything?
 
 - Class: cmd_question
-  Output: Use R's function `lm` to generate the regression line using this normalized data. Store it in a variable called `l_nor`. Use the parents' heights as the predictors (independent variable) and the childrens' as the predicted (dependent). Remember, `lm` needs a formula of the form dependent ~ independent. Since we've created the data vectors for you there's no need to provide a second "data" argument as you have previously.
+  Output: Use R's function `lm` to generate the regression line using this normalized data. Store it in a variable called `l_nor`. Use the parents' heights as the predictors (independent variable) and the childrens' as the predicted (dependent). Remember, `lm` needs a formula of the form `dependent ~ independent`. Since we've created the data vectors for you there's no need to provide a second "data" argument as you have previously.
   CorrectAnswer: l_nor <- lm(gch_nor ~ gpa_nor)
   AnswerTests: omnitest(correctExpr='l_nor <- lm(gch_nor ~ gpa_nor)')
   Hint: Type `l_nor <- lm(gch_nor ~ gpa_nor)` at the R prompt.
 
 - Class: mult_question  
   Output:  What is the slope of this line?
-  AnswerChoices: The correlation of the 2 data sets; I have no idea; 1.
+  AnswerChoices: The correlation of the 2 data sets; I have no idea; 1
   CorrectAnswer:  The correlation of the 2 data sets
   AnswerTests: omnitest(correctVal='The correlation of the 2 data sets')
   Hint: Think correlation.
 
 - Class: mult_question  
   Output:  If you swapped the outcome (Y) and predictor (X) of your original (unnormalized) data, (for example, used childrens' heights to predict their parents), what would the slope of the new regression line be?
-  AnswerChoices: correlation(X,Y) * sd(X)/sd(Y); the same as the original; I have no idea; 1.
+  AnswerChoices: correlation(X,Y) * sd(X)/sd(Y); the same as the original; I have no idea; 1
   CorrectAnswer: correlation(X,Y) * sd(X)/sd(Y) 
   AnswerTests: omnitest(correctVal='correlation(X,Y) * sd(X)/sd(Y)')
   Hint: Since you're swapping X and Y, swap the X and Y in the formula. Swapping X and Y in the correlation function doesn't change anything.

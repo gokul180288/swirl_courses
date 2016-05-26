@@ -170,10 +170,10 @@
   Hint: Type `1/sqrt(120)` at the command prompt.
 
 - Class: cmd_question
-  Output: Now check it as we did before. Use the expression `sd(apply(matrix(runif(10000),1000),1,mean))`. 
+  Output: Now check it as we did before. Use the expression ```sd(apply(matrix(runif(10000),1000),1,mean))```. 
   CorrectAnswer: sd(apply(matrix(runif(10000),1000),1,mean))
   AnswerTests: omnitest(correctExpr='sd(apply(matrix(runif(10000),1000),1,mean))')
-  Hint: Type `sd(apply(matrix(runif(10000),1000),1,mean))` at the command prompt.
+  Hint: Type ```sd(apply(matrix(runif(10000),1000),1,mean))``` at the command prompt.
 
 - Class: mult_question
   Output: Pretty close again, right? `Poisson(4)` are distributions with variance `4`; what standard error would means of random samples of `n` `Poisson(4)` have?

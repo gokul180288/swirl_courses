@@ -350,7 +350,7 @@
 
 - Class: cmd_question
   Output:  Now  change `delta` to `2` and `sd` to `4`. Keep everything else the same.
-  CorrectAnswer: `power.t.test(n = 16, delta = 2 , sd=4, type = "one.sample",  alt = "one.sided")$power`
+  CorrectAnswer: power.t.test(n = 16, delta = 2 , sd=4, type = "one.sample",  alt = "one.sided")$power
   AnswerTests: omnitest(correctExpr='power.t.test(n = 16, delta = 2 , sd=4, type = "one.sample",  alt = "one.sided")$power')
   Hint: Type `power.t.test(n = 16, delta = 2 , sd=4, type = "one.sample",  alt = "one.sided")$power` at the prompt.
 

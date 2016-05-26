@@ -249,7 +249,7 @@
 - Class: mult_question
   Output: This means what?
   AnswerChoices: we reject `H_0`; we fail to reject `H_0`; we reject `H_a`; 
-  CorrectAnswer: we fail to reject H_0
+  CorrectAnswer: we fail to reject `H_0`
   AnswerTests: omnitest(correctVal='we fail to reject H_0')
   Hint: The test statistic is outside the region of rejection so we fail to reject `H_0`.
 

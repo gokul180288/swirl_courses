@@ -138,7 +138,7 @@
   AnswerChoices: p'+/- 1/sqrt(n); p'+/- 1/(2*sqrt(n)); p'+/- 2*sqrt(n)
   CorrectAnswer: p'+/- 1/sqrt(n)
   AnswerTests: omnitest(correctVal='p\'+/- 1/sqrt(n)')
-  Hint: `p(1-p)=1/4` when `p=1/2` and the `sqrt(1/4n)=1/(2*sqrt(n))`. What happens when you multiply this by 2?
+  Hint: "`p(1-p)=1/4` when `p=1/2` and the `sqrt(1/4n)=1/(2*sqrt(n))`. What happens when you multiply this by 2?"
 
 - Class: mult_question
   Output:  Here's another example of applying this formula from the slides. Suppose you were running for office and your pollster polled 100 people. Of these 60 claimed they were going to vote for you. You'd like to estimate the true proportion of people who will vote for you and you want to be 95% confident of your estimate. We need to find the limits that will contain the true proportion of your supporters with 95% confidence, so we'll use the formula `p' +/- 1/sqrt(n)` to answer this question. First, what value would you use for `p'`, the sampled estimate?

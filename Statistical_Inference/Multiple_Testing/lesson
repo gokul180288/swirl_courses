@@ -232,7 +232,7 @@
   Hint: Type `sum(p.adjust(pValues,method="bonferroni") < 0.05)` at the command prompt.
 
 - Class: cmd_question
-  Output: "So the correction eliminated all the false positives that had passed the uncorrected alpha test. Repeat the same experiment, this time using the method `"BH"` to control the `FDR`."
+  Output: "So the correction eliminated all the false positives that had passed the uncorrected alpha test. Repeat the same experiment, this time using the method `BH` to control the `FDR`."
   CorrectAnswer: sum(p.adjust(pValues,method="BH") < 0.05)
   AnswerTests: omnitest(correctExpr='sum(p.adjust(pValues,method="BH") < 0.05)')
   Hint: Type `sum(p.adjust(pValues,method="BH") < 0.05)` at the command prompt.
@@ -255,7 +255,7 @@
   Hint: Type `table(pValues2 < 0.05, trueStatus)` at the command prompt.
 
 - Class: text
-  Output: "We see that without any correction all 500 of the truly significant (nonrandom) tests were correctly identified in the `"not zero"` column. In the zero column (the truly random tests), however, 24 results were flagged as significant." 
+  Output: "We see that without any correction all 500 of the truly significant (nonrandom) tests were correctly identified in the `not zero` column. In the zero column (the truly random tests), however, 24 results were flagged as significant." 
 
 - Class: cmd_question
   Output: What is the percentage of false positives in this test?
@@ -267,7 +267,7 @@
   Output: "Just as we expected - around 5% or `.05*100`."
 
 - Class: cmd_question
-  Output: "Now run the same table function, however, this time use the call to `p.adjust` with the `"bonferroni"` method in the boolean expression. This will control the `FWER`."
+  Output: "Now run the same table function, however, this time use the call to `p.adjust` with the `bonferroni` method in the boolean expression. This will control the `FWER`."
   CorrectAnswer: "table(p.adjust(pValues2,method=\"bonferroni\") < 0.05, trueStatus)"
   AnswerTests: omnitest(correctExpr='table(p.adjust(pValues2,method=\"bonferroni\") < 0.05, trueStatus)')
   Hint: "Type `table(p.adjust(pValues2,method=\"bonferroni\") < 0.05, trueStatus)` at the command prompt."
@@ -276,13 +276,13 @@
   Output: Since the Bonferroni correction method is more conservative than just comparing p-values to `alpha` all the truly random tests are correctly identified in the zero column. In other words, we have no false positives. However, the threshold has been adjusted so much that 23 of the truly significant results have been misidentified in the not zero column. 
 
 - Class: cmd_question
-  Output: "Now run the same table function one final time. Use the call to `p.adjust` with `"BH"` method in the boolean expression. This will control the false discovery rate."
+  Output: "Now run the same table function one final time. Use the call to `p.adjust` with `BH` method in the boolean expression. This will control the false discovery rate."
   CorrectAnswer: "table(p.adjust(pValues2,method=\"BH\") < 0.05, trueStatus)"
   AnswerTests: omnitest(correctExpr='table(p.adjust(pValues2,method=\"BH\") < 0.05, trueStatus)')
   Hint: "Type `table(p.adjust(pValues2,method=\"BH\") < 0.05, trueStatus)` at the command prompt."
 
 - Class: text
-  Output: "Again, the results are a compromise between the No Corrections and the Bonferroni. All the significant results were correctly identified in the `"not zero"` column but in the random (`"zero"`) column 13 results were incorrectly identified. These are the false positives. This is roughly half the number of errors in the other two runs."
+  Output: "Again, the results are a compromise between the No Corrections and the Bonferroni. All the significant results were correctly identified in the `not zero` column but in the random (`zero`) column 13 results were incorrectly identified. These are the false positives. This is roughly half the number of errors in the other two runs."
 
 - Class: figure
   Output: Here's a plot of the two sets of adjusted p-values, Bonferroni on the left and BH on the right. The x-axis indicates the original p-values. For the Bonferroni, (adjusting by multiplying by 1000, the number of tests), only a few of the adjusted values are below 1. For the BH, the adjusted values are slightly larger than the original values.

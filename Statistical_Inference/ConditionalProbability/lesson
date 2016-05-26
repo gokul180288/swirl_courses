@@ -33,7 +33,7 @@
   Output: We represent the conditional probability of an event `A` given that `B` has occurred with the notation `P(A|B)`. More specifically, we define the conditional probability of event `A`, given that `B` has occurred with the following.
 
 - Class: text
-  Output:   "`P(A|B) = P(A & B)/ P(B)` . `P(A|B)` is the probability that BOTH `A` and `B` occur divided by the probability that `B` occurs."
+  Output:   The expression ```P(A|B) = P(A & B)/ P(B)` . `P(A|B)``` is the probability that BOTH `A` and `B` occur divided by the probability that `B` occurs.
 
 - Class: mult_question
   Output: Back to our dice example. Which of the following expressions represents `P(A&B)`, where `A` is the event of rolling a 3 and `B` is the event of the roll being odd?
@@ -53,7 +53,7 @@
   Output: From the definition of `P(A|B)`, we can write `P(A&B) = P(A|B) * P(B)`, right?  Let's use this to express `P(B|A)`.
 
 - Class: text
-  Output: "`P(B|A) = P(B&A)/P(A) = P(A|B) * P(B)/P(A)`. This is a simple form of Bayes' Rule which relates the two conditional probabilities."
+  Output: The formula ```P(B|A) = P(B&A)/P(A) = P(A|B) * P(B)/P(A)``` is a simple form of Bayes' Rule which relates the two conditional probabilities."
 
 - Class: text
   Output: Suppose we don't know `P(A)` itself, but only know its conditional probabilities, that is, the probability that it occurs if B occurs and the probability that it occurs if B doesn't occur. These are  `P(A|B)` and `P(A|~B)`, respectively. We use `~B` to represent `not B` or `B complement`. 
@@ -62,7 +62,7 @@
   Output: We can then express `P(A) = P(A|B) * P(B) + P(A|~B) * P(~B)` and substitute this is into the denominator of Bayes' Formula. 
 
 - Class: text
-  Output: "`P(B|A) = P(A|B) * P(B) / ( P(A|B) * P(B) + P(A|~B) * P(~B) )`"
+  Output: "See the denominator ```P(B|A) = P(A|B) * P(B) / ( P(A|B) * P(B) + P(A|~B) * P(~B) )```"
 
 - Class: text
   Output: Bayes' Rule has applicability to medical diagnostic tests. We'll now discuss the example of the HIV test from the slides. 

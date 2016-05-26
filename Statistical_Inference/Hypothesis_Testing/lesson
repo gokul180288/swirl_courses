@@ -366,7 +366,7 @@
   Hint: "`mybin[7]=.144` and `mybin[8]=.035`."
 
 - Class: mult_question
-  Output: So  `mybin[8]=.03` is the probability  of having at least `7` girls out of a sample of size `8` under `H_0` (if `p actually is `.5`) which is what our sample has. This is less than `.05` so  our sample falls in this region of rejection. Does that mean we accept or reject `H_0`, (that either gender is equally likely) based on this sample of size `8`?
+  Output: So  `mybin[8]=.03` is the probability  of having at least `7` girls out of a sample of size `8` under `H_0` (if `p` actually is `.5`) which is what our sample has. This is less than `.05` so  our sample falls in this region of rejection. Does that mean we accept or reject `H_0`, (that either gender is equally likely) based on this sample of size `8`?
   AnswerChoices: accept H_0; reject H_0
   CorrectAnswer: reject H_0
   AnswerTests: omnitest(correctVal='reject H_0')

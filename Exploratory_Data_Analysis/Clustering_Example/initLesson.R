@@ -1,13 +1,13 @@
 library(fields)
 
 # Put initialization code in this file.
-path_to_course <- file.path(file.path("~", ".datacamp", "Courses/Exploratory_Data_Analysis/Custering_Example")
+path_to_course <- file.path(file.path("~", ".datacamp", "Courses/Exploratory_Data_Analysis/Custering_Example"))
 try(dev.off(),silent=TRUE)
 plot.new()
 
 pathtofile <- function(fileName){
   mypath <- file.path("~", ".datacamp",
-                      "Courses/Exploratory_Data_Analysis/Clustering_Example/",
+                      "Courses/Exploratory_Data_Analysis/Clustering_Example",
                       fileName)
 }
 fxfer <- function(fileName){

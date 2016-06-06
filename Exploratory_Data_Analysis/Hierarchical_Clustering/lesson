@@ -22,7 +22,7 @@
   FigureType: new
 
 - Class: text
-  Output: "Hierarchical clustering is an agglomerative, or bottom-up, approach. From Wikipedia  (http://en.wikipedia.org/wiki/Hierarchical_clustering), we learn that in this method, "each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy." This means that we'll find the closest two points and put them together in one cluster, then find the next closest pair in the updated picture, and so forth. We'll repeat this process until we reach a reasonable stopping place."
+  Output: "Hierarchical clustering is an agglomerative, or bottom-up, approach. From Wikipedia, we learn that in this method, 'each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy.' This means that we'll find the closest two points and put them together in one cluster, then find the next closest pair in the updated picture, and so forth. We'll repeat this process until we reach a reasonable stopping place."
 
 - Class: text
   Output: Note the word "reasonable". There's a lot of flexibility in this field and how you perform your analysis depends on your problem. Again, Wikipedia tells us, "one can decide to stop clustering either when the clusters are too far apart to be merged (distance criterion) or when there is a sufficiently small number of clusters (number criterion)."

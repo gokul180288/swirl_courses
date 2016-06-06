@@ -7,7 +7,7 @@
   Version: 2.2.0
 
 - Class: text
-  Output: "Hierarchical_Clustering. (Slides for this and other Data Science courses may be found at github https://github.com/DataScienceSpecialization/courses/. If you care to use them, they must be downloaded as a zip file and viewed locally. This lesson corresponds to 04_ExploratoryAnalysis/hierarchicalClustering.)"
+  Output: "Hierarchical_Clustering. (Slides for this and other Data Science courses may be found at github github.com/DataScienceSpecialization/courses/. If you care to use them, they must be downloaded as a zip file and viewed locally. This lesson corresponds to 04_ExploratoryAnalysis/hierarchicalClustering.)"
 
 
 - Class: text
@@ -52,7 +52,7 @@
   Output: Euclidean distance is distance "as the crow flies". Many applications, however,  can't realistically use crow-flying distance. Cars, for instance, have to follow roads. 
 
 - Class: figure
-  Output:  "In this case, we can use Manhattan or city block distance (also known as a taxicab metric). This picture, copied from http://en.wikipedia.org/wiki/Taxicab_geometry, shows what this means."
+  Output:  "In this case, we can use Manhattan or city block distance (also known as a taxicab metric). This picture, copied from en.wikipedia.org/wiki/Taxicab_geometry, shows what this means."
   Figure: showTaxi.R
   FigureType: new 
 
@@ -215,13 +215,13 @@
   Output: In our simple set of data, the average and complete linkages aren't that different, but in more complicated datasets the type of linkage  you use could affect how your data clusters. It is a good idea to experiment with different methods of linkage to see the varying ways your data groups. This will help you determine the best way to continue with your analysis.
 
 - Class: text
-  Output: "The last method of visualizing data we'll mention in this lesson concerns heat maps. Wikipedia (http://en.wikipedia.org/wiki/Heat_map) tells us a heat map is "a graphical representation of data where the individual values contained in a matrix are represented as colors. ... Heat maps originated in 2D displays of the values in a data matrix. Larger values were represented by small dark gray or black squares (pixels) and smaller values by lighter squares."" 
+  Output: "The last method of visualizing data we'll mention in this lesson concerns heat maps. Wikipedia tells us a heat map is 'a graphical representation of data where the individual values contained in a matrix are represented as colors. ... Heat maps originated in 2D displays of the values in a data matrix. Larger values were represented by small dark gray or black squares (pixels) and smaller values by lighter squares.'" 
 
 - Class: text
-  Output:  "You've probably seen many examples of heat maps, for instance weather radar and displays of ocean salinity. From Wikipedia (http://en.wikipedia.org/wiki/Heat_map) we learn that heat maps are often used in molecular biology "to represent the level of expression of many genes across a number of comparable samples  (e.g. cells in different states, samples from different patients) as they are obtained from DNA microarrays.""
+  Output:  "You've probably seen many examples of heat maps, for instance weather radar and displays of ocean salinity. From Wikipedia (en.wikipedia.org/wiki/Heat_map) we learn that heat maps are often used in molecular biology 'to represent the level of expression of many genes across a number of comparable samples  (e.g. cells in different states, samples from different patients) as they are obtained from DNA microarrays.'"
 
 - Class: figure
-  Output: "We won't say too much on this topic, but a very nice concise tutorial on creating heatmaps in R exists at  http://sebastianraschka.com/Articles/heatmaps_in_r.html#clustering. Here's an image from the tutorial to start you thinking about the topic. It shows a sample heat map with a dendrogram on the left edge mapping the relationship between the rows. The legend at the top shows how colors relate to values." 
+  Output: "We won't say too much on this topic, but a very nice concise tutorial on creating heatmaps in R exists at sebastianraschka.com/Articles/heatmaps_in_r.html#clustering. Here's an image from the tutorial to start you thinking about the topic. It shows a sample heat map with a dendrogram on the left edge mapping the relationship between the rows. The legend at the top shows how colors relate to values." 
   Figure: showheat.R
   FigureType: new 
 

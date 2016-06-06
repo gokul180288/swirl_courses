@@ -383,10 +383,5 @@
     can find a complete discussion in the 2011 Journal of Statistical Software paper titled 'Dates and Times Made 
     Easy with lubridate'."
 
-- Class: cmd_question
-  Output: This concludes our introduction to working with dates and times in lubridate. I created a little timer 
-    that started running in the background when you began this lesson. Type `stopwatch()` to see how long you've 
-    been working!
-  CorrectAnswer: stopwatch()
-  AnswerTests: omnitest('stopwatch()'); stop_timer()
-  Hint: Type `stopwatch()` to see how long you've been working!
+- Class: text
+  Output: This concludes our introduction to working with dates and times in lubridate.

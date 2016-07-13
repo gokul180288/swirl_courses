@@ -59,7 +59,7 @@
   AnswerChoices: p(1-p); p^2-p; p(p-1); p^2*(1-p)^2 
   CorrectAnswer: p(1-p)
   AnswerTests: omnitest(correctVal='p(1-p)')
-  Hint: "`E(X^2)=p` and `E(X)=p`, so `Var=p-p^2`. Rewrite this expression by factoring out the `p`".
+  Hint: "`E(X^2)=p` and `E(X)=p`, so `Var=p-p^2`. Rewrite this expression by factoring out the `p`."
 
 - Class: text
   Output: Binomial random variables are obtained as the sum of iid Bernoulli trials.  Specifically, let `X_1, ..., X_n` be iid Bernoulli(p) random variables; then `X = X_1 + X_2 + ... X_n` is a binomial random variable. Binomial random variables represent the number of successes, `k`, out of `n` independent Bernoulli trials. Each of the trials has probability `p`.

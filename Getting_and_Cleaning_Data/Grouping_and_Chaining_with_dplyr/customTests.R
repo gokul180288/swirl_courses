@@ -103,19 +103,19 @@ coursera_on_demand <- function(){
   if(selection == "Yes"){
     email <- readline("What is your email address? ")
     token <- readline("What is your assignment token? ")
-    
-    payload <- sprintf('{  
+
+    payload <- sprintf('{
       "assignmentKey": "bA2_vK8hEeWK-gr2JZre1Q",
-      "submitterEmail": "%s",  
-      "secret": "%s",  
-      "parts": {  
-        "UrEnQ": {  
-          "output": "correct"  
-        }  
-      }  
+      "submitterEmail": "%s",
+      "secret": "%s",
+      "parts": {
+        "UrEnQ": {
+          "output": "correct"
+        }
+      }
     }', email, token)
     url <- 'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
-  
+
     respone <- httr::POST(url, body = payload)
     if(respone$status_code >= 200 && respone$status_code < 300){
       message("Grade submission succeeded!")

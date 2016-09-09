@@ -1,34 +1,3 @@
-expr_creates_var <- function(correctName=NULL){
-  e <- get("e", parent.frame())
-  # TODO: Eventually make auto-detection of new variables an option.
-  # Currently it can be set in customTests.R
-  delta <- if(!customTests$AUTO_DETECT_NEWVAR){
-    safeEval(e$expr, e)
-  } else {
-    e$delta
-  }
-  if(is.null(correctName)){
-    results <- expectThat(length(delta) >= 1,
-                          testthat::is_true(),
-                          label=paste(deparse(e$expr), 
-                                      "does not create a variable."))  
-  } else {
-    results <- expectThat(correctName %in% names(delta), 
-                          testthat::is_true(), 
-                          label=paste(deparse(e$expr),
-                                      "does not create a variable named",
-                                      correctName))
-  }
-  if(results$passed){
-    e$newVar <- e$val
-    e$newVarName <- names(delta)[1]
-    e$delta <- mergeLists(delta, e$delta)
-  } else {
-    e$delta <- list()
-  }
-  return(results$passed)
-}
-
 omnitest <- function(correctExpr=NULL, correctVal=NULL, strict=FALSE){
   e <- get("e", parent.frame())
   # Trivial case
@@ -52,7 +21,7 @@ omnitest <- function(correctExpr=NULL, correctVal=NULL, strict=FALSE){
       # valGood <- val_matches(correctVal)
     } else if(!is.na(e$val) && is.numeric(e$val) && length(e$val) == 1){
       cval <- try(as.numeric(correctVal), silent=TRUE)
-      valResults <- expectThat(e$val, 
+      valResults <- expectThat(e$val,
                                equals(cval, label=correctVal),
                                label=toString(e$val))
       if(is(e, "dev") && !valResults$passed)swirl_out(valResults$message)
@@ -96,19 +65,19 @@ coursera_on_demand <- function(){
   if(selection == "Yes"){
     email <- readline("What is your email address? ")
     token <- readline("What is your assignment token? ")
-    
-    payload <- sprintf('{  
+
+    payload <- sprintf('{
       "assignmentKey": "-ACWUq8VEeWyvg4disSh_Q",
-      "submitterEmail": "%s",  
-      "secret": "%s",  
-      "parts": {  
-        "bMOHi": {  
-          "output": "correct"  
-        }  
-      }  
+      "submitterEmail": "%s",
+      "secret": "%s",
+      "parts": {
+        "bMOHi": {
+          "output": "correct"
+        }
+      }
     }', email, token)
     url <- 'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
-  
+
     respone <- httr::POST(url, body = payload)
     if(respone$status_code >= 200 && respone$status_code < 300){
       message("Grade submission succeeded!")

@@ -67,7 +67,7 @@
   Hint: The command `attributes(my_vector)` will show you all of the attributes for the `my_vector` object.
 
 - Class: text
-  Output: Just like in math class, when dealing with a 2-dimensional object (think rectangular table), the first number is the number of rows and the second is the number of columns. Therefore, we just gave `my_vector 4` rows and 5 columns.
+  Output: Just like in math class, when dealing with a 2-dimensional object (think rectangular table), the first number is the number of rows and the second is the number of columns. Therefore, we just gave `my_vector` 4 rows and 5 columns.
 
 - Class: cmd_question
   Output: But, wait! That doesn't sound like a vector any more. Well, it's not. Now it's a matrix. View the contents of `my_vector` now to see what it looks like.

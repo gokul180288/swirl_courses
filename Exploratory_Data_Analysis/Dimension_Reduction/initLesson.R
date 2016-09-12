@@ -8,23 +8,13 @@ library(fields)
 }
 
 # Put initialization code in this file.
-<<<<<<< HEAD
 path_to_course <- file.path("~", ".datacamp", "Courses/Exploratory_Data_Analysis/Dimension_Reduction")
-=======
-path_to_course <- file.path(.get_course_path(),
-  "Exploratory_Data_Analysis","Dimension_Reduction")
->>>>>>> upstream/master
 try(dev.off(),silent=TRUE)
 plot.new()
 
 pathtofile <- function(fileName){
-<<<<<<< HEAD
   mypath <- file.path("~", ".datacamp",
                       "Courses/Exploratory_Data_Analysis/Dimension_Reduction/",
-=======
-  mypath <- file.path(.get_course_path(),
-    "Exploratory_Data_Analysis","Dimension_Reduction",
->>>>>>> upstream/master
                       fileName)
 }
 fxfer <- function(fileName){
@@ -48,10 +38,10 @@ mdist <- function(x,y,cx,cy){
   distTmp <- matrix(NA,nrow=3,ncol=12)
   distTmp[1,] <- (x-cx[1])^2 + (y-cy[1])^2
   distTmp[2,] <- (x-cx[2])^2 + (y-cy[2])^2
-  distTmp[3,] <- (x-cx[3])^2 + (y-cy[3])^2  
+  distTmp[3,] <- (x-cx[3])^2 + (y-cy[3])^2
   return(distTmp)
 }
-set.seed(12345); 
+set.seed(12345);
 dataMatrix <- matrix(rnorm(400),nrow=40)
 hh <- hclust(dist(dataMatrix))
 dataMatrixOrdered <- dataMatrix[hh$order,]

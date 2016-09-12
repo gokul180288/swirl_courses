@@ -8,23 +8,13 @@ library(fields)
 }
 
 # Put initialization code in this file.
-<<<<<<< HEAD
 path_to_course <- file.path("~", ".datacamp","Courses/Exploratory_Data_Analysis/Hierarchical_Clustering")
-=======
-path_to_course <- file.path(.get_course_path(),
-  "Exploratory_Data_Analysis","Hierarchical_Clustering")
->>>>>>> upstream/master
 try(dev.off(),silent=TRUE)
 plot.new()
 
 pathtofile <- function(fileName){
-<<<<<<< HEAD
   mypath <- file.path("~", ".datacamp",
                       "Courses/Exploratory_Data_Analysis/Hierarchical_Clustering/",
-=======
-  mypath <- file.path(.get_course_path(),
-    "Exploratory_Data_Analysis","Hierarchical_Clustering",
->>>>>>> upstream/master
                       fileName)
 }
 fxfer <- function(fileName){
@@ -45,7 +35,7 @@ mdist <- function(x,y,cx,cy){
   distTmp <- matrix(NA,nrow=3,ncol=12)
   distTmp[1,] <- (x-cx[1])^2 + (y-cy[1])^2
   distTmp[2,] <- (x-cx[2])^2 + (y-cy[2])^2
-  distTmp[3,] <- (x-cx[3])^2 + (y-cy[3])^2  
+  distTmp[3,] <- (x-cx[3])^2 + (y-cy[3])^2
   return(distTmp)
 }
 set.seed(1234);
@@ -56,7 +46,7 @@ dataMatrix <- as.matrix(dataFrame)
 distxy <- dist(dataFrame)
 cx <- c(1,1.8,2.5)
 cy <- c(2,1,1.5)
-cmat <- matrix(c(cx,cy),nrow=2,byrow=TRUE) 
+cmat <- matrix(c(cx,cy),nrow=2,byrow=TRUE)
 # distTmp <- matrix(NA,nrow=3,ncol=12)
 # distTmp[1,] <- (x-cx[1])^2 + (y-cy[1])^2
 # distTmp[2,] <- (x-cx[2])^2 + (y-cy[2])^2

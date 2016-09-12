@@ -4,8 +4,5 @@
 swirl_courses.Rproj
 .RData
 *.html
-<<<<<<< HEAD
 *.zip
-=======
 .Rapp.history
->>>>>>> upstream/master

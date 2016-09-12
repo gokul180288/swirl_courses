@@ -1,5 +1,12 @@
+# For compatibility with 2.2.21
+.get_course_path <- function(){
+  tryCatch(swirl:::swirl_courses_dir(),
+           error = function(c) {file.path(find.package("swirl"),"Courses")}
+  )
+}
+
 local({
-  fname <- file.path("~", ".datacamp", 
+  fname <- file.path("~", ".datacamp",
                      "Courses/Regression_Models/Introduction_to_Multivariable_Regression/elimination.R")
   file.copy(fname, "elimination.R")
   file.edit("elimination.R")

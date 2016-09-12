@@ -21,8 +21,8 @@
 - Class: cmd_question
   Output: Now, let's multiply `x` by 3.
   CorrectAnswer: x * 3
-  AnswerTests: ANY_of_exprs('x * 3', '3 * x')
-  Hint: Try `x * 3`.
+  AnswerTests: any_of_exprs('x * 3', '3 * x')
+  Hint: Try x * 3.
 
 - Class: text
   Output: Notice that the elements of the resulting vector that correspond with the `NA` values in `x` are also `NA`.

@@ -1,13 +1,30 @@
 library(fields)
 
+# For compatibility with 2.2.21
+.get_course_path <- function(){
+  tryCatch(swirl:::swirl_courses_dir(),
+           error = function(c) {file.path(find.package("swirl"),"Courses")}
+  )
+}
+
 # Put initialization code in this file.
+<<<<<<< HEAD
 path_to_course <- file.path("~", ".datacamp","Courses/Exploratory_Data_Analysis/Hierarchical_Clustering")
+=======
+path_to_course <- file.path(.get_course_path(),
+  "Exploratory_Data_Analysis","Hierarchical_Clustering")
+>>>>>>> upstream/master
 try(dev.off(),silent=TRUE)
 plot.new()
 
 pathtofile <- function(fileName){
+<<<<<<< HEAD
   mypath <- file.path("~", ".datacamp",
                       "Courses/Exploratory_Data_Analysis/Hierarchical_Clustering/",
+=======
+  mypath <- file.path(.get_course_path(),
+    "Exploratory_Data_Analysis","Hierarchical_Clustering",
+>>>>>>> upstream/master
                       fileName)
 }
 fxfer <- function(fileName){

@@ -54,13 +54,11 @@
 - Class: cmd_question
   Output: Pull up the documentation for `:` now.
   CorrectAnswer: ?`:`
-  AnswerTests: ANY_of_exprs('?`:`', "?':'", '?":"')
-  Hint: |
-    In order to view the documentation for a symbol like the colon operator, you have to use backticks (or quotes). This is so R knows you are not attempting to use the symbol in the command. Here's what it looks like: 
-    ```
-    ?`:`
-    ```
-    Don't forget the question mark out front.
+  AnswerTests: any_of_exprs('?`:`', "?':'", '?":"')
+  Hint: "In order to view the documentation for a symbol like the colon operator,
+    you have to use backticks (or quotes). This is so R knows you are not attempting to use the
+    symbol in the command. Here's what it looks like: `` ?`:` ``. Don't forget the question
+    mark out front."
 
 - Class: text
   Output: Often, we'll desire more control over a sequence we're creating than what
@@ -183,7 +181,7 @@
   CorrectAnswer: rep(c(0, 1, 2), each = 10)
   AnswerTests: omnitest(correctExpr='rep(c(0, 1, 2), each = 10)')
   Hint: |
-    Type 
+    Type
     ```
     rep(c(0, 1, 2), each = 10)
     ```

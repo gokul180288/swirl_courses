@@ -15,14 +15,14 @@
 - Class: text
   Output: "First, I would like to illustrate how omitting a correlated regressor can bias estimates of a coefficient. The relevant source code is in a file named fitting. R which I have copied into your working directory and tried to display in your source code editor. If I've failed to display it, you should open it manually."
 
-- Class: mult_question  
+- Class: mult_question
   Output: "Find the function `simbias()` at the top of `fitting.R`. Below the comment labeled `Point A` three regressors, `x1`, `x2`, and `x3`, are defined. Which of these two are correlated?"
   AnswerChoices: "x1 and x2;x1 and x3;x2 and x3"
   CorrectAnswer: "x1 and x2"
   AnswerTests: omnitest(correctVal= 'x1 and x2')
   Hint: The variable, temp, is involved in forming both `x1` and `x2`.
 
-- Class: mult_question  
+- Class: mult_question
   Output: "Within `simbias()` another function, `f(n)`, is defined. It forms a dependent variable, `y`, and at `Point C` returns the coefficient of `x1` as estimated by two models, `y ~ x1 + x2`, and `y ~ x1 + x3`. One regressor is missing in each model. In the expression for `y (Point B,)` what is the actual coefficient of `x1`?"
   AnswerChoices: 1;0.3;1/sqrt(2)
   CorrectAnswer: 1
@@ -55,7 +55,7 @@
   Output: "In the figure, adding random regressors decreased deviance, but we would be mistaken to believe that such decreases are significant. To assess significance, we should take into account that adding regressors reduces residual degrees of freedom. Analysis of variance `(ANOVA)` is a useful way to quantify the significance of additional regressors. To exemplify its use, we will use the swiss data."
 
 - Class: cmd_question
-  Output: "Recall that the Swiss data set consists of a standardized fertility measure and socioeconomic indicators for each of 47 French-speaking provinces of Switzerland in 1888. Fertility was thought to depend on an intercept and five factors denoted as `Agriculture`, `Examination`, `Education`, `Catholic`, and `Infant Mortality`. To begin our `ANOVA` example, regress `Fertility` on `Agriculture` and store the result in a variable named `fit1`."
+  Output: "Recall that the Swiss data set consists of a standardized fertility measure and socioeconomic indicators for each of 47 French-speaking provinces of Switzerland in 1888. Fertility was thought to depend on an intercept and five factors denoted as Agriculture, Examination, Education, Catholic, and Infant Mortality. To begin our ANOVA example, regress Fertility on Agriculture and store the result in a variable named `fit1`."
   CorrectAnswer: fit1 <- lm(Fertility ~ Agriculture, swiss)
   AnswerTests: creates_lm_model('fit1 <- lm(Fertility ~ Agriculture, swiss)')
   Hint: Enter `fit1 <- lm(Fertility ~ Agriculture, swiss)` or something equivalent at the R prompt.
@@ -72,7 +72,7 @@
   AnswerTests: omnitest(correctExpr='anova(fit1, fit3)')
   Hint: Enter `anova(fit1, fit3)` at the R prompt.
 
-- Class: mult_question  
+- Class: mult_question
   Output: "The three asterisks, ***, at the lower right of the printed table indicate that the null hypothesis is rejected at the 0.001 level, so at least one of the two additional regressors is significant. Rejection is based on a right-tailed F test, `Pr(>F)`, applied to an `F value`. According to the table, what is that `F value`?"
   AnswerChoices: 20.968;3102.2;45
   CorrectAnswer: 20.968
@@ -131,21 +131,21 @@
 - Class: text
   Output: "It appears that each model is a significant improvement on its predecessor. Before ending the lesson, let's review a few salient points."
 
-- Class: mult_question  
+- Class: mult_question
   Output: "Omitting a regressor can bias estimation of the coefficient of certain other regressors. Which ones?"
   AnswerChoices: Correlated regressors;Uncorrelated regressors
   CorrectAnswer: Correlated regressors
   AnswerTests: omnitest(correctVal= 'Correlated regressors')
   Hint: The other one.
 
-- Class: mult_question  
+- Class: mult_question
   Output: "Including more regressors will reduce a model's residual sum of squares, even if the new regressors are irrelevant. True or False?"
   AnswerChoices: True;False;It depends on circumstances.
   CorrectAnswer: True
   AnswerTests: omnitest(correctVal= 'True')
   Hint: It doesn't depend on circumstances.
 
-- Class: mult_question  
+- Class: mult_question
   Output: "When adding regressors, the reduction in residual sums of squares should be tested for significance above and beyond that of reducing residual degrees of freedom. R's `anova()` function uses an F-test for this purpose. What else should be done to insure that `anova()` applies?"
   AnswerChoices: "Model residuals should be tested for normality.;Regressors should be tested for normality.;The residuals should be tested for having zero means."
   CorrectAnswer: Model residuals should be tested for normality.

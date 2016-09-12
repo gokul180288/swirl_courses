@@ -29,21 +29,21 @@
   Hint: "Enter `fit <- lm(y ~ x, out2)` or something equivalent at the R prompt."
 
 - Class: cmd_question
-  Output: "The simplest diagnostic plot displays residuals versus fitted values. Residuals should be uncorrelated with the fit, and should be independent and (almost) identically disributed with mean zero. Enter `plot(fit, which=1)` at the R prompt to see if this is the case."
+  Output: "The simplest diagnostic plot displays residuals versus fitted values. Residuals should be uncorrelated with the fit, independent and (almost) identically distributed with mean zero. Enter `plot(fit, which = 1)` at the R prompt to see if this is the case."
   CorrectAnswer: plot(fit, which=1)
   AnswerTests: omnitest(correctExpr='plot(fit, which=1)')
   Hint: Enter `plot(fit, which=1)` at the R prompt
   Figure: restore_1.R
   FigureType: new
 
-- Class: mult_question  
+- Class: mult_question
   Output: "Do the residuals appear uncorrelated with the fit?"
   AnswerChoices: Yes;No. There is a linear pattern involving all but one residual and the fit.
   CorrectAnswer: No. There is a linear pattern involving all but one residual and the fit.
   AnswerTests: omnitest(correctVal= 'No. There is a linear pattern involving all but one residual and the fit.')
   Hint: "There is an obvious linear relation between fit and most residuals."
 
-- Class: mult_question  
+- Class: mult_question
   Output: "The Residuals vs Fitted plot labels certain points with their row names or numbers, numbers in our case. Which of the three labeled points would you guess is our influential outlier?"
   AnswerChoices: 1;13;50
   CorrectAnswer: 1
@@ -142,7 +142,7 @@
   Figure: restore_4.R
   FigureType: new
 
-- Class: mult_question  
+- Class: mult_question
   Output: "Look at the outlier's standardized residual, labeled 1 on the Normal QQ plot. About how many standard deviations from the mean is it?"
   AnswerChoices: About -5;About -2
   CorrectAnswer: About -5

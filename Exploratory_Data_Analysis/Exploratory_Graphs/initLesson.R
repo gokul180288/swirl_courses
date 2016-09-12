@@ -1,3 +1,10 @@
+# For compatibility with 2.2.21
+.get_course_path <- function(){
+  tryCatch(swirl:::swirl_courses_dir(),
+           error = function(c) {file.path(find.package("swirl"),"Courses")}
+  )
+}
+
 # Put initialization code in this file.
 path_to_course <- file.path("~", ".datacamp", "Courses/Exploratory_Data_Analysis/Exploratory_Graphs")
 pollution <- read.csv(paste(path_to_course,"avgpm25.csv",sep="/"), colClasses = c("numeric", "character", "factor", "numeric", "numeric"))

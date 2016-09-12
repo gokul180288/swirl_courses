@@ -11,7 +11,7 @@
 
 - Class: mult_question
   Output: Given the title of this lesson, what do you think it will cover?
-  AnswerChoices: Common Distributions; Rare Distributions; Common Bistros; I haven't a clue 
+  AnswerChoices: Common Distributions; Rare Distributions; Common Bistros; I haven't a clue
   CorrectAnswer: Common Distributions
   AnswerTests: omnitest(correctVal='Common Distributions')
   Hint: Part of the title is an abbreviation for another word we've seen several times in earlier lessons.
@@ -27,7 +27,7 @@
   Hint: Which of the choices has only two possible outcomes?
 
 - Class: mult_question
-  Output: For simplicity, we usually say that Bernoulli random variables take only the values `1` and `0`. Suppose we also specify that the probability that the Bernoulli outcome of `1` is `p`. Which of the following represents the probability of a `0` outcome? 
+  Output: For simplicity, we usually say that Bernoulli random variables take only the values `1` and `0`. Suppose we also specify that the probability that the Bernoulli outcome of `1` is `p`. Which of the following represents the probability of a `0` outcome?
   AnswerChoices: p; 1-p; p^2; p(1-p)
   CorrectAnswer: 1-p
   AnswerTests: omnitest(correctVal='1-p')
@@ -49,14 +49,14 @@
 
 - Class: mult_question
   Output: Given the same Bernoulli random variable above, which of the following represents `E(X^2)`
-  AnswerChoices: p(1-p); p^2; (1-p)^2; p; 1-p 
+  AnswerChoices: p(1-p); p^2; (1-p)^2; p; 1-p
   CorrectAnswer: p
   AnswerTests: omnitest(correctVal='p')
   Hint: Add the two terms `x^2*p(x)` where `x` equals `0` and `1` respectively.
 
 - Class: mult_question
   Output: Use the answers of the last two questions to find the variance of the Bernoulli random variable. Recall `Var = E(X^2)-(E(X))^2`
-  AnswerChoices: p(1-p); p^2-p; p(p-1); p^2*(1-p)^2 
+  AnswerChoices: p(1-p); p^2-p; p(p-1); p^2*(1-p)^2
   CorrectAnswer: p(1-p)
   AnswerTests: omnitest(correctVal='p(1-p)')
   Hint: "`E(X^2)=p` and `E(X)=p`, so `Var=p-p^2`. Rewrite this expression by factoring out the `p`."
@@ -75,7 +75,7 @@
   Output: Suppose we were going to flip a biased coin 5 times. The probability of tossing a head is `.8` and a tail `.2`. What is the probability that you'll toss at least 3 heads.
   CorrectAnswer: 0.94208
   AnswerTests: equiv_val(0.94208)
-  Hint: You'll have to add together 3 terms each of the form, `choose(5,x)*(.8)^x*(.2)^(5-x)` for `x=3,4,5` . 
+  Hint: You'll have to add together 3 terms each of the form, `choose(5,x)*(.8)^x*(.2)^(5-x)` for `x=3,4,5` .
 
 - Class: cmd_question
   Output: Now you can verify your answer with the R function `pbinom`. The `quantile` is `2`, the `size` is `5`, the `prob` is `.8` and the `lower.tail` is `FALSE`. Try it now.
@@ -90,7 +90,7 @@
   Output:  When `mu = 0` and `sigma = 1` the resulting distribution is called the standard normal distribution and it is often labeled `Z`.
 
 - Class: figure
-  Output: Here's a picture of the density function of a standard normal distribution. It's centered at its mean 0 and the vertical lines (at the integer points of the x-axis) indicate the standard deviations. 
+  Output: Here's a picture of the density function of a standard normal distribution. It's centered at its mean 0 and the vertical lines (at the integer points of the x-axis) indicate the standard deviations.
   Figure: plotNormal.R
   FigureType: new
 
@@ -137,7 +137,7 @@
   Output: then the random variable `Z` defined as `Z = (X -mu)/sigma` is normally distributed with mean `0` and variance `1`, i.e., `Z ~ N(0, 1)`. (`Z` is standard normal.)
 
 - Class: text
-  Output: The converse is also true. If `Z` is standard normal, i.e., `Z ~ N(0,1)`, then  the random variable `X` defined as  `X = mu + sigma*Z` is normally distributed with mean `mu` and variance `sigma^2`, i.e., `X ~ N(mu, sigma^2)` 
+  Output: The converse is also true. If `Z` is standard normal, i.e., `Z ~ N(0,1)`, then  the random variable `X` defined as  `X = mu + sigma*Z` is normally distributed with mean `mu` and variance `sigma^2`, i.e., `X ~ N(mu, sigma^2)`
 
 - Class: text
   Output: These formulae allow you to easily compute quantiles (and thus percentiles) for ANY normally distributed variable if you know its mean and variance. We'll show how to find the 97.5th percentile of a normal distribution with mean 3 and variance 4.
@@ -149,7 +149,7 @@
   Hint: Type `qnorm(.975,mean=3,sd=2)` at the R prompt.
 
 - Class: cmd_question
-  Output: Let's check it using the formula above, `X = mu + sigma*Z`. Here we'll use the 97.5th percentile for the standard normal as the value `Z` in the formula. Recall that we previously calculated this to be 1.96. Let's multiply this by the standard deviation of the given normal distribution (2) and add in its mean (3) to see if we get a result close to the one `qnorm` gave us. 
+  Output: Let's check it using the formula above, `X = mu + sigma*Z`. Here we'll use the 97.5th percentile for the standard normal as the value `Z` in the formula. Recall that we previously calculated this to be 1.96. Let's multiply this by the standard deviation of the given normal distribution (2) and add in its mean (3) to see if we get a result close to the one `qnorm` gave us.
   CorrectAnswer: 6.92
   AnswerTests: equiv_val(6.92)
   Hint: Type `1.96*2 + 3` at the R prompt.
@@ -179,16 +179,16 @@
   Hint: Type `pnorm(qnorm(.53))` at the R prompt.
 
 - Class: cmd_question
-  Output: How about `qnorm(pnorm(.53))`? 
+  Output: How about `qnorm(pnorm(.53))`?
   CorrectAnswer: .53
   AnswerTests: equiv_val(.53)
   Hint: Type `qnorm(pnorm(.53))` at the R prompt.
 
 - Class: text
-  Output: Now let's talk about our last common distribution, the Poisson. This is, as Wikipedia tells us, "a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time and/or space if these events occur with a known average rate and independently of the time since the last event." 
+  Output: Now let's talk about our last common distribution, the Poisson. This is, as Wikipedia tells us, "a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time and/or space if these events occur with a known average rate and independently of the time since the last event."
 
 - Class: text
-  Output: In other words, the Poisson distribution models counts or number of event in some interval of time. From Wikipedia, "Any variable that is Poisson distributed only takes on integer values." 
+  Output: In other words, the Poisson distribution models counts or number of event in some interval of time. From Wikipedia, "Any variable that is Poisson distributed only takes on integer values."
 
 - Class: text
   Output: The PMF of the Poisson distribution has one parameter, lambda. As with the other distributions the PMF calculates the probability that the Poisson distributed random variable `X` takes the value `x`. Specifically, `P(X=x)=(lambda^x)e^(-lambda)/x!`. Here `x` ranges from 0 to infinity.
@@ -197,10 +197,10 @@
   Output: The mean and variance of the Poisson distribution are both `lambda`.
 
 - Class: text
-  Output: Poisson random variables are used to model rates such as the rate of hard drive failures. We write `X~Poisson(lambda*t)` where `lambda` is the expected count per unit of time and t is the total monitoring time. 
+  Output: Poisson random variables are used to model rates such as the rate of hard drive failures. We write `X~Poisson(lambda*t)` where `lambda` is the expected count per unit of time and t is the total monitoring time.
 
 - Class: cmd_question
-  Output: For example, suppose the number of people that show up at a bus stop is Poisson with a mean of 2.5 per hour, and we want to know the probability that at most 3 people show up in a 4 hour period. We use the R function `ppois` which returns a probability that the random variable is less than 3. We only need to specify the quantile (3) and the mean (2.5 * 4). We can use the default parameters, `lower.tail=TRUE` and `log.p=FALSE`. Try it now.
+  Output: For example, suppose the number of people that show up at a bus stop is Poisson with a mean of 2.5 per hour, and we want to know the probability that at most 3 people show up in a 4 hour period. We use the R function ppois which returns a probability that the random variable is less than or equal to 3. We only need to specify the quantile (3) and the mean (2.5 * 4). We can use the default parameters, `lower.tail = TRUE` and `log.p = FALSE`. Try it now.
   CorrectAnswer: ppois(3,2.5 * 4)
   AnswerTests: ANY_of_exprs('ppois(3,2.5 * 4)','ppois(3,4*2.5)')
   Hint: Type  `ppois(3,2.5 * 4)` at the R prompt.
@@ -224,4 +224,4 @@
   Output: See how they're close? Pretty cool, right? This worked because `n` was large (1000) and `p` was small (.01).
 
 - Class: text
-  Output: Congrats! You've concluded this uncommon lesson on common distributions. 
+  Output: Congrats! You've concluded this uncommon lesson on common distributions.

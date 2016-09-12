@@ -12,9 +12,7 @@ equiv_val <- function(correctVal){
   e <- get("e", parent.frame())
   #print(paste("User val is ",e$val,"Correct ans is ",correctVal))
   isTRUE(all.equal(correctVal,e$val))
-
 }
-
 
 is_robust_match <- function(expr1, expr2, eval_for_class, eval_env=NULL){
   expr1 <- rmatch_calls(expr1, eval_for_class, eval_env)

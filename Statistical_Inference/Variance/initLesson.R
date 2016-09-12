@@ -1,3 +1,10 @@
+# For compatibility with 2.2.21
+.get_course_path <- function(){
+  tryCatch(swirl:::swirl_courses_dir(),
+           error = function(c) {file.path(find.package("swirl"),"Courses")}
+  )
+}
+
 # Put initialization code in this file.
 dice_fair <- c(1/6,1/6,1/6,1/6,1/6,1/6)
 dice_high <- c(1/21,2/21,3/21,4/21,5/21,6/21)

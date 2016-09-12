@@ -16,28 +16,28 @@
   Output: The variance of a random variable, as a measure of spread or dispersion,  is, like a mean, defined as an expected value. It is the expected squared distance of the variable from its mean. Squaring the distance makes it positive so values less than and greater than the mean are treated the same. In mathematical terms, if `X` comes from a population with mean `mu`, then
 
 - Class: text
-  Output: "`Var(X) = E( (X-mu)^2 ) = E( (X-E(X))^2 ) =  E(X^2)-E(X)^2`" 
+  Output: "`Var(X) = E( (X-mu)^2 ) = E( (X-E(X))^2 ) =  E(X^2)-E(X)^2`"
 
 - Class: text
-  Output: So variance is the difference between two expected values. Recall that `E(X)`, the expected value of a random variable from the population, is `mu`, the mean of that population. 
+  Output: So variance is the difference between two expected values. Recall that `E(X)`, the expected value of a random variable from the population, is `mu`, the mean of that population.
 
 - Class: text
-  Output: Higher variance implies more spread around a mean than lower variance. 
+  Output: Higher variance implies more spread around a mean than lower variance.
 
 - Class: text
-  Output: Finally, it's easy to show from the definition and the linearity of expectations that, if a is a constant, then `Var(aX)=a^2*Var(X)`. This will come in handy later.  
+  Output: Finally, it's easy to show from the definition and the linearity of expectations that, if a is a constant, then `Var(aX)=a^2*Var(X)`. This will come in handy later.
 
 #- Class: video
 #  Output: Would you like to see the equation proving this? You'll need an internet connection to see it.
 #  VideoLink: "http://wilcrofter.github.io/slidex/markDown/varAX.html"
 
 - Class: figure
-  Output: If you're interested, here's the proof. You might have to stretch out your plot window to make it clearer. 
+  Output: If you're interested, here's the proof. You might have to stretch out your plot window to make it clearer.
   Figure: plotVform.R
   FigureType: new
-                                       
+
 - Class: text
-  Output:  Let's practice computing the variance of a dice roll now. First we need to compute `E(X^2)`. From the definition of expected values, this means we'll take a weighted sum over all possible values of `X^2`. The weight is the probability of `X` occurring.  
+  Output:  Let's practice computing the variance of a dice roll now. First we need to compute `E(X^2)`. From the definition of expected values, this means we'll take a weighted sum over all possible values of `X^2`. The weight is the probability of `X` occurring.
 
 - Class: cmd_question
   Output: For convenience, we've defined a 6-long vector for you, `dice_sqr`, which holds the squares of the integers `1` through `6`. This will give us the `X^2` values. Look at it now.
@@ -54,8 +54,8 @@
 - Class: cmd_question
   Output: Recall that the expected value of a fair dice roll is `3.5`. Subtract the square of that from `ex2_fair` to compute the sample variance.
   CorrectAnswer: ex2_fair-3.5^2
-  AnswerTests: ANY_of_exprs('ex2_fair-3.5^2','ex2_fair-3.5*3.5')
-  Hint: Type `ex2_fair-3.5^2` at the command prompt.
+  AnswerTests: ANY_of_exprs('ex2_fair-3.5^2','ex2_fair-3.5*3.5','ex2_fair-(3.5^2)','ex2_fair-(3.5*3.5)')
+  Hint: Type 'ex2_fair-3.5^2' at the command prompt.
 
 - Class: cmd_question
   Output: Now use a similar approach to compute the sample variance of `dice_high` in one step. Sum the appropriate product and subtract the square of the mean. Recall that `edh` holds the expected value of `dice_high`.
@@ -64,7 +64,7 @@
   Hint: Type `sum(dice_high * dice_sqr)-edh^2` at the command prompt.
 
 - Class: text
-  Output: Note that when we talk about variance we're using square units. Because it is often more useful to use measurements in the same units as `X` we define the standard deviation of `X` as the square root of `Var(X)`. 
+  Output: Note that when we talk about variance we're using square units. Because it is often more useful to use measurements in the same units as `X` we define the standard deviation of `X` as the square root of `Var(X)`.
 
 - Class: figure
   Output: Here's a figure from the slides. It shows several normal distributions all centered around a common mean `0`, but with different standard deviations. As you can see from the color key on the right, the thinner the bell the smaller the standard deviation and the bigger the standard deviation the fatter the bell.
@@ -91,12 +91,12 @@
   FigureType: new
 
 - Class: figure
-  Output: Finally, we repeat the experiment using `30` samples for each of the `10000` variances. You can see that with more data, the distribution gets more concentrated around the population variance it is trying to estimate. 
+  Output: Finally, we repeat the experiment using `30` samples for each of the `10000` variances. You can see that with more data, the distribution gets more concentrated around the population variance it is trying to estimate.
   Figure: moreData3.R
   FigureType: new
 
 - Class: text
-  Output: Now recall that the means of unbiased estimators equal the values they're trying to estimate. We can infer from the above that the sample variance is an unbiased estimator of population variance. 
+  Output: Now recall that the means of unbiased estimators equal the values they're trying to estimate. We can infer from the above that the sample variance is an unbiased estimator of population variance.
 
 - Class: text
   Output: Recall that the average of random samples from a population is itself a random variable with a distribution centered around the population `mean`. Specifically, `E(X') = mu`, where `X'` represents a sample mean and `mu` is the population mean.
@@ -112,7 +112,7 @@
   Hint: Which of the choices has both Var and the definition of mean in it?
 
 - Class: mult_question
-  Output: Which of the following does `Var(1/n * Sum(X_i)')` equal?
+  Output: Which of the following does Var(1/n * Sum(X_i)) equal?
   AnswerChoices: 1/n^2*Var(Sum(X_i)); 1/n^2*E(Sum(X_i)); mu/n^2; sigma/n
   CorrectAnswer: 1/n^2*Var(Sum(X_i))
   AnswerTests: omnitest(correctVal='1/n^2*Var(Sum(X_i))')
@@ -133,7 +133,7 @@
   Hint: "`Var(X_i)` is the constant value `sigma^2` and we're summing over `n` of them."
 
 - Class: text
-  Output: So we've shown that `Var(X')=Var(1/n*Sum(X_i))=(1/n^2)*Var(Sum(X_i))=(1/n^2)*Sum(sigma^2)=sigma^2/n` for infinite populations when our samples are independent. 
+  Output: So we've shown that `Var(X')=Var(1/n*Sum(X_i))=(1/n^2)*Var(Sum(X_i))=(1/n^2)*Sum(sigma^2)=sigma^2/n` for infinite populations when our samples are independent.
 
 - Class: text
   Output: The standard deviation of a statistic is called its standard error, so the standard error of the sample mean is the square root of its variance.
@@ -145,7 +145,7 @@
   Output: The sample standard deviation, `s`, tells us how variable the population is, and `s/sqrt(n)`, the standard error, tells us how much averages of random samples of size `n` from the population vary. Let's see this with some simulations.
 
 - Class: cmd_question
-  Output: The R function `rnorm(n,mean,sd)` generates `n` independent (hence uncorrelated) random normal samples with the specified mean and standard deviation. The defaults for the latter are mean `0` and standard deviation `1`. Type the expression `sd(apply(matrix(rnorm(10000),1000),1,mean))` at the prompt. 
+  Output: The R function `rnorm(n,mean,sd)` generates `n` independent (hence uncorrelated) random normal samples with the specified mean and standard deviation. The defaults for the latter are mean `0` and standard deviation `1`. Type the expression `sd(apply(matrix(rnorm(10000),1000),1,mean))` at the prompt.
   CorrectAnswer: sd(apply(matrix(rnorm(10000),1000),1,mean))
   AnswerTests: omnitest(correctExpr='sd(apply(matrix(rnorm(10000),1000),1,mean))')
   Hint: Type `sd(apply(matrix(rnorm(10000),1000),1,mean))` at the command prompt.
@@ -158,26 +158,26 @@
 
 - Class: mult_question
   Output: Pretty close, right? Let's try a few more. Standard uniform distributions have variance `1/12`. The theory tells us the standard error of means of independent samples of size `n` would have which standard error?
-  AnswerChoices: 1/(12*sqrt(n)); 12/sqrt(n); 1/sqrt(12*n); I haven't a clue 
+  AnswerChoices: 1/(12*sqrt(n)); 12/sqrt(n); 1/sqrt(12*n); I haven't a clue
   CorrectAnswer: 1/sqrt(12*n)
   AnswerTests: omnitest(correctVal='1/sqrt(12*n)')
   Hint: In this case s is the `sqrt(1/12)`. Divide this by `sqrt(n)`.
 
 - Class: cmd_question
-  Output:  Compute `1/sqrt(120)`. This would be the standard error of the means of uniform samples of size `10`. 
+  Output:  Compute `1/sqrt(120)`. This would be the standard error of the means of uniform samples of size `10`.
   CorrectAnswer: 1/sqrt(120)
   AnswerTests: omnitest(correctExpr='1/sqrt(120)')
   Hint: Type `1/sqrt(120)` at the command prompt.
 
 - Class: cmd_question
-  Output: Now check it as we did before. Use the expression ```sd(apply(matrix(runif(10000),1000),1,mean))```. 
+  Output: Now check it as we did before. Use the expression ```sd(apply(matrix(runif(10000),1000),1,mean))```.
   CorrectAnswer: sd(apply(matrix(runif(10000),1000),1,mean))
   AnswerTests: omnitest(correctExpr='sd(apply(matrix(runif(10000),1000),1,mean))')
   Hint: Type ```sd(apply(matrix(runif(10000),1000),1,mean))``` at the command prompt.
 
 - Class: mult_question
   Output: Pretty close again, right? `Poisson(4)` are distributions with variance `4`; what standard error would means of random samples of `n` `Poisson(4)` have?
-  AnswerChoices: 2/sqrt(n); 1/sqrt(2*n); 2*sqrt(n); I haven't a clue 
+  AnswerChoices: 2/sqrt(n); 1/sqrt(2*n); 2*sqrt(n); I haven't a clue
   CorrectAnswer:  2/sqrt(n)
   AnswerTests: omnitest(correctVal='2/sqrt(n)')
   Hint: In this case `s` is `2`. Divide this by `sqrt(n)`.
@@ -189,14 +189,14 @@
   Hint: Type `2/sqrt(10)` at the command prompt.
 
 - Class: cmd_question
-  Output: Now check it as we did before. Use the expression `sd(apply(matrix(rpois(10000,4),1000),1,mean))`. 
+  Output: Now check it as we did before. Use the expression `sd(apply(matrix(rpois(10000,4),1000),1,mean))`.
   CorrectAnswer: sd(apply(matrix(rpois(10000,4),1000),1,mean))
   AnswerTests: omnitest(correctExpr='sd(apply(matrix(rpois(10000,4),1000),1,mean))')
   Hint: Type `sd(apply(matrix(rpois(10000,4),1000),1,mean))` at the command prompt.
 
 - Class: mult_question
   Output: Like magic, right? One final test. Fair coin flips have variance `0.25`; means of random samples of `n` coin flips have  what standard error?
-  AnswerChoices: 2/sqrt(n); 1/sqrt(2*n); 2*sqrt(n); 1/(2*sqrt(n)); I haven't a clue 
+  AnswerChoices: 2/sqrt(n); 1/sqrt(2*n); 2*sqrt(n); 1/(2*sqrt(n)); I haven't a clue
   CorrectAnswer:  1/(2*sqrt(n))
   AnswerTests: omnitest(correctVal='1/(2*sqrt(n))')
   Hint: In this case s is `1/2` which is the sqrt of `1/4`, the variance. Divide this by `sqrt(n)`.
@@ -208,7 +208,7 @@
   Hint: Type `1/(2*sqrt(10))` at the command prompt.
 
 - Class: cmd_question
-  Output: "Now check it as we did before. Use the expression `sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))`." 
+  Output: "Now check it as we did before. Use the expression `sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))`."
   CorrectAnswer: sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))
   AnswerTests: omnitest(correctExpr='sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))')
   Hint: "Type `sd(apply(matrix(sample(0:1,10000,TRUE),1000),1,mean))` at the command prompt."
@@ -220,8 +220,8 @@
   Output: However this estimate is quite conservative for random variables that are normally distributed, that is, with bell-curve distributions. In these cases, the probability of being at least `2` standard deviations from the mean is about 5% (as compared to Chebyshev's upper bound of 25%) and the probability of being at least `3` standard deviations from the mean is roughly .2%.
 
 - Class: mult_question
-  Output: Suppose you had a measurement that was `4` standard deviations from the distribution's mean. What would be the upper bound  of the probability of this happening using Chebyshev's inequality? 
-  AnswerChoices: 6%; 0%; 11%; 25%; 96% 
+  Output: Suppose you had a measurement that was `4` standard deviations from the distribution's mean. What would be the upper bound  of the probability of this happening using Chebyshev's inequality?
+  AnswerChoices: 6%; 0%; 11%; 25%; 96%
   CorrectAnswer: 6%
   AnswerTests: omnitest(correctVal='6%')
   Hint: Chebyshev's inequality estimates that probability as `1/16`. Convert this to a probability.

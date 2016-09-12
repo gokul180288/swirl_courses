@@ -1,3 +1,11 @@
+# For compatibility with 2.2.21
+.get_course_path <- function(){
+  tryCatch(swirl:::swirl_courses_dir(),
+           error = function(c) {file.path(find.package("swirl"),"Courses")}
+  )
+}
+
+
 # Path to installed lesson
 .lessonpath <- file.path("~", ".datacamp", "Courses", "R_Programming",
                          "lapply_and_sapply")
@@ -20,7 +28,7 @@ viewinfo <- function() {
   return(.infopath)
 }
 
-# Dummy function to advance user past question for which 
+# Dummy function to advance user past question for which
 # correct answer yields an error
 ok <- function() {
   invisible()

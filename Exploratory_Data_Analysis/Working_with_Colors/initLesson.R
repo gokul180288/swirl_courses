@@ -1,8 +1,16 @@
 library(RColorBrewer)
 library(datasets)
 
+# For compatibility with 2.2.21
+.get_course_path <- function(){
+  tryCatch(swirl:::swirl_courses_dir(),
+           error = function(c) {file.path(find.package("swirl"),"Courses")}
+  )
+}
+
 # Put initialization code in this file.
 path_to_course <- file.path("~", ".datacamp", "Courses/Exploratory_Data_Analysis/Working_with_Colors")
+
 try(dev.off(),silent=TRUE)
 plot.new()
 
@@ -32,7 +40,7 @@ mdist <- function(x,y,cx,cy){
   distTmp <- matrix(NA,nrow=3,ncol=12)
   distTmp[1,] <- (x-cx[1])^2 + (y-cy[1])^2
   distTmp[2,] <- (x-cx[2])^2 + (y-cy[2])^2
-  distTmp[3,] <- (x-cx[3])^2 + (y-cy[3])^2  
+  distTmp[3,] <- (x-cx[3])^2 + (y-cy[3])^2
   return(distTmp)
 }
 

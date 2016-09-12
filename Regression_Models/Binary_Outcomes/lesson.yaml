@@ -18,7 +18,7 @@
 - Class: text
   Output: The Baltimore Ravens are a team in the American Football League. In post season (championship) play they win about 2/3 of their games. In other words, they win about twice as often as they lose. If I wanted to bet on them, I would have to offer 2-to-1 odds--if they lost I would pay you $2, but if they won you would pay me only $1. That way, in the long run over many bets, we'd both expect to win as much money as we'd lost.
 
-- Class: mult_question  
+- Class: mult_question
   Output: During the regular season the Ravens win about 55% of their games. What odds would I have to offer in the regular season?
   AnswerChoices: 55 to 45; 11 to 9; 1.22222 to 1; Any of these
   CorrectAnswer: Any of these
@@ -26,19 +26,19 @@
   Hint: Any answer will do.
 
 - Class: text
-  Output: All of the answers are correct because they all represent the same ratio. If `p` is the probability of an event, the associated odds are `p/(1-p)`. 
+  Output: All of the answers are correct because they all represent the same ratio. If `p` is the probability of an event, the associated odds are `p/(1-p)`.
 
 - Class: figure
   Output: Now suppose we want to see how the Ravens' odds depends on their offense. In other words, we want to model how `p`, or some function of it, depends on how many points the Ravens are able to score. Of course, we can't observe `p`, we can only observe wins, losses, and the associated scores. Here is a Box plot of one season's worth of such observations.
   Figure: nevermore.R
   FigureType: new
 
-- Class: mult_question  
+- Class: mult_question
   Output: We can see that the Ravens tend to win more when they score more points. In fact, about 3/4 of their losses are at or below a certain score and about 3/4 of their wins are at or above it. What score am I talking about? (Remember that the purple boxes represent 50% of the samples, and the "T's" 25%.)
   AnswerChoices: 23;18;30;40
   CorrectAnswer: 23
   AnswerTests: omnitest(correctVal='23')
-  Hint: The purple "loss" box is to the left of this score and the purple "win" box to its right. 
+  Hint: The purple "loss" box is to the left of this score and the purple "win" box to its right.
 
 - Class: figure
   Output: There were 9 games in which the Ravens scored 23 points or less. They won 4 of these games, so we might guess their probability of winning, given that they score 23 points or less, is about 1/2.
@@ -52,7 +52,7 @@
   Hint: Type `ravenData` to print the data in the console. Type `View(ravenData)` to see it a separate window.
 
 - Class: figure
-  Output: We see a fairly rapid transition in the Ravens' win/loss record between 23 and 28 points. At 23 points and below they win about half their games, between 24 and 28 points they win 3 of 4, and above 28 points they win them all. From this, we get a very crude idea of the correspondence between points scored and the probability of a win. We get an S shaped curve, a graffiti S anyway. 
+  Output: We see a fairly rapid transition in the Ravens' win/loss record between 23 and 28 points. At 23 points and below they win about half their games, between 24 and 28 points they win 3 of 4, and above 28 points they win them all. From this, we get a very crude idea of the correspondence between points scored and the probability of a win. We get an S shaped curve, a graffiti S anyway.
   Figure: graffiti_s.R
   FigureType: new
 
@@ -69,7 +69,7 @@
   Hint: Use an expression such as ```mdl <- glm(ravenWinNum ~ ravenScore, binomial, ravenData)``` or ```mdl <- glm(ravenWinNum ~ ravenScore, family=binomial, data=ravenData)```.
 
 - Class: figure
-  Output: "The probabilities estimated by logistic regression using `glm()` are represented by the black curve. It is more reasonable than our crude estimate in several respects: It increases smoothly with score, it estimates that 15 points give the Ravens a 50% chance of winning, that 28 points give them an 80% chance, and that 55 points make a win very likely (98%) but not absolutely certain." 
+  Output: "The probabilities estimated by logistic regression using `glm()` are represented by the black curve. It is more reasonable than our crude estimate in several respects: It increases smoothly with score, it estimates that 15 points give the Ravens a 50% chance of winning, that 28 points give them an 80% chance, and that 55 points make a win very likely (98%) but not absolutely certain."
   Figure: glm_vs_graffiti.R
   FigureType: new
 
@@ -100,14 +100,14 @@
   AnswerTests: omnitest('exp(confint(mdl))')
   Hint: Just type `exp(confint(mdl))`.
 
-- Class: mult_question  
+- Class: mult_question
   Output: "What is the 2.5% confidence bound on the odds of winning with a score of 0 points?"
   AnswerChoices: 0.005674966;0.996229662;2.5%
   CorrectAnswer: '0.005674966'
   AnswerTests: omnitest(correctVal= '0.005674966')
   Hint: It's very small.
 
-- Class: mult_question  
+- Class: mult_question
   Output: "The lower confidence bound on the odds of winning with a score of 0 is near zero, which seems much more realistic than the 16/84 figure of the maximum likelihood model. Now look at the lower bound on `exp(b1)`, the exponentiated coefficient of `ravenScore`. How does it suggest the odds of winning will be affected by each additional point scored?"
   AnswerChoices: They will decrease slightly;They will increase slightly;They will increase by 30%
   CorrectAnswer: They will decrease slightly
@@ -130,5 +130,14 @@
   Hint: Type `qchisq(0.95, 1)`.
 
 - Class: text
-  Output: "As you can see, 3.5398 is close to but less than the 95th percentile threshold, 3.841459, hence would be regarded as consistent with the null hypothesis at the conventional 5% level. In other words, ravenScore adds very little to a model which just guesses that the Ravens win with probability 70% (their actual record that season) or odds 7 to 3 is almost as good. If you like, you can verify this using ```mdl0 <- glm(ravenWinNum ~ 1, binomial, ravenData)```, but this concludes the Binary Outcomes example. Thank you."
+  Output: "As you can see, 3.5398 is close to but less than the 95th percentile threshold, 3.841459, hence would be regarded as consistent with the null hypothesis at the conventional 5% level. In other words, ravenScore adds very little to a model which just guesses that the Ravens win with probability 70% (their actual record that season) or odds 7 to 3 is almost as good. If you like, you can verify this using `mdl0 <- glm(ravenWinNum ~ 1, binomial, ravenData)`, but this concludes the Binary Outcomes example. Thank you."
+
+- Class: mult_question
+  Output: "Would you like to receive credit for completing this course on
+    Coursera.org?"
+  CorrectAnswer: NULL
+  AnswerChoices: Yes;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""
+
 

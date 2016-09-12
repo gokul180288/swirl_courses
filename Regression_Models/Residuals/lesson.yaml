@@ -17,7 +17,7 @@
 
 
 - Class: cmd_question
-  Output: We'll demonstrate these concepts now. First regenerate the regression line and call it `fit`. Use the R function `lm`. Recall that by default its first argument is a formula such as `child ~ parent` and its second is the dataset, in this case `galton`. 
+  Output: We'll demonstrate these concepts now. First regenerate the regression line and call it `fit`. Use the R function `lm`. Recall that by default its first argument is a formula such as `child ~ parent` and its second is the dataset, in this case `galton`.
   CorrectAnswer: fit <- lm(child ~ parent, galton)
   AnswerTests: creates_lm_model('fit <- lm(child ~ parent, galton)')
   Hint: Type `fit <- lm(child ~ parent, galton)` at the R prompt.
@@ -44,20 +44,20 @@
   Output: As shown algebraically in the slides, the equations for the intercept and slope are found by supposing a change is made to the intercept and slope. Squaring out the resulting expressions produces three summations. The first sum is the original term squared, before the slope and intercept were changed. The third sum totals the squared changes themselves. For instance, if we had changed fit’s intercept by adding 2, the third sum would be the total of 928 4’s. The middle sum is guaranteed to be zero precisely when the two equations (the conditions on the residuals) are satisfied.
 
 - Class: text
-  Output: We'll verify these claims now. We've defined for you two R functions, `est` and `sqe`. Both take two inputs, a slope and an intercept. The function `est` calculates a child's height (y-coordinate) using the line defined by the two parameters, (slope and intercept), and the parents' heights in the Galton data as x-coordinates.  
+  Output: We'll verify these claims now. We've defined for you two R functions, `est` and `sqe`. Both take two inputs, a slope and an intercept. The function `est` calculates a child's height (y-coordinate) using the line defined by the two parameters, (slope and intercept), and the parents' heights in the Galton data as x-coordinates.
 
 - Class: mult_question
-  Output: Let `mch` represent the mean of the galton childrens' heights and `mph` the mean of the galton parents' heights. Let `ic` and `slope` represent the intercept and slope of the regression line respectively. As shown in the slides and past lessons, the point `(mph,mch)` lies on the regression line. This means
+  Output: Let `mch` represent the mean of the galton childrens' heights and `mph` the mean of the galton parents' heights. Let `ic` and `slope` represent the intercept and slope of the regression line respectively. As shown in the slides and past lessons, the point (mph,mch) lies on the regression line. This means
   AnswerChoices: mch = ic + slope*mph; mph = ic + slope*mch; I haven't the slightest idea.
   CorrectAnswer: mch = ic + slope*mph
   AnswerTests: omnitest(correctVal='mch = ic + slope*mph')
   Hint: A line is the set of all points (x,y) satisfying the equation `y = mx + b`, where `m` is the slope of the line and `b` is its intercept. Remember that the point `(mph,mch)` lies on the regression line with intercept `ic` and slope `slope`.
 
 - Class: text
-  Output: The function `sqe` calculates the sum of the squared residuals, the differences between the actual children's heights and the estimated heights specified by the line defined by the given parameters (slope and intercept).  R provides the function deviance to do exactly this using a fitted model (e.g., `fit`) as its argument. However, we provide `sqe` because we'll use it to test regression lines different from fit. 
+  Output: The function `sqe` calculates the sum of the squared residuals, the differences between the actual children's heights and the estimated heights specified by the line defined by the given parameters (slope and intercept).  R provides the function deviance to do exactly this using a fitted model (e.g., `fit`) as its argument. However, we provide `sqe` because we'll use it to test regression lines different from fit.
 
 - Class: text
-  Output: We'll see that when we vary or tweak the slope and intercept values of the regression line which are stored in `fit$coef`, the resulting squared residuals are approximately equal to the sum of two sums of squares - that of the original regression residuals and that of the tweaks themselves. More precisely, up to numerical error, 
+  Output: We'll see that when we vary or tweak the slope and intercept values of the regression line which are stored in `fit$coef`, the resulting squared residuals are approximately equal to the sum of two sums of squares - that of the original regression residuals and that of the tweaks themselves. More precisely, up to numerical error,
 
 - Class: text
   Output: "```sqe(ols.slope+sl,ols.intercept+ic) == deviance(fit) + sum(est(sl,ic)ˆ2 )```"
@@ -67,7 +67,7 @@
 
 
 - Class: text
-  Output: The left side of the equation represents the squared residuals of a new line, the "tweaked" regression line. The terms `sl` and `ic` represent the variations in the slope and intercept respectively. The right side has two terms. The first represents the squared residuals of the original regression line and the second is the sum of squares of the variations themselves. 
+  Output: The left side of the equation represents the squared residuals of a new line, the "tweaked" regression line. The terms `sl` and `ic` represent the variations in the slope and intercept respectively. The right side has two terms. The first represents the squared residuals of the original regression line and the second is the sum of squares of the variations themselves.
 
 - Class: cmd_question
   Output: We'll demonstrate this now. First extract the intercept from `fit$coef` and put it in a variable called `ols.ic`. The intercept is the first element in the `fit$coef` vector, that is `fit$coef[1]`.
@@ -135,7 +135,7 @@
 
 
 - Class: text
-  Output: The two properties of the residuals we've emphasized here can be applied to datasets which have multiple predictors. In this lesson we've loaded the dataset attenu which gives data for 23 earthquakes in California. Accelerations are estimated based on two predictors, distance and magnitude. 
+  Output: The two properties of the residuals we've emphasized here can be applied to datasets which have multiple predictors. In this lesson we've loaded the dataset attenu which gives data for 23 earthquakes in California. Accelerations are estimated based on two predictors, distance and magnitude.
 
 
 - Class: cmd_question

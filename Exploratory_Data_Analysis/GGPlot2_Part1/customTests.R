@@ -9,85 +9,12 @@ ANY_of_exprs <- function(...){
 }
 
 equiv_val <- function(correctVal){
-  e <- get("e", parent.frame()) 
+  e <- get("e", parent.frame())
   #print(paste("User val is ",e$val,"Correct ans is ",correctVal))
   isTRUE(all.equal(correctVal,e$val))
-  
+
 }
 
-omnitest <- function(correctExpr=NULL, correctVal=NULL, strict=FALSE, eval_for_class=as.logical(NA)){
-  e <- get("e", parent.frame())
-  # Trivial case
-  if(is.null(correctExpr) && is.null(correctVal))return(TRUE)
-  # If eval_for_class is not specified, default to customTests$EVAL_FOR_CLASS.
-  # If the latter is not set, default to TRUE.
-  if(is.na(eval_for_class)){
-    if(exists("EVAL_FOR_CLASS", customTests)){
-      eval_for_class <- isTRUE(customTests$EVAL_FOR_CLASS)
-    } else {
-      eval_for_class <- TRUE
-    }
-  }
-  # If eval_for_class is TRUE, create a parent environment for that in
-  # in which evaluations for class are to be made.
-  eval_env <- if(eval_for_class){
-    cleanEnv(e$snapshot)
-  } else {
-    NULL
-  }
-  # Testing for correct expression only
-  if(!is.null(correctExpr) && is.null(correctVal)){
-    err <- try({
-      good_expr <- parse(text=correctExpr)[[1]]
-      ans <- is_robust_match(good_expr, e$expr, eval_for_class, eval_env)
-    }, silent=TRUE)
-#     print(paste("In omnitest ans is ",ans))
-    if (is(err, "try-error")) {
-      return(expr_identical_to(correctExpr))
-    } else {
-      return(ans)
-    }
-  }
-  # Testing for both correct expression and correct value
-  # Value must be character or single number
-  valGood <- as.logical(NA)
-  if(!is.null(correctVal)){
-    if(is.character(e$val)){
-      valResults <- expectThat(e$val,
-                               is_equivalent_to(correctVal, label=correctVal),
-                               label=(e$val))
-      if(is(e, "dev") && !valResults$passed)swirl_out(valResults$message)
-      valGood <- valResults$passed
-      # valGood <- val_matches(correctVal)
-    } else if(!is.na(e$val) && is.numeric(e$val) && length(e$val) == 1){
-      cval <- try(as.numeric(correctVal), silent=TRUE)
-      valResults <- expectThat(e$val, 
-                               equals(cval, label=correctVal),
-                               label=toString(e$val))
-      if(is(e, "dev") && !valResults$passed)swirl_out(valResults$message)
-      valGood <- valResults$passed
-    }
-  }
-  # If a correct expression is given attempt a robust match with user's expression.
-  exprGood <- TRUE
-  if(!is.null(correctExpr)){
-    err <- try({
-      good_expr <- parse(text=correctExpr)[[1]]
-      ans <- is_robust_match(good_expr, e$expr, eval_for_class, eval_env)
-    }, silent=TRUE)
-    exprGood <- ifelse(is(err, "try-error"), expr_identical_to(correctExpr), ans)
-  }
-  if((isTRUE(valGood) || is.na(valGood)) && exprGood){
-    return(TRUE)
-  } else if (isTRUE(valGood) && !exprGood && !strict){
-    swirl_out("That's not the expression I expected but it works.")
-    swirl_out("I've executed the correct expression in case the result is needed in an upcoming question.")
-    eval(parse(text=correctExpr),globalenv())
-    return(TRUE)
-  } else {
-    return(FALSE)
-  }
-}
 
 is_robust_match <- function(expr1, expr2, eval_for_class, eval_env=NULL){
   expr1 <- rmatch_calls(expr1, eval_for_class, eval_env)
@@ -108,7 +35,7 @@ rmatch_calls <- function(expr, eval_for_class=FALSE, eval_env=NULL){
   # would be likely to give a misleading result. Catch the error merely to
   # produce a better diagnostic.
   tryCatch(fct <- match.fun(expr[[1]]),
-           error=function(e)stop(paste0("Illegal expression ", dprs(expr), 
+           error=function(e)stop(paste0("Illegal expression ", dprs(expr),
                                         ": ", dprs(expr[[1]]), " is not a function.\n")))
   # If fct is a special function such as `$`, or builtin such as `+`, return expr.
   if(is.primitive(fct)){
@@ -121,11 +48,11 @@ rmatch_calls <- function(expr, eval_for_class=FALSE, eval_env=NULL){
   }
   # At this point, fct should be an ordinary function or an S3 method.
   if(isS3(fct)){
-    # If the S3 method's first argument, expr[[2]], is anything but atomic 
+    # If the S3 method's first argument, expr[[2]], is anything but atomic
     # its class can't be determined here without evaluation.
     if(!is.atomic(expr[[2]]) & !eval_for_class){
-      stop(paste0("Illegal expression, ", dprs(expr),": The first argument, ", dprs(expr[[2]]), 
-                  ", to S3 method '", dprs(expr[[1]]), 
+      stop(paste0("Illegal expression, ", dprs(expr),": The first argument, ", dprs(expr[[2]]),
+                  ", to S3 method '", dprs(expr[[1]]),
                   "', is a ", class(expr[[2]]) , ", which (as an expression) is not atomic,",
                   " hence its class can't be determined in an abstract",
                   " syntax tree without additional information.\n"))
@@ -151,12 +78,12 @@ rmatch_calls <- function(expr, eval_for_class=FALSE, eval_env=NULL){
                                               dprs(expr[[2]]), ", of class, ", cls,".\n")))
     }
   }
-  
+
   expr <- enhancedMatch(fct,expr)
 #   # Form preliminary match. If match.call raises an error here, the remaining code is
 #   # likely to give a misleading result. Catch the error merely to give a better diagnostic.
 #   tryCatch(expr <- match.call(fct, expr),
-#            error = function(e)stop(paste0("Illegal expression ", dprs(expr), ": ", 
+#            error = function(e)stop(paste0("Illegal expression ", dprs(expr), ": ",
 #                                           dprs(expr[[1]]), " is not a function.\n")))
 #   expr <- fixInformals(fct,expr)
 #   # Append named formals with default values which are not included
@@ -180,17 +107,17 @@ enhancedMatch <- function(fct,expr){
   #   # likely to give a misleading result. Catch the error merely to give a better diagnostic.
   #   # Set expand.dots to FALSE so that we can detect ... args
   tryCatch(expr <- match.call(fct, expr,expand.dots=FALSE),
-           error = function(e)stop(paste0("Illegal expression ", dprs(expr), ": ", 
+           error = function(e)stop(paste0("Illegal expression ", dprs(expr), ": ",
                                          dprs(expr[[1]]), " is not a function.\n")))  #define three lists, informals, formals, indices
   # Check to see if there are ... args
     idx <- which(names(expr)=="...")
-  # If there are ... args, then if they are named sort them by name, else keep them as is 
+  # If there are ... args, then if they are named sort them by name, else keep them as is
   if (length(idx)>0){
   #    print(paste("Here ",expr$...))
       if (!is.null(names(expr$...)))
          expr$... <- expr$...[order(names(expr$...))]
     }
-  
+
 #   mylist <- character()
 #   myfmls <- character()
 #   mydotn <- character()
@@ -199,7 +126,7 @@ enhancedMatch <- function(fct,expr){
 #   fmls <- formals(fct)
 #   print(fmls)
 
-#   
+#
 #   # form list of nonformal parameter names
 #   for(n in names(expr[-1])){
 #     print(n)
@@ -216,7 +143,7 @@ enhancedMatch <- function(fct,expr){
 #   myfmls <- c(myfmls,sort(mylist))
 #   print(paste("myfmls next  ",myfmls))
 #   # now create list of indices in correct order
-#   for (n  in 1:length(myfmls)){ 
+#   for (n  in 1:length(myfmls)){
 #     mynum <- c(mynum,1+which(names(expr[-1])==myfmls[n]))
 #   }
 #   mynum <- c(1,mynum)
@@ -259,19 +186,19 @@ coursera_on_demand <- function(){
   if(selection == "Yes"){
     email <- readline("What is your email address? ")
     token <- readline("What is your assignment token? ")
-    
-    payload <- sprintf('{  
+
+    payload <- sprintf('{
       "assignmentKey": "jstSfq8dEeWVdAqQVb1YyQ",
-      "submitterEmail": "%s",  
-      "secret": "%s",  
-      "parts": {  
-        "ci2e6": {  
-          "output": "correct"  
-        }  
-      }  
+      "submitterEmail": "%s",
+      "secret": "%s",
+      "parts": {
+        "ci2e6": {
+          "output": "correct"
+        }
+      }
     }', email, token)
     url <- 'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
-  
+
     respone <- httr::POST(url, body = payload)
     if(respone$status_code >= 200 && respone$status_code < 300){
       message("Grade submission succeeded!")

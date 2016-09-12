@@ -1,7 +1,7 @@
-# R_Programming
-zip -r R_Programming.zip R_Programming/*
-s3cmd put --acl-public R_Programming.zip s3://assets.datacamp.com/course/swirl/
 
-# Getting_and_Cleaning_Data
+zip -r R_Programming.zip R_Programming/*
 zip -r Getting_and_Cleaning_Data.zip Getting_and_Cleaning_Data/*
-s3cmd put --acl-public Getting_and_Cleaning_Data.zip s3://assets.datacamp.com/course/swirl/
+zip -r Exploratory_Data_Analysis.zip Exploratory_Data_Analysis/*
+zip -r Regression_Models.zip Regression_Models/*
+zip -r Statistical_Inference.zip Statistical_Inference/*
+

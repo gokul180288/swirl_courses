@@ -155,7 +155,7 @@
     If you are having trouble, we recommend using RStudio.
 
 - Class: cmd_question
-  Output: `arrange()` the rows of `top_counts` based on the 'count' column and assign the result to a new object called `top_counts_sorted`. We want the packages with the highest number of downloads at the top, which means we want 'count' to be in descending order. If you need help, check out `?arrange` and/or `?desc`.
+  Output: arrange the rows of `top_counts` based on the 'count' column and assign the result to a new object called `top_counts_sorted`. We want the packages with the highest number of downloads at the top, which means we want 'count' to be in descending order. If you need help, check out `?arrange` and/or `?desc`."
   CorrectAnswer: top_counts_sorted <- arrange(top_counts, desc(count))
   AnswerTests: omnitest('top_counts_sorted <- arrange(top_counts, desc(count))')
   Hint: The line `arrange(top_counts, desc(count))` will arrange the rows of `top_counts` based on the values of the `count`

@@ -1,24 +1,16 @@
 library(lattice)
 library(datasets)
 
-# For compatibility with 2.2.21
-.get_course_path <- function(){
-  tryCatch(swirl:::swirl_courses_dir(),
-           error = function(c) {file.path(find.package("swirl"),"Courses")}
-  )
-}
-
 # Put initialization code in this file.
-path_to_course <- file.path("~", ".datacamp","Courses/Exploratory_Data_Analysis/Lattice_Plotting_System")
+path_to_course <- file.path("~", ".datacamp","Courses", "Exploratory_Data_Analysis", "Lattice_Plotting_System")
 try(dev.off(),silent=TRUE)
 dev.set(2)
 plot.new()
 
 pathtofile <- function(fileName){
-  mypath <- file.path("~", ".datacamp",
-                      "Courses/Exploratory_Data_Analysis/Lattice_Plotting_System/",
-                      fileName)
+  mypath <- file.path(path_to_course, fileName)
 }
+
 fxfer <- function(fileName){
   mypath <- pathtofile(fileName)
   file.copy(mypath,fileName)

@@ -1,9 +1,3 @@
-# For compatibility with 2.2.21
-.get_course_path <- function(){
-  tryCatch(swirl:::swirl_courses_dir(),
-           error = function(c) {file.path(find.package("swirl"),"Courses")}
-  )
-}
 
 # Make data available to user in a data frame
 .path2csv <- file.path("~", ".datacamp", 'Courses',

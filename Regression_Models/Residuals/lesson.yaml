@@ -81,10 +81,11 @@
   AnswerTests: omnitest(correctExpr='ols.slope <- fit$coef[2]')
   Hint: Type `ols.slope <- fit$coef[2]` at the R prompt.
 
-- Class: figure
-  Output: Now we'll show you some R code which generates the left and right sides of this equation.  Take a moment to look it over. We've formed two 6-long vectors of variations, one for the slope and one for the intercept. Then we have two `for` loops to generate the two sides of the equation.
-  Figure: demofile.R
-  FigureType: new
+- Class: script
+  Output: Now we'll show you some R code which generates the left and right sides of this equation.  Take a moment to look it over. We've formed two 6-long vectors of variations, one for the slope and one for the intercept. Then we have two `for` loops to generate the two sides of the equation. Type `submit()` to submit and run the script.
+  Script: res_eqn.R
+  Hint: Use `submit()` to run the script and see what objects it creates.
+  AnswerTests: function() { TRUE }
 
 - Class: cmd_question
   Output: Subtract the right side, the vector `rhs`, from the left, the vector `lhs`, to see the relationship between them. You should get a vector of very small, almost 0, numbers.

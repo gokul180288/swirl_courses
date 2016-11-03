@@ -1,5 +1,3 @@
-mypath <- pathtofile("face.rda")
-load(mypath)
 par(mfrow=c(1,1))
 par(mar=c(4,5,4,5))
 image(t(faceData)[,nrow(faceData):1])

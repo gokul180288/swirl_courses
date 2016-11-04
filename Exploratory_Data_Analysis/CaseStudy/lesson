@@ -205,11 +205,11 @@
 - Class: text
   Output: We see the bulk of the negative measurements were taken in the winter months, with a spike in May. Not many of these negative measurements occurred in summer months. We can take a guess that because particulate measures tend to be low in winter and high in summer, coupled with the fact that higher densities are easier to measure, that measurement errors occurred when the values were low. For now we'll attribute these negative measurements to errors. Also, since they account for only 2% of the 2012 data, we'll ignore them.
 
-
-- Class: figure
-  Output: Now we'll change focus a bit and instead of looking at all the monitors throughout the country and the data they recorded, we'll try to find one monitor that was taking measurements in both 1999 and 2012. This will allow us to control for different geographical and environmental variables that might have affected air quality in different areas. We'll narrow our search and look just at monitors in New York State.
-  Figure: runSites.R
-  FigureType: new
+- Class: script
+  Output: Now we'll change focus a bit and instead of looking at all the monitors throughout the country and the data they recorded, we'll try to find one monitor that was taking measurements in both 1999 and 2012. This will allow us to control for different geographical and environmental variables that might have affected air quality in different areas. We'll narrow our search and look just at monitors in New York State. Type `submit()` to submit and run the script; no need to make any changes.
+  Script: runSites.R
+  Hint: Use `submit()` to run the script.
+  AnswerTests: function() { TRUE }
 
 - Class: cmd_question
   Output: We subsetted off the New York State monitor identification data for 1999 and 2012  into 2 vectors, `site0` and `site1`. Look at the structure of `site0` now with the R command `str`.
@@ -232,13 +232,18 @@
   AnswerTests:  obliterate("x1"); ANY_of_exprs('both','print(both)')
   Hint: Type `both` or `print(both)` at the command prompt.
 
-- Class: figure
-  Output:  We see that 10 monitors in New York State were active in both 1999 and 2012.
-  Figure: runModpms.R
-  FigureType: new
+- Class: text
+  Output: We see that 10 monitors in New York State were active in both 1999 and 2012.
+
+
+- Class: script
+  Output: Have a look at the script that has been opened up for you. It modifies the data frames `pm0` and `pm1` by adding to each of them a new component, `county.site`. This is just a concatenation of two original components `County.Code` and `Site.ID`. We did this to facilitate the next step which is to find out how many measurements were taken by the 10 New York monitors working in both of the years of interest. Run the script by typing `submit()`; no need to make any changes.
+  Script: runModpms.R
+  Hint: Use `submit()` to run the script.
+  AnswerTests: function() { TRUE }
 
 - Class: cmd_question
-  Output: To save you some time and typing, we modified the data frames `pm0` and `pm1` slightly  by adding to each of them a new component, `county.site`. This is just a concatenation of two original components `County.Code` and `Site.ID`. We did this to facilitate the next step which is to find out how many measurements were taken by the 10 New York monitors working in both of the years of interest. Run `head` on `pm0` to see the first few entries now.
+  Output: Run `head` on `pm0` to see the first few entries.
   CorrectAnswer: head(pm0)
   AnswerTests:  obliterate("negative"); omnitest(correctExpr='head(pm0)')
   Hint: Type `head(pm0)` at the command prompt.
@@ -385,7 +390,7 @@
   Hint: Type `rng <- range(x0sub,x1sub,na.rm=TRUE)` at the command prompt.
 
 - Class: cmd_question
-  Output:  Look at rng to see the values it spans.
+  Output:  Look at `rng` to see the values it spans.
   CorrectAnswer: rng
   AnswerTests:    ANY_of_exprs("rng","print(rng)")
   Hint: Type `rng` or `print(rng)` at the command prompt.
